@@ -1,0 +1,52 @@
+{
+  "A01": {
+    "form": "3P（D 形态：P1 自动看路，P2 锚手 / P3 配重 / P4 梢手）",
+    "built": "HTML 原型 gate-kit.html（自包含，file:// 可开）",
+    "measured": [
+      "标准档每角 4/4 通关：P2 40.80s、P3 48.05s、P4 45.48s（合成代理，4 种子）",
+      "P1 标准档不动仍 4/4（63.45s）；难关档 P1/P4 不动均 0/4"
+    ],
+    "smoke": "72/72",
+    "verdict": "冻结为观察项：2 必需角 + 1 条件角；不加角色变体，只有 3P 真人 Gate 达 Go 线才进入切片",
+    "boundary": "HTML 原型 + 合成代理，0 真人、0 引擎、0 需求证据",
+    "source": "prototype/kids-fantasy-a01/FINAL-VERDICT.md、REPORT.md"
+  },
+  "A25": {
+    "form": "3P · 6 段，三职责（背壶含撑伞 / 探路 / 记步）整段轮换",
+    "built": "HTML 原型 index.html（自包含，file:// 可开）",
+    "measured": [
+      "标准档（10 口）engaged 代理 4/4、111.5s、剩水 3",
+      "难关档（8 口 + 更热）4/4、120.3s、剩水 0（压线通关）",
+      "1H2B 任一角色单人挂机 0/4"
+    ],
+    "smoke": "49/49",
+    "verdict": "留结构：6 段是唯一同时满足「每座位各承担 1 次最热段」与保留冷热梯度的段数",
+    "boundary": "HTML 原型 + 合成代理，0 真人、0 引擎",
+    "source": "prototype/kids-fantasy-a25/REPORT.md、README.md"
+  },
+  "A41": {
+    "form": "3P · 三段并行流水线（裁+缝 / 背布 / 撑缺口）",
+    "built": "HTML 原型 index.html（自包含，file:// 可开）",
+    "measured": [
+      "三段全程 199.4 / 200.6 / 201.1s（3 种子，约 3.3 分钟）",
+      "分段 64.7 / 70.7 / 65.5s；最坏等待 26.6%（<30%）",
+      "三种失败均可触发并按角色归因"
+    ],
+    "smoke": "52/52",
+    "verdict": "留结构、留三段，不新增机制；完整体验化不等于已验证好玩",
+    "boundary": "HTML 原型 + 合成代理，0 真人、0 引擎、0 需求证据",
+    "source": "prototype/kids-fantasy-a41/REPORT.md、README.md"
+  },
+  "B17": {
+    "form": "1–3P 合作备餐/宴席短篇，4 套稀缺结构 × 3 顿",
+    "built": "HTML 原型 index.html（自包含，file:// 可开）",
+    "measured": [
+      "固定策略代理 12/12 全胜，用时 140.7–151.5s",
+      "4 套 × 3 顿；等待最高 35%、决策最低 13.75/分、36 种挂机全输"
+    ],
+    "smoke": "95/95",
+    "verdict": "保留 r5，暂不进入队列：结构过线但仍是 0 真人，且结构可被套路化",
+    "boundary": "HTML 原型 + 合成代理，0 真人、0 引擎、0 需求数据",
+    "source": "prototype/kids-fantasy-b17/REPORT.md"
+  }
+}
