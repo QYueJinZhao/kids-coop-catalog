@@ -1,0 +1,23 @@
+{
+  "name": "kids-coop-catalog",
+  "version": "1.0.0",
+  "description": "儿童同屏合作游戏分类库：224 条结构化创意/冒险条目 + 自包含可筛选站点",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "ingest": "node scripts/ingest.mjs"
+  },
+  "keywords": [
+    "game-catalog",
+    "kids",
+    "co-op",
+    "local-multiplayer"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "playwright-core": "^1.64.1"
+  }
+}

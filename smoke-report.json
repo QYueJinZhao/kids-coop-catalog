@@ -1,0 +1,145 @@
+{
+  "generatedAt": "2026-11-04T13:14:28.895Z",
+  "target": "index.html",
+  "entries": 224,
+  "browser": "Chrome (playwright-core, headless)",
+  "summary": {
+    "total": 25,
+    "passed": 25,
+    "failed": 0
+  },
+  "requests": {
+    "total": 2,
+    "external": [],
+    "failed": []
+  },
+  "consoleErrors": [],
+  "pageErrors": [],
+  "results": [
+    {
+      "name": "条目数：列表渲染 224 条",
+      "ok": true,
+      "detail": "DOM 224 / 数据 224"
+    },
+    {
+      "name": "头部统计显示收录 224",
+      "ok": true,
+      "detail": "收录 224 条 玩法族 23 类 原始池 3 个 HTML 实测 4 条 真人试玩 0"
+    },
+    {
+      "name": "筛选：玩法族 F01",
+      "ok": true,
+      "detail": "DOM 12 / 预期 12"
+    },
+    {
+      "name": "筛选组合：F01 + 4P",
+      "ok": true,
+      "detail": "DOM 6 / 预期 6"
+    },
+    {
+      "name": "筛选组合：F01 + 4P + 门槛低",
+      "ok": true,
+      "detail": "DOM 6 / 预期 6"
+    },
+    {
+      "name": "计数文案随筛选更新",
+      "ok": true,
+      "detail": "显示 6 / 224 条 · 筛选：F01 抓与搬 · 4P · 门槛 低"
+    },
+    {
+      "name": "重置筛选回到 224",
+      "ok": true,
+      "detail": "DOM 224"
+    },
+    {
+      "name": "搜索「四角抬月」命中 1 条",
+      "ok": true,
+      "detail": "DOM 1"
+    },
+    {
+      "name": "搜索结果含 A01",
+      "ok": true,
+      "detail": "A01 卡片存在"
+    },
+    {
+      "name": "搜索编号「A41」命中 1 条",
+      "ok": true,
+      "detail": "DOM 1"
+    },
+    {
+      "name": "搜索「月亮」命中 > 0",
+      "ok": true,
+      "detail": "DOM 6"
+    },
+    {
+      "name": "详情弹层打开 A01",
+      "ok": true,
+      "detail": "×"
+    },
+    {
+      "name": "详情显示原型实测与冒烟数",
+      "ok": true,
+      "detail": "含 72/72 与原型段"
+    },
+    {
+      "name": "详情显示分类判据",
+      "ok": true,
+      "detail": "判据段存在"
+    },
+    {
+      "name": "详情显示来源指针",
+      "ok": true,
+      "detail": "含来源文件"
+    },
+    {
+      "name": "Esc 关闭弹层",
+      "ok": true,
+      "detail": "已关闭"
+    },
+    {
+      "name": "390px 无页面级横向溢出",
+      "ok": true,
+      "detail": "scrollWidth 390 / clientWidth 390 / innerWidth 390"
+    },
+    {
+      "name": "390px 卡片不超出视口",
+      "ok": true,
+      "detail": "最右卡片 right=376.0"
+    },
+    {
+      "name": "390px 无越界元素",
+      "ok": true,
+      "detail": "无"
+    },
+    {
+      "name": "390px 详情按全屏宽度且不溢出",
+      "ok": true,
+      "detail": "modal 390px, scrollWidth 390"
+    },
+    {
+      "name": "无 console error",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "无 pageerror",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "无失败请求",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "无外网请求",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "请求均为本地文件",
+      "ok": true,
+      "detail": "共 2 个请求"
+    }
+  ]
+}

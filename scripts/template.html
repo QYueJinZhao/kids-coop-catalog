@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>儿童同屏合作游戏分类库 · Catalog</title>
+<style>
+  :root{
+    --bg:#f6f1e7; --paper:#fffdf7; --ink:#211d18; --muted:#6d6459;
+    --line:#e4dccd; --accent:#e8503a; --teal:#1c8a80; --violet:#6a5acd; --gold:#c88a12;
+    --shadow:0 1px 2px rgba(33,29,24,.06),0 8px 24px rgba(33,29,24,.07);
+    --r:14px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+  header.hero{
+    background:
+      radial-gradient(900px 380px at 8% -20%, rgba(232,80,58,.18), transparent 60%),
+      radial-gradient(700px 320px at 92% 0%, rgba(28,138,128,.16), transparent 62%),
+      var(--paper);
+    border-bottom:1px solid var(--line);
+    padding:44px 0 30px;
+  }
+  .kicker{margin:0 0 10px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  h1{margin:0;font-size:clamp(28px,4.4vw,44px);line-height:1.15;letter-spacing:-.02em}
+  .lede{max-width:860px;margin:14px 0 0;color:var(--muted);font-size:15px}
+  .stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px}
+  .stat b{color:var(--accent)}
+  main{padding:22px 0 40px}
+  .controls{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:var(--shadow)}
+  .searchrow{display:flex;gap:10px;flex-wrap:wrap}
+  .searchrow input[type=search]{
+    flex:1 1 320px;min-width:0;padding:11px 14px;border:1px solid var(--line);border-radius:10px;
+    background:#fff;font-size:15px;color:var(--ink);outline:none;
+  }
+  .searchrow input[type=search]:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(232,80,58,.14)}
+  select,button{font:inherit;color:var(--ink)}
+  .searchrow select,.searchrow button{
+    padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;cursor:pointer
+  }
+  .searchrow button:hover{border-color:var(--accent);color:var(--accent)}
+  .facet{margin-top:16px}
+  .facet-label{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--muted);margin-bottom:8px}
+  .chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 8px;scrollbar-width:thin}
+  .chip{
+    flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:999px;
+    padding:6px 12px;font-size:13px;cursor:pointer;white-space:nowrap;color:var(--ink)
+  }
+  .chip .n{color:var(--muted);font-size:12px;margin-left:4px}
+  .chip[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+  .chip[aria-pressed=true] .n{color:#d9d2c6}
+  .selects{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:14px}
+  .field{display:flex;flex-direction:column;gap:4px;min-width:0}
+  .field span{font-size:11px;color:var(--muted);letter-spacing:.05em}
+  .field select{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:9px;background:#fff}
+  .count{margin:14px 0 0;font-size:13px;color:var(--muted)}
+  .count b{color:var(--ink)}
+  .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}
+  .card{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:16px;
+    box-shadow:var(--shadow);cursor:pointer;display:flex;flex-direction:column;gap:8px;min-width:0;
+    transition:transform .15s ease,border-color .15s ease
+  }
+  .card:hover,.card:focus-visible{transform:translateY(-2px);border-color:var(--accent);outline:none}
+  .card-top{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted);flex-wrap:wrap}
+  .id{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:700;color:var(--ink)}
+  .pill{border-radius:999px;padding:2px 8px;background:#efe8db;color:#5d5347}
+  .pill.p1{background:#fde4de;color:#a83a26}
+  .pill.p2{background:#ddf1ee;color:#15675f}
+  .pill.p3{background:#e8e4fb;color:#4d3fa8}
+  .fit{margin-left:auto;color:var(--gold);font-weight:700}
+  .card h3{margin:0;font-size:17px;line-height:1.35;overflow-wrap:anywhere}
+  .card h3 .en{display:block;font-size:11px;font-weight:400;color:var(--muted);letter-spacing:.02em;margin-top:2px}
+  .oneliner{margin:0;color:#4a4238;font-size:13.5px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+  .badge{font-size:11.5px;border:1px solid var(--line);border-radius:6px;padding:2px 7px;color:#584f44;background:#fff}
+  .badge.e1{border-color:#b9e3dd;background:#e9f7f5;color:#0f6b62;font-weight:700}
+  .badge.verb{border-color:#f2d2ca;background:#fdf0ec;color:#a83a26}
+  .empty{margin:36px 0;text-align:center;color:var(--muted)}
+  .foot{border-top:1px solid var(--line);margin-top:40px;padding-top:18px;color:var(--muted);font-size:12.5px}
+  .foot code{font-size:12px;background:#efe8db;padding:1px 5px;border-radius:4px}
+
+  /* 详情 */
+  .modal{position:fixed;inset:0;z-index:50;display:none;background:rgba(30,26,21,.42);padding:24px}
+  .modal.open{display:flex;align-items:flex-start;justify-content:center;overflow:auto}
+  .modal-card{
+    background:var(--paper);border-radius:18px;max-width:780px;width:100%;padding:26px;
+    box-shadow:0 24px 70px rgba(20,16,12,.35);position:relative
+  }
+  .modal-close{
+    position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:50%;
+    border:1px solid var(--line);background:#fff;cursor:pointer;font-size:18px;line-height:1
+  }
+  .modal h2{margin:0 0 4px;font-size:24px;line-height:1.3;padding-right:44px;overflow-wrap:anywhere}
+  .modal .sub{color:var(--muted);font-size:13px;margin:0 0 16px}
+  .modal .oneliner{display:block;-webkit-line-clamp:unset;font-size:14.5px;margin:0 0 18px}
+  .meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0 0 18px}
+  .meta div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:9px 11px;min-width:0}
+  .meta dt{font-size:11px;color:var(--muted);margin:0 0 2px}
+  .meta dd{margin:0;font-size:13.5px;overflow-wrap:anywhere}
+  .block{margin:0 0 16px}
+  .block h4{margin:0 0 6px;font-size:13px;letter-spacing:.04em;color:var(--accent)}
+  .block p{margin:0;font-size:13.5px;color:#3f382f}
+  .kv{margin:0;display:grid;grid-template-columns:120px minmax(0,1fr);gap:6px 12px;font-size:13px}
+  .kv dt{color:var(--muted)}
+  .kv dd{margin:0;overflow-wrap:anywhere}
+  .proto{background:#eaf7f4;border:1px solid #bfe4dd;border-radius:12px;padding:14px;margin:0 0 16px}
+  .proto h4{color:#0f6b62}
+  .proto ul{margin:6px 0 0;padding-left:18px}
+  .proto li{font-size:13px;margin:2px 0}
+  .note{font-size:12px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px;margin-top:6px}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px}
+
+  @media(max-width:980px){
+    .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .selects{grid-template-columns:repeat(3,minmax(0,1fr))}
+  }
+  @media(max-width:760px){
+    .wrap{padding:0 14px}
+    header.hero{padding:30px 0 22px}
+    .grid{grid-template-columns:1fr}
+    .selects{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .searchrow input[type=search]{flex-basis:100%}
+    .modal{padding:0}
+    .modal-card{border-radius:0;min-height:100dvh;max-width:100%;padding:20px 16px 32px}
+    .meta{grid-template-columns:1fr}
+    .kv{grid-template-columns:96px minmax(0,1fr)}
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">Game Catalog · v1.0</p>
+    <h1>儿童同屏合作游戏分类库</h1>
+    <p class="lede">把已有调研里的创意、冒险与原型结论收进同一套可筛选的字段：玩法族、人数、年龄、单局时长、上手门槛、情绪基调、载体与价格带。分类骨架沿用原池的机制家族，不另起一套；所有推断都标注了依据。</p>
+    <div class="stats" id="stats"></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="controls" aria-label="筛选与搜索">
+    <div class="searchrow">
+      <input id="q" type="search" placeholder="搜索标题 / 英文名 / 玩法 / 核心动词 / 编号（按 / 聚焦）" aria-label="搜索条目">
+      <select id="sort" aria-label="排序">
+        <option value="fit">按适配分排序</option>
+        <option value="id">按编号排序</option>
+        <option value="time">按单局时长排序</option>
+        <option value="title">按名称排序</option>
+      </select>
+      <button id="reset" type="button">重置筛选</button>
+    </div>
+
+    <div class="facet">
+      <span class="facet-label">玩法族（创意池 F / 冒险池 S / 第三批 G）</span>
+      <div class="chips" id="playChips" role="group" aria-label="玩法族筛选"></div>
+    </div>
+
+    <div class="selects" id="selects"></div>
+    <p class="count" id="count" aria-live="polite"></p>
+  </section>
+
+  <section id="grid" class="grid" aria-label="条目列表"></section>
+  <p id="empty" class="empty" hidden>没有匹配条目。试试减少筛选条件。</p>
+
+  <footer class="foot">
+    <p>数据来源：<code>ideas.json</code>（120 条）、<code>adventures.json</code>（64 条）、<code>adventures3.json</code>（40 条），以及 4 个 HTML 原型的 REPORT / FINAL-VERDICT。条目只做了结构化搬运与规则化派生，未改动原文。</p>
+    <p>证据等级：<b>E1</b> = 有 HTML 原型 + 合成代理实测；<b>E0</b> = 纸面推理。全库 <b>E2（真人试玩）= 0</b>。分类成立不等于玩法被验证。</p>
+  </footer>
+</main>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-card" id="modalCard"></div>
+</div>
+
+<script type="application/json" id="catalog-data">__DATA__</script>
+<script>
+(function(){
+  "use strict";
+  var DATA = JSON.parse(document.getElementById('catalog-data').textContent);
+  var entries = DATA.entries;
+  var meta = DATA.meta;
+
+  var state = {q:'', play:'', players:'', age:'', session:'', onboarding:'', mood:'', tech:'', price:'', evidence:'', sort:'fit'};
+
+  var POOL_CLASS = {'P1':'p1','P2':'p2','P3':'p3'};
+  var POOL_LABEL = {'P1':'创意池','P2':'冒险池','P3':'第三批'};
+
+  function esc(s){
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+  function uniq(arr){ var o={}, r=[]; arr.forEach(function(x){ if(x && !o[x]){o[x]=1;r.push(x);} }); return r; }
+  function haystack(e){
+    var parts=[e.id,e.title,e.titleEn,e.poolLabel,e.play,e.playKey,e.coreVerb,e.oneLiner,e.why,e.risk,e.lineage,e.dedup,e.mood,e.onboarding];
+    Object.keys(e.detail||{}).forEach(function(k){
+      var v=e.detail[k];
+      parts.push(k, typeof v==='string'?v:JSON.stringify(v));
+    });
+    if(e.prototype) parts.push(JSON.stringify(e.prototype));
+    return parts.join(' ').toLowerCase();
+  }
+  entries.forEach(function(e){ e._hay = haystack(e); });
+
+  /* ---------- 顶部统计 ---------- */
+  var e1 = entries.filter(function(e){ return e.evidence.level==='E1'; }).length;
+  var plays = uniq(entries.map(function(e){ return e.playKey; })).length;
+  document.getElementById('stats').innerHTML = [
+    '<span class="stat">收录 <b>'+entries.length+'</b> 条</span>',
+    '<span class="stat">玩法族 <b>'+plays+'</b> 类</span>',
+    '<span class="stat">原始池 <b>3</b> 个</span>',
+    '<span class="stat">HTML 实测 <b>'+e1+'</b> 条</span>',
+    '<span class="stat">真人试玩 <b>0</b></span>'
+  ].join('');
+
+  /* ---------- 筛选项 ---------- */
+  var PLAY_DEFS = meta.playDefs;
+  var playKeys = Object.keys(PLAY_DEFS);
+  var playChips = document.getElementById('playChips');
+  playChips.innerHTML =
+    '<button class="chip" type="button" data-play="" aria-pressed="true">全部<span class="n">'+entries.length+'</span></button>' +
+    playKeys.map(function(k){
+      var n = entries.filter(function(e){ return e.playKey===k; }).length;
+      return '<button class="chip" type="button" data-play="'+esc(k)+'" aria-pressed="false" title="'+esc(PLAY_DEFS[k].desc)+'">'+esc(k+' '+PLAY_DEFS[k].name)+'<span class="n">'+n+'</span></button>';
+    }).join('');
+
+  var fields = [
+    ['players','人数', uniq([].concat.apply([], entries.map(function(e){ return e.players.modes; })))],
+    ['age','目标年龄', uniq(entries.map(function(e){ return e.age.band; }))],
+    ['session','单局时长', uniq(entries.map(function(e){ return e.session.band; }))],
+    ['onboarding','上手门槛', uniq(entries.map(function(e){ return e.onboarding; }))],
+    ['mood','情绪基调', uniq(entries.map(function(e){ return e.mood; }))],
+    ['tech','载体形态', uniq(entries.map(function(e){ return e.platform.tech; }))],
+    ['price','价格带', uniq(entries.map(function(e){ return e.price.band; }))],
+    ['evidence','证据等级', uniq(entries.map(function(e){ return e.evidence.level+' '+e.evidence.label; }))]
+  ];
+  var selects = document.getElementById('selects');
+  selects.innerHTML = fields.map(function(f){
+    return '<label class="field"><span>'+esc(f[1])+'</span><select data-key="'+f[0]+'"><option value="">全部</option>'+
+      f[2].map(function(v){ return '<option value="'+esc(v)+'">'+esc(v)+'</option>'; }).join('')+
+      '</select></label>';
+  }).join('');
+
+  /* ---------- 过滤 / 排序 / 渲染 ---------- */
+  function matches(e){
+    if(state.q && e._hay.indexOf(state.q.toLowerCase()) === -1) return false;
+    if(state.play && e.playKey !== state.play) return false;
+    if(state.players && e.players.modes.indexOf(state.players) === -1) return false;
+    if(state.age && e.age.band !== state.age) return false;
+    if(state.session && e.session.band !== state.session) return false;
+    if(state.onboarding && e.onboarding !== state.onboarding) return false;
+    if(state.mood && e.mood !== state.mood) return false;
+    if(state.tech && e.platform.tech !== state.tech) return false;
+    if(state.price && e.price.band !== state.price) return false;
+    if(state.evidence && (e.evidence.level+' '+e.evidence.label) !== state.evidence) return false;
+    return true;
+  }
+  function sortFn(a,b){
+    if(state.sort==='id') return a.id.localeCompare(b.id);
+    if(state.sort==='time') return (a.session.seconds==null?999:a.session.seconds) - (b.session.seconds==null?999:b.session.seconds) || a.id.localeCompare(b.id);
+    if(state.sort==='title') return a.title.localeCompare(b.title,'zh-Hans-CN');
+    return (b.fit||0)-(a.fit||0) || a.id.localeCompare(b.id);
+  }
+
+  var grid = document.getElementById('grid');
+  var countEl = document.getElementById('count');
+  var emptyEl = document.getElementById('empty');
+
+  function card(e){
+    var proto = e.prototype ? '<span class="badge e1">● 有 HTML 原型</span>' : '';
+    return '<article class="card" tabindex="0" role="button" data-id="'+esc(e.id)+'">'+
+      '<div class="card-top"><span class="id">'+esc(e.id)+'</span>'+
+        '<span class="pill '+POOL_CLASS[e.pool]+'">'+esc(POOL_LABEL[e.pool])+'</span>'+
+        '<span class="pill">'+esc(e.playKey+' '+e.play)+'</span>'+
+        '<span class="fit">适配 '+esc(e.fit)+'</span></div>'+
+      '<h3>'+esc(e.title)+'<span class="en">'+esc(e.titleEn||'')+'</span></h3>'+
+      '<p class="oneliner">'+esc(e.oneLiner)+'</p>'+
+      '<div class="badges">'+
+        '<span class="badge verb">动词 '+esc(e.coreVerb)+'</span>'+
+        '<span class="badge">'+esc(e.players.modes.join(' / ') || '人数待定')+'</span>'+
+        '<span class="badge">'+esc(e.age.band)+' 岁</span>'+
+        '<span class="badge">'+esc(e.session.band)+'</span>'+
+        '<span class="badge">门槛 '+esc(e.onboarding)+'</span>'+
+        '<span class="badge">'+esc(e.mood)+'</span>'+
+        '<span class="badge">'+esc(e.evidence.level)+'</span>'+
+        proto+
+      '</div></article>';
+  }
+
+  function render(){
+    var exact = state.q ? entries.filter(function(e){ return e.id.toLowerCase() === state.q.toLowerCase(); }) : [];
+    var list = entries.filter(function(e){
+      if(!matches(e)) return false;
+      if(exact.length && exact.indexOf(e) === -1) return false; // 精确编号优先
+      return true;
+    }).sort(sortFn);
+    grid.innerHTML = list.map(card).join('');
+    emptyEl.hidden = list.length > 0;
+    var bits = [];
+    if(state.play) bits.push(PLAY_DEFS[state.play] ? state.play+' '+PLAY_DEFS[state.play].name : state.play);
+    if(state.players) bits.push(state.players);
+    if(state.age) bits.push(state.age+' 岁');
+    if(state.session) bits.push(state.session);
+    if(state.onboarding) bits.push('门槛 '+state.onboarding);
+    if(state.mood) bits.push(state.mood);
+    if(state.tech) bits.push(state.tech);
+    if(state.price) bits.push(state.price);
+    if(state.evidence) bits.push(state.evidence);
+    if(state.q) bits.push('关键词「'+state.q+'」');
+    countEl.innerHTML = '显示 <b>'+list.length+'</b> / '+entries.length+' 条'+(bits.length?' · 筛选：'+esc(bits.join(' · ')):' · 未筛选');
+  }
+
+  /* ---------- 详情 ---------- */
+  var modal = document.getElementById('modal');
+  var modalCard = document.getElementById('modalCard');
+  var lastFocus = null;
+
+  function metaItem(k,v){ return '<div><dt>'+esc(k)+'</dt><dd>'+esc(v)+'</dd></div>'; }
+
+  function openDetail(id){
+    var e = entries.filter(function(x){ return x.id===id; })[0];
+    if(!e) return;
+    lastFocus = document.activeElement;
+    var html = '';
+    html += '<button class="modal-close" type="button" aria-label="关闭">×</button>';
+    html += '<h2 id="modalTitle">'+esc(e.title)+'</h2>';
+    html += '<p class="sub">'+esc(e.titleEn||'')+' · '+esc(e.id)+' · '+esc(e.poolLabel)+'</p>';
+    html += '<p class="oneliner">'+esc(e.oneLiner)+'</p>';
+    html += '<dl class="meta">'+
+      metaItem('玩法族', e.playKey+' '+e.play)+
+      metaItem('核心动词', e.coreVerb)+
+      metaItem('玩家人数', e.players.modes.join(' / ')||'未定')+
+      metaItem('目标年龄', e.age.band+' 岁（'+e.age.basis+'）')+
+      metaItem('单局时长', e.session.band+'（'+e.session.basis+'）')+
+      metaItem('上手门槛', e.onboarding)+
+      metaItem('情绪基调', e.mood+'（关键词规则推导）')+
+      metaItem('载体 / 平台', e.platform.target+'；'+e.platform.tech)+
+      metaItem('价格带', e.price.band)+
+      metaItem('适配分', e.fit+' / 5')+
+      metaItem('证据等级', e.evidence.level+' · '+e.evidence.label)+
+      '</dl>';
+    html += '<div class="block"><h4>分类判据</h4><p>'+esc(e.why)+'</p></div>';
+
+    if(e.prototype){
+      html += '<div class="proto"><h4>原型形态与实测结论（E1）</h4>'+
+        '<p><b>形态：</b>'+esc(e.prototype.form)+'</p>'+
+        '<p><b>实现：</b>'+esc(e.prototype.built)+'</p>'+
+        '<ul>'+e.prototype.measured.map(function(m){ return '<li>'+esc(m)+'</li>'; }).join('')+'</ul>'+
+        '<p><b>冒烟：</b>'+esc(e.prototype.smoke)+' · <b>结论：</b>'+esc(e.prototype.verdict)+'</p>'+
+        '<p class="note">证据边界：'+esc(e.prototype.boundary)+'；来源：'+esc(e.prototype.source)+'</p></div>';
+    }
+
+    var kv = Object.keys(e.detail||{}).map(function(k){
+      var v = e.detail[k];
+      return '<dt>'+esc(k)+'</dt><dd>'+(typeof v==='string'?esc(v):esc(JSON.stringify(v)))+'</dd>';
+    }).join('');
+    html += '<div class="block"><h4>原文要点</h4><dl class="kv">'+kv+'</dl></div>';
+    html += '<div class="block"><h4>风险 / 谱系 / 去重</h4><dl class="kv">'+
+      '<dt>风险</dt><dd>'+esc(e.risk)+'</dd>'+
+      '<dt>机制谱系</dt><dd>'+esc(e.lineage)+'</dd>'+
+      '<dt>去重状态</dt><dd>'+esc(e.dedup)+'</dd></dl></div>';
+    html += '<div class="block"><h4>来源</h4><p class="mono">'+esc(e.source.file)+' '+esc(e.source.pointer)+'</p></div>';
+    html += '<p class="note">除 4 条 HTML 原型外，本库所有条目均为纸面推理；分类判据来自原池机制家族定义，不是市场验证结论。</p>';
+
+    modalCard.innerHTML = html;
+    modal.classList.add('open');
+    document.body.style.overflow='hidden';
+    var closeBtn = modalCard.querySelector('.modal-close');
+    if(closeBtn) closeBtn.focus();
+  }
+  function closeDetail(){
+    modal.classList.remove('open');
+    document.body.style.overflow='';
+    if(lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  /* ---------- 事件 ---------- */
+  playChips.addEventListener('click', function(ev){
+    var btn = ev.target.closest ? ev.target.closest('.chip') : null;
+    if(!btn) return;
+    state.play = btn.getAttribute('data-play');
+    Array.prototype.forEach.call(playChips.querySelectorAll('.chip'), function(b){
+      b.setAttribute('aria-pressed', b===btn ? 'true' : 'false');
+    });
+    render();
+  });
+  selects.addEventListener('change', function(ev){
+    var sel = ev.target;
+    if(sel.tagName!=='SELECT') return;
+    state[sel.getAttribute('data-key')] = sel.value;
+    render();
+  });
+  document.getElementById('q').addEventListener('input', function(ev){
+    state.q = ev.target.value.trim();
+    render();
+  });
+  document.getElementById('sort').addEventListener('change', function(ev){
+    state.sort = ev.target.value;
+    render();
+  });
+  document.getElementById('reset').addEventListener('click', function(){
+    state = {q:'', play:'', players:'', age:'', session:'', onboarding:'', mood:'', tech:'', price:'', evidence:'', sort:'fit'};
+    document.getElementById('q').value='';
+    document.getElementById('sort').value='fit';
+    Array.prototype.forEach.call(selects.querySelectorAll('select'), function(s){ s.value=''; });
+    Array.prototype.forEach.call(playChips.querySelectorAll('.chip'), function(b,i){ b.setAttribute('aria-pressed', i===0?'true':'false'); });
+    render();
+  });
+  grid.addEventListener('click', function(ev){
+    var card = ev.target.closest ? ev.target.closest('.card') : null;
+    if(card) openDetail(card.getAttribute('data-id'));
+  });
+  grid.addEventListener('keydown', function(ev){
+    if(ev.key!=='Enter' && ev.key!==' ') return;
+    var card = ev.target.closest ? ev.target.closest('.card') : null;
+    if(card){ ev.preventDefault(); openDetail(card.getAttribute('data-id')); }
+  });
+  modal.addEventListener('click', function(ev){
+    if(ev.target === modal) closeDetail();
+    if(ev.target.classList && ev.target.classList.contains('modal-close')) closeDetail();
+  });
+  document.addEventListener('keydown', function(ev){
+    if(ev.key==='Escape') closeDetail();
+    if(ev.key==='/' && document.activeElement.tagName!=='INPUT' && document.activeElement.tagName!=='SELECT'){
+      ev.preventDefault();
+      document.getElementById('q').focus();
+    }
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
