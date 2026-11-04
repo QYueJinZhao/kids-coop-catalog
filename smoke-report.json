@@ -1,11 +1,15 @@
 {
-  "generatedAt": "2026-11-04T13:14:28.895Z",
+  "generatedAt": "2026-11-04T15:17:09.877Z",
   "target": "index.html",
-  "entries": 224,
+  "entries": {
+    "total": 240,
+    "own": 224,
+    "market": 16
+  },
   "browser": "Chrome (playwright-core, headless)",
   "summary": {
-    "total": 25,
-    "passed": 25,
+    "total": 43,
+    "passed": 43,
     "failed": 0
   },
   "requests": {
@@ -17,89 +21,169 @@
   "pageErrors": [],
   "results": [
     {
-      "name": "条目数：列表渲染 224 条",
+      "name": "条目数：列表渲染 240 条（自有 224 + 市面 16）",
+      "ok": true,
+      "detail": "DOM 240 / 数据 240"
+    },
+    {
+      "name": "头部统计：收录 240 / 自有 224 · 市面 16",
+      "ok": true,
+      "detail": "收录 240 条 自有 224 · 市面 16 玩法族 23 类 市面覆盖 12 类 真人试玩 0"
+    },
+    {
+      "name": "头部统计：市面覆盖 12 类",
+      "ok": true,
+      "detail": "收录 240 条 自有 224 · 市面 16 玩法族 23 类 市面覆盖 12 类 真人试玩 0"
+    },
+    {
+      "name": "筛选：市面对照 16 条",
+      "ok": true,
+      "detail": "DOM 16 / market 卡片 16 / 数据 16"
+    },
+    {
+      "name": "筛选：自有创意 224 条",
       "ok": true,
       "detail": "DOM 224 / 数据 224"
     },
     {
-      "name": "头部统计显示收录 224",
+      "name": "重置来源筛选回到 240",
       "ok": true,
-      "detail": "收录 224 条 玩法族 23 类 原始池 3 个 HTML 实测 4 条 真人试玩 0"
+      "detail": "已回到全部"
     },
     {
-      "name": "筛选：玩法族 F01",
+      "name": "筛选：玩法族 F01（自有+市面）",
       "ok": true,
-      "detail": "DOM 12 / 预期 12"
+      "detail": "DOM 17 / 预期 17"
     },
     {
-      "name": "筛选组合：F01 + 4P",
+      "name": "F01 列表含市面 Overcooked! 2",
       "ok": true,
-      "detail": "DOM 6 / 预期 6"
+      "detail": "M01 在列"
     },
     {
-      "name": "筛选组合：F01 + 4P + 门槛低",
+      "name": "组合筛选：F01 + 市面",
       "ok": true,
-      "detail": "DOM 6 / 预期 6"
+      "detail": "预期 5"
     },
     {
-      "name": "计数文案随筛选更新",
+      "name": "对照视图：23 个玩法族 + 1 个未归类行",
       "ok": true,
-      "detail": "显示 6 / 224 条 · 筛选：F01 抓与搬 · 4P · 门槛 低"
+      "detail": "DOM 24"
     },
     {
-      "name": "重置筛选回到 224",
+      "name": "对照视图打开后列表隐藏",
       "ok": true,
-      "detail": "DOM 224"
+      "detail": "grid/origin facet 已隐藏"
     },
     {
-      "name": "搜索「四角抬月」命中 1 条",
+      "name": "对照行 F05 标为「本样本内已有」",
       "ok": true,
-      "detail": "DOM 1"
+      "detail": "tag.has 存在"
     },
     {
-      "name": "搜索结果含 A01",
+      "name": "对照行 F05 右栏含 Overcooked! 2",
       "ok": true,
-      "detail": "A01 卡片存在"
+      "detail": "市面侧有 M01"
     },
     {
-      "name": "搜索编号「A41」命中 1 条",
+      "name": "对照行 F04 标为「本样本内未见对照」",
       "ok": true,
-      "detail": "DOM 1"
+      "detail": "tag.none 存在"
     },
     {
-      "name": "搜索「月亮」命中 > 0",
+      "name": "F04 左栏仍有自有条目",
       "ok": true,
-      "detail": "DOM 6"
+      "detail": "mini 6"
     },
     {
-      "name": "详情弹层打开 A01",
+      "name": "未归类行含 Castle Crashers",
+      "ok": true,
+      "detail": "M10 在未归类行"
+    },
+    {
+      "name": "对照视图 + 玩法族 F05 只剩 1 行",
+      "ok": true,
+      "detail": "单行对照"
+    },
+    {
+      "name": "对照视图搜索「PICO PARK」只留有内容的行",
+      "ok": true,
+      "detail": "DOM 2"
+    },
+    {
+      "name": "F02 行右栏含 PICO PARK",
+      "ok": true,
+      "detail": "搜索命中映射行"
+    },
+    {
+      "name": "对照行可打开市面详情 M03",
       "ok": true,
       "detail": "×"
     },
     {
-      "name": "详情显示原型实测与冒烟数",
+      "name": "市面详情有官方人数原文与 E3",
       "ok": true,
-      "detail": "含 72/72 与原型段"
+      "detail": "含原文与 E3"
     },
     {
-      "name": "详情显示分类判据",
+      "name": "市面详情有映射判据与谱系关联",
       "ok": true,
-      "detail": "判据段存在"
+      "detail": "两段都在"
     },
     {
-      "name": "详情显示来源指针",
+      "name": "市面详情不做适配分评分",
       "ok": true,
-      "detail": "含来源文件"
+      "detail": "无适配分"
     },
     {
-      "name": "Esc 关闭弹层",
+      "name": "市面详情有 Steam 商店页链接",
       "ok": true,
-      "detail": "已关闭"
+      "detail": "appid 1509960"
     },
     {
-      "name": "390px 无页面级横向溢出",
+      "name": "搜索「PICO PARK」命中 2 款市面游戏",
       "ok": true,
-      "detail": "scrollWidth 390 / clientWidth 390 / innerWidth 390"
+      "detail": "DOM 2"
+    },
+    {
+      "name": "搜索「Overcooked」命中 2 款市面 + 谱系提及 1 条自有",
+      "ok": true,
+      "detail": "DOM 3（市面 2）"
+    },
+    {
+      "name": "搜索编号「A41」仍精确命中 1 条",
+      "ok": true,
+      "detail": "精确编号优先"
+    },
+    {
+      "name": "市面详情 M01 显示初始价/采样价",
+      "ok": true,
+      "detail": "价格字段在"
+    },
+    {
+      "name": "市面详情 M01 显示评测数与采样时间",
+      "ok": true,
+      "detail": "评测/采样时间在"
+    },
+    {
+      "name": "市面详情 M01 有「未获取」或口径说明",
+      "ok": true,
+      "detail": "边界说明"
+    },
+    {
+      "name": "自有详情 A01 仍显示原型实测 72/72 与判据",
+      "ok": true,
+      "detail": "A01 详情正常"
+    },
+    {
+      "name": "自有详情 A01 显示适配分",
+      "ok": true,
+      "detail": "自有评分保留"
+    },
+    {
+      "name": "390px 列表无页面级横向溢出",
+      "ok": true,
+      "detail": "scrollWidth 390 / innerWidth 390"
     },
     {
       "name": "390px 卡片不超出视口",
@@ -112,7 +196,17 @@
       "detail": "无"
     },
     {
-      "name": "390px 详情按全屏宽度且不溢出",
+      "name": "390px 对照视图无横向溢出",
+      "ok": true,
+      "detail": "scrollWidth 390 / innerWidth 390"
+    },
+    {
+      "name": "390px 对照视图单列不越界",
+      "ok": true,
+      "detail": "无越界 · 24 行"
+    },
+    {
+      "name": "390px 市面详情全屏宽度且不溢出",
       "ok": true,
       "detail": "modal 390px, scrollWidth 390"
     },

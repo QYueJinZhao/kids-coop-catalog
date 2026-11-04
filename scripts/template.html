@@ -117,6 +117,38 @@
   .note{font-size:12px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px;margin-top:6px}
   .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px}
 
+  /* 来源徽章 / 市面条目 */
+  .pill.market{background:#fdf1d8;color:#8a5a00}
+  .card.market{border-left:3px solid #d9a62e}
+  .btn-link{display:inline-block;margin-top:6px;color:var(--teal);font-size:13px;text-decoration:none;border-bottom:1px solid currentColor;overflow-wrap:anywhere}
+
+  /* 视图切换与对照 */
+  .toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:14px}
+  .tabs{display:inline-flex;background:#efe8db;border-radius:999px;padding:3px}
+  .tab{border:0;background:transparent;padding:7px 14px;border-radius:999px;cursor:pointer;font-size:13px;color:#5d5347}
+  .tab[aria-selected=true]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.08);font-weight:700}
+  .compare{display:none;margin-top:16px}
+  .compare.open{display:block}
+  .compare-lead{font-size:13px;color:var(--muted);margin:0 0 12px}
+  .crow{border:1px solid var(--line);border-radius:var(--r);background:var(--paper);margin-bottom:12px;box-shadow:var(--shadow);overflow:hidden}
+  .crow-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:11px 14px;border-bottom:1px solid var(--line);background:#fff}
+  .crow-head h3{margin:0;font-size:15px}
+  .crow-head .num{font-size:12px;color:var(--muted)}
+  .tag{font-size:11.5px;border-radius:999px;padding:2px 9px;border:1px solid var(--line)}
+  .tag.has{background:#e9f7f5;border-color:#bfe4dd;color:#0f6b62}
+  .tag.none{background:#f6f1e7;color:#7a7064}
+  .crow-body{display:grid;grid-template-columns:1fr 1fr}
+  .col{padding:12px 14px;min-width:0}
+  .col.right{border-left:1px solid var(--line);background:#fcfaf4}
+  .col h4{margin:0 0 8px;font-size:11.5px;letter-spacing:.08em;color:var(--muted)}
+  .mini{display:block;width:100%;text-align:left;border:1px solid var(--line);background:#fff;border-radius:8px;
+    padding:7px 9px;margin:0 0 6px;font-size:13px;cursor:pointer;overflow-wrap:anywhere}
+  .mini:hover{border-color:var(--accent)}
+  .mini .mid{font-family:ui-monospace,Consolas,monospace;font-size:11px;color:var(--muted);margin-right:6px}
+  .mini .subline{display:block;font-size:11.5px;color:var(--muted);margin-top:2px}
+  .col .none{font-size:12.5px;color:var(--muted);margin:0}
+
+
   @media(max-width:980px){
     .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     .selects{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -131,15 +163,18 @@
     .modal-card{border-radius:0;min-height:100dvh;max-width:100%;padding:20px 16px 32px}
     .meta{grid-template-columns:1fr}
     .kv{grid-template-columns:96px minmax(0,1fr)}
+    .crow-body{grid-template-columns:1fr}
+    .col.right{border-left:0;border-top:1px solid var(--line)}
+    .toolbar{gap:8px}
   }
 </style>
 </head>
 <body>
 <header class="hero">
   <div class="wrap">
-    <p class="kicker">Game Catalog · v1.0</p>
+    <p class="kicker">Game Catalog · v1.1</p>
     <h1>儿童同屏合作游戏分类库</h1>
-    <p class="lede">把已有调研里的创意、冒险与原型结论收进同一套可筛选的字段：玩法族、人数、年龄、单局时长、上手门槛、情绪基调、载体与价格带。分类骨架沿用原池的机制家族，不另起一套；所有推断都标注了依据。</p>
+    <p class="lede">把已有调研里的创意、冒险与原型结论，和 16 款 Steam 在售同类游戏放进同一套字段：玩法族、人数、年龄、单局时长、上手门槛、情绪基调、载体与价格带。玩法族沿用原池机制家族，不另起一套；市面条目只搬运可核实事实，缺的写「未获取」。</p>
     <div class="stats" id="stats"></div>
   </div>
 </header>
@@ -157,6 +192,19 @@
       <button id="reset" type="button">重置筛选</button>
     </div>
 
+    <div class="toolbar">
+      <div class="tabs" role="tablist" aria-label="视图切换">
+        <button class="tab" id="tabList" type="button" role="tab" aria-selected="true">条目列表</button>
+        <button class="tab" id="tabCompare" type="button" role="tab" aria-selected="false">玩法族对照</button>
+      </div>
+      <span class="count" id="modeNote">自有条目与市面对照在同一套字段里</span>
+    </div>
+
+    <div class="facet" id="originFacet">
+      <span class="facet-label">条目来源</span>
+      <div class="chips" id="originChips" role="group" aria-label="来源筛选"></div>
+    </div>
+
     <div class="facet">
       <span class="facet-label">玩法族（创意池 F / 冒险池 S / 第三批 G）</span>
       <div class="chips" id="playChips" role="group" aria-label="玩法族筛选"></div>
@@ -169,9 +217,12 @@
   <section id="grid" class="grid" aria-label="条目列表"></section>
   <p id="empty" class="empty" hidden>没有匹配条目。试试减少筛选条件。</p>
 
+  <section id="compare" class="compare" aria-label="玩法族对照视图"></section>
+
   <footer class="foot">
-    <p>数据来源：<code>ideas.json</code>（120 条）、<code>adventures.json</code>（64 条）、<code>adventures3.json</code>（40 条），以及 4 个 HTML 原型的 REPORT / FINAL-VERDICT。条目只做了结构化搬运与规则化派生，未改动原文。</p>
-    <p>证据等级：<b>E1</b> = 有 HTML 原型 + 合成代理实测；<b>E0</b> = 纸面推理。全库 <b>E2（真人试玩）= 0</b>。分类成立不等于玩法被验证。</p>
+    <p>数据来源：<code>ideas.json</code>（120 条）、<code>adventures.json</code>（64 条）、<code>adventures3.json</code>（40 条）、4 个 HTML 原型的 REPORT / FINAL-VERDICT，以及 <code>steam-demand-2026-11-04.json</code>（16 款 Steam 在售同类采样）。条目只做了结构化搬运与规则化派生，未改动原文。</p>
+    <p>证据等级：<b>E0</b> = 纸面推理；<b>E1</b> = HTML 原型 + 合成代理实测；<b>E2</b> = 真人试玩（全库 <b>0</b> 条）；<b>E3</b> = 外部可核实事实（市面 16 款，非试玩证据）。分类成立不等于玩法被验证。</p>
+    <p>市面对照边界：价格与评测数是采样时点值（非历史最低价、非峰值）；人数只认官方原文，原文没写就写「未获取」；玩法族映射是编者判据，不是厂商分类；「本样本内未见同族」不等于市场空白。</p>
   </footer>
 </main>
 
@@ -187,10 +238,10 @@
   var entries = DATA.entries;
   var meta = DATA.meta;
 
-  var state = {q:'', play:'', players:'', age:'', session:'', onboarding:'', mood:'', tech:'', price:'', evidence:'', sort:'fit'};
+  var state = {q:'', origin:'', play:'', players:'', age:'', session:'', onboarding:'', mood:'', tech:'', price:'', evidence:'', sort:'fit', view:'list'};
 
-  var POOL_CLASS = {'P1':'p1','P2':'p2','P3':'p3'};
-  var POOL_LABEL = {'P1':'创意池','P2':'冒险池','P3':'第三批'};
+  var POOL_CLASS = {'P1':'p1','P2':'p2','P3':'p3','M':'market'};
+  var POOL_LABEL = {'P1':'创意池','P2':'冒险池','P3':'第三批','M':'市面对照'};
 
   function esc(s){
     return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
@@ -199,7 +250,8 @@
   }
   function uniq(arr){ var o={}, r=[]; arr.forEach(function(x){ if(x && !o[x]){o[x]=1;r.push(x);} }); return r; }
   function haystack(e){
-    var parts=[e.id,e.title,e.titleEn,e.poolLabel,e.play,e.playKey,e.coreVerb,e.oneLiner,e.why,e.risk,e.lineage,e.dedup,e.mood,e.onboarding];
+    var parts=[e.id,e.title,e.titleEn,e.poolLabel,e.play,e.playKey,(e.playKeys||[]).join(' '),e.coreVerb,e.oneLiner,e.why,e.risk,e.lineage,e.dedup,e.mood,e.onboarding,e.steamUrl,e.origin];
+    if(e.players) parts.push(e.players.note,e.players.officialText,e.players.maxPlayers);
     Object.keys(e.detail||{}).forEach(function(k){
       var v=e.detail[k];
       parts.push(k, typeof v==='string'?v:JSON.stringify(v));
@@ -211,35 +263,45 @@
 
   /* ---------- 顶部统计 ---------- */
   var e1 = entries.filter(function(e){ return e.evidence.level==='E1'; }).length;
-  var plays = uniq(entries.map(function(e){ return e.playKey; })).length;
+  var ownCount = entries.filter(function(e){ return e.origin==='own'; }).length;
+  var marketCount = entries.filter(function(e){ return e.origin==='market'; }).length;
+  var plays = Object.keys(meta.playDefs).length;
+  var marketFamilies = uniq([].concat.apply([], entries.filter(function(e){ return e.origin==='market'; }).map(function(e){ return e.playKeys||[]; }))).length;
   document.getElementById('stats').innerHTML = [
     '<span class="stat">收录 <b>'+entries.length+'</b> 条</span>',
+    '<span class="stat">自有 <b>'+ownCount+'</b> · 市面 <b>'+marketCount+'</b></span>',
     '<span class="stat">玩法族 <b>'+plays+'</b> 类</span>',
-    '<span class="stat">原始池 <b>3</b> 个</span>',
-    '<span class="stat">HTML 实测 <b>'+e1+'</b> 条</span>',
+    '<span class="stat">市面覆盖 <b>'+marketFamilies+'</b> 类</span>',
     '<span class="stat">真人试玩 <b>0</b></span>'
   ].join('');
 
   /* ---------- 筛选项 ---------- */
   var PLAY_DEFS = meta.playDefs;
   var playKeys = Object.keys(PLAY_DEFS);
+  var originChips = document.getElementById('originChips');
+  originChips.innerHTML =
+    '<button class="chip" type="button" data-origin="" aria-pressed="true">全部<span class="n">'+entries.length+'</span></button>'+
+    '<button class="chip" type="button" data-origin="own" aria-pressed="false">自有创意<span class="n">'+ownCount+'</span></button>'+
+    '<button class="chip" type="button" data-origin="market" aria-pressed="false">市面对照<span class="n">'+marketCount+'</span></button>';
+
   var playChips = document.getElementById('playChips');
   playChips.innerHTML =
     '<button class="chip" type="button" data-play="" aria-pressed="true">全部<span class="n">'+entries.length+'</span></button>' +
     playKeys.map(function(k){
-      var n = entries.filter(function(e){ return e.playKey===k; }).length;
+      var n = entries.filter(function(e){ return (e.playKeys||[e.playKey]).indexOf(k) !== -1; }).length;
       return '<button class="chip" type="button" data-play="'+esc(k)+'" aria-pressed="false" title="'+esc(PLAY_DEFS[k].desc)+'">'+esc(k+' '+PLAY_DEFS[k].name)+'<span class="n">'+n+'</span></button>';
     }).join('');
 
+  function opts(arr){ return uniq(arr).filter(function(v){ return v && v!=='未获取'; }); }
   var fields = [
-    ['players','人数', uniq([].concat.apply([], entries.map(function(e){ return e.players.modes; })))],
-    ['age','目标年龄', uniq(entries.map(function(e){ return e.age.band; }))],
-    ['session','单局时长', uniq(entries.map(function(e){ return e.session.band; }))],
-    ['onboarding','上手门槛', uniq(entries.map(function(e){ return e.onboarding; }))],
-    ['mood','情绪基调', uniq(entries.map(function(e){ return e.mood; }))],
-    ['tech','载体形态', uniq(entries.map(function(e){ return e.platform.tech; }))],
-    ['price','价格带', uniq(entries.map(function(e){ return e.price.band; }))],
-    ['evidence','证据等级', uniq(entries.map(function(e){ return e.evidence.level+' '+e.evidence.label; }))]
+    ['players','人数', opts([].concat.apply([], entries.map(function(e){ return e.players.modes; })))],
+    ['age','目标年龄', opts(entries.map(function(e){ return e.age.band; }))],
+    ['session','单局时长', opts(entries.map(function(e){ return e.session.band; }))],
+    ['onboarding','上手门槛', opts(entries.map(function(e){ return e.onboarding; }))],
+    ['mood','情绪基调', opts(entries.map(function(e){ return e.mood; }))],
+    ['tech','载体形态', opts(entries.map(function(e){ return e.platform.tech; }))],
+    ['price','价格带', opts(entries.map(function(e){ return e.price.band; }))],
+    ['evidence','证据等级', opts(entries.map(function(e){ return e.evidence.level+' '+e.evidence.label; }))]
   ];
   var selects = document.getElementById('selects');
   selects.innerHTML = fields.map(function(f){
@@ -251,7 +313,8 @@
   /* ---------- 过滤 / 排序 / 渲染 ---------- */
   function matches(e){
     if(state.q && e._hay.indexOf(state.q.toLowerCase()) === -1) return false;
-    if(state.play && e.playKey !== state.play) return false;
+    if(state.origin && e.origin !== state.origin) return false;
+    if(state.play && (e.playKeys||[e.playKey]).indexOf(state.play) === -1) return false;
     if(state.players && e.players.modes.indexOf(state.players) === -1) return false;
     if(state.age && e.age.band !== state.age) return false;
     if(state.session && e.session.band !== state.session) return false;
@@ -273,9 +336,37 @@
   var countEl = document.getElementById('count');
   var emptyEl = document.getElementById('empty');
 
+  function familyText(e){
+    var keys = e.playKeys || [e.playKey];
+    if(!keys.length) return '未归类';
+    return keys.map(function(k){ return k+' '+PLAY_DEFS[k].name; }).join(' + ');
+  }
+  function money(v){ return v === '未获取' || v == null ? '价格未获取' : '$'+v; }
+  function reviewText(e){
+    if(!e.reviews || e.reviews.total === '未获取') return '评测数未获取';
+    return String(e.reviews.total).replace(/\B(?=(\d{3})+(?!\d))/g, ',')+' 评测 · '+e.reviews.positivePct+'% 好评';
+  }
+
   function card(e){
+    if(e.origin === 'market'){
+      var price = e.price ? (money(e.price.base)+(e.price.sampled !== '未获取' && e.price.discountPct ? ' → '+money(e.price.sampled)+'（-'+e.price.discountPct+'%）' : '')) : '价格未获取';
+      var ptxt = e.players.officialText && e.players.officialText !== '未获取' ? e.players.officialText : '官方人数未获取';
+      var ptxtShort = ptxt.length > 46 ? ptxt.slice(0, 46)+'…' : ptxt;
+      return '<article class="card market" tabindex="0" role="button" data-id="'+esc(e.id)+'" data-origin="market">'+
+        '<div class="card-top"><span class="id">'+esc(e.id)+'</span>'+
+          '<span class="pill market">市面对照</span>'+
+          '<span class="pill">'+esc(familyText(e))+'</span></div>'+
+        '<h3>'+esc(e.title)+'</h3>'+
+        '<p class="oneliner">'+esc(e.oneLiner)+'</p>'+
+        '<div class="badges">'+
+          '<span class="badge verb">官方人数：'+esc(ptxtShort)+'</span>'+
+          '<span class="badge">'+esc(price)+'</span>'+
+          '<span class="badge">'+esc(reviewText(e))+'</span>'+
+          '<span class="badge e1">E3 外部事实</span>'+
+        '</div></article>';
+    }
     var proto = e.prototype ? '<span class="badge e1">● 有 HTML 原型</span>' : '';
-    return '<article class="card" tabindex="0" role="button" data-id="'+esc(e.id)+'">'+
+    return '<article class="card" tabindex="0" role="button" data-id="'+esc(e.id)+'" data-origin="own">'+
       '<div class="card-top"><span class="id">'+esc(e.id)+'</span>'+
         '<span class="pill '+POOL_CLASS[e.pool]+'">'+esc(POOL_LABEL[e.pool])+'</span>'+
         '<span class="pill">'+esc(e.playKey+' '+e.play)+'</span>'+
@@ -304,6 +395,7 @@
     grid.innerHTML = list.map(card).join('');
     emptyEl.hidden = list.length > 0;
     var bits = [];
+    if(state.origin) bits.push(state.origin==='own'?'自有创意':'市面对照');
     if(state.play) bits.push(PLAY_DEFS[state.play] ? state.play+' '+PLAY_DEFS[state.play].name : state.play);
     if(state.players) bits.push(state.players);
     if(state.age) bits.push(state.age+' 岁');
@@ -317,6 +409,81 @@
     countEl.innerHTML = '显示 <b>'+list.length+'</b> / '+entries.length+' 条'+(bits.length?' · 筛选：'+esc(bits.join(' · ')):' · 未筛选');
   }
 
+  /* ---------- 玩法族对照视图 ---------- */
+  var compareEl = document.getElementById('compare');
+  function miniOwn(e){
+    return '<button class="mini" type="button" data-id="'+esc(e.id)+'"><span class="mid">'+esc(e.id)+'</span>'+esc(e.title)+
+      '<span class="subline">'+esc(e.playKey+' '+e.play)+' · '+esc(e.players.modes.join(' / ')||'人数待定')+' · E'+esc(e.evidence.level.slice(1))+'</span></button>';
+  }
+  function miniMarket(e){
+    var p = e.players.officialText !== '未获取' ? e.players.officialText : '官方人数未获取';
+    if(p.length > 56) p = p.slice(0, 56)+'…';
+    return '<button class="mini" type="button" data-id="'+esc(e.id)+'"><span class="mid">'+esc(e.id)+'</span>'+esc(e.title)+
+      '<span class="subline">官方人数：'+esc(p)+'</span><span class="subline">'+esc(reviewText(e))+' · '+esc(familyText(e))+'</span></button>';
+  }
+  function renderCompare(){
+    var q = state.q.toLowerCase();
+    var vis = entries.filter(function(e){ return !q || e._hay.indexOf(q) !== -1; });
+    var rows = playKeys.map(function(k){
+      return {
+        key: k,
+        def: PLAY_DEFS[k],
+        own: vis.filter(function(e){ return e.origin==='own' && e.playKey===k; }),
+        market: vis.filter(function(e){ return e.origin==='market' && (e.playKeys||[]).indexOf(k) !== -1; })
+      };
+    });
+    if(state.play) rows = rows.filter(function(r){ return r.key===state.play; });
+    if(state.q) rows = rows.filter(function(r){ return r.own.length || r.market.length; });
+    var un = vis.filter(function(e){ return e.origin==='market' && !(e.playKeys||[]).length; });
+
+    var html = '<p class="compare-lead">读法：按玩法族并列。左边是本库自有条目，右边是 16 款 Steam 采样里映射到该族的游戏。徽标「本样本内已有 / 未见」只描述这 16 款，不代表市场全貌；本视图不评分、不排序、不判断谁更好。搜索与玩法族筛选生效；来源筛选、人数/价格等下拉只作用于列表视图。</p>';
+    html += rows.map(function(r){
+      var tag = r.market.length
+        ? '<span class="tag has">本样本内已有 '+r.market.length+' 款</span>'
+        : '<span class="tag none">本样本内未见对照</span>';
+      var ownHtml = r.own.length
+        ? r.own.slice(0, 6).map(miniOwn).join('') + (r.own.length > 6 ? '<p class="none">另有 '+(r.own.length-6)+' 条，切回列表按 '+esc(r.key)+' 筛选</p>' : '')
+        : '<p class="none">本族暂无自有条目</p>';
+      var mHtml = r.market.length
+        ? r.market.map(miniMarket).join('')
+        : '<p class="none">这 16 款里没有映射到本族的游戏。</p>';
+      return '<div class="crow" data-row="'+esc(r.key)+'"><div class="crow-head"><h3>'+esc(r.key+' '+r.def.name)+'</h3>'+
+        '<span class="num">自有 '+r.own.length+' 条 · 市面 '+r.market.length+' 款</span>'+tag+'</div>'+
+        '<div class="crow-body"><div class="col"><h4>本库自有</h4>'+ownHtml+'</div>'+
+        '<div class="col right"><h4>市面对照（Steam 采样）</h4>'+mHtml+'</div></div></div>';
+    }).join('');
+
+    if(!state.play && un.length){
+      html += '<div class="crow" data-row="UNMAPPED"><div class="crow-head"><h3>未归类（市面）</h3>'+
+        '<span class="num">自有 0 条 · 市面 '+un.length+' 款</span><span class="tag none">没有匹配的玩法族</span></div>'+
+        '<div class="crow-body"><div class="col"><h4>本库自有</h4><p class="none">—</p></div>'+
+        '<div class="col right"><h4>市面对照（Steam 采样）</h4>'+un.map(miniMarket).join('')+'</div></div></div>';
+    }
+    compareEl.innerHTML = html;
+  }
+  function syncOriginChips(){
+    Array.prototype.forEach.call(originChips.querySelectorAll('.chip'), function(b){
+      b.setAttribute('aria-pressed', (b.getAttribute('data-origin')||'') === state.origin ? 'true' : 'false');
+    });
+  }
+  function setView(v){
+    state.view = v;
+    var isList = v === 'list';
+    if(!isList && state.origin){ state.origin = ''; syncOriginChips(); } // 对照视图两侧都展示，来源筛选不适用
+    grid.style.display = isList ? '' : 'none';
+    emptyEl.style.display = isList ? '' : 'none';
+    compareEl.classList.toggle('open', !isList);
+    document.getElementById('originFacet').style.display = isList ? '' : 'none';
+    selects.style.display = isList ? '' : 'none';
+    countEl.style.display = isList ? '' : 'none';
+    document.getElementById('tabList').setAttribute('aria-selected', isList ? 'true' : 'false');
+    document.getElementById('tabCompare').setAttribute('aria-selected', isList ? 'false' : 'true');
+    document.getElementById('modeNote').textContent = isList
+      ? '自有条目与市面对照在同一套字段里'
+      : '对照视图：按玩法族并列，搜索与玩法族筛选生效';
+    if(isList) render(); else renderCompare();
+  }
+
   /* ---------- 详情 ---------- */
   var modal = document.getElementById('modal');
   var modalCard = document.getElementById('modalCard');
@@ -324,11 +491,58 @@
 
   function metaItem(k,v){ return '<div><dt>'+esc(k)+'</dt><dd>'+esc(v)+'</dd></div>'; }
 
+  function usd(v){ return v==='未获取' || v==null ? '未获取' : '$'+v; }
+
+  function marketDetail(e){
+    var playersTxt = e.players.modes.length ? e.players.modes.join(' / ') : '未获取';
+    var html = '';
+    html += '<button class="modal-close" type="button" aria-label="关闭">×</button>';
+    html += '<h2 id="modalTitle">'+esc(e.title)+'</h2>';
+    html += '<p class="sub">'+esc(e.id)+' · '+esc(e.origin==='market'?'市面对照 · Steam 采样':'')+' · 证据 '+esc(e.evidence.level)+'</p>';
+    html += '<p class="oneliner">'+esc(e.oneLiner)+'</p>';
+    html += '<dl class="meta">'+
+      metaItem('玩法族', familyText(e))+
+      metaItem('官方支持人数', e.players.officialText||'未获取')+
+      metaItem('官方标注上限', e.players.maxPlayers)+
+      metaItem('可筛人数档', playersTxt+'（从官方原文解析，未写就不补）')+
+      metaItem('初始价 / 采样价', usd(e.price.base)+' / '+usd(e.price.sampled)+
+        (e.price.discountPct!=='未获取' && e.price.discountPct ? '（-'+e.price.discountPct+'%）' : ''))+
+      metaItem('评测数 / 好评率', reviewText(e))+
+      metaItem('发行年份', String(e.releaseYear||'未获取'))+
+      metaItem('采样时间', e.sampledAt)+
+      metaItem('证据等级', e.evidence.level+' · '+e.evidence.label)+
+      '</dl>';
+    html += '<div class="block"><h4>映射判据（编者判断，非厂商分类）</h4><p>'+esc(e.why)+'</p></div>';
+    html += '<div class="block"><h4>与自有条目的机制谱系关联</h4><p>'+esc(e.lineage)+'</p></div>';
+    var kv = Object.keys(e.detail||{}).map(function(k){
+      var v = e.detail[k];
+      return '<dt>'+esc(k)+'</dt><dd>'+(typeof v==='string'?esc(v):esc(JSON.stringify(v)))+'</dd>';
+    }).join('');
+    html += '<div class="block"><h4>原文要点</h4><dl class="kv">'+kv+'</dl></div>';
+    html += '<div class="block"><h4>条目边界</h4><dl class="kv">'+
+      '<dt>缺项说明</dt><dd>'+esc(e.risk)+'</dd>'+
+      '<dt>价格 / 评测口径</dt><dd>'+esc(e.price.basis)+'；'+esc(e.reviews.basis)+'</dd>'+
+      '<dt>证据边界</dt><dd>'+esc(e.evidence.note)+'</dd></dl></div>';
+    html += '<a class="btn-link" href="'+esc(e.steamUrl)+'" target="_blank" rel="noopener noreferrer">Steam 商店页 · '+esc(e.steamUrl)+'</a>';
+    html += '<div class="block" style="margin-top:14px"><h4>来源</h4><p class="mono">'+esc(e.source.file)+' '+esc(e.source.pointer)+'</p></div>';
+    html += '<p class="note">本条只记录采样时点可核实的商店页事实，不代表儿童适配、也不做「比自有条目更好/更差」的评分。</p>';
+    return html;
+  }
+
   function openDetail(id){
     var e = entries.filter(function(x){ return x.id===id; })[0];
     if(!e) return;
     lastFocus = document.activeElement;
     var html = '';
+    if(e.origin === 'market'){
+      html = marketDetail(e);
+      modalCard.innerHTML = html;
+      modal.classList.add('open');
+      document.body.style.overflow='hidden';
+      var cb = modalCard.querySelector('.modal-close');
+      if(cb) cb.focus();
+      return;
+    }
     html += '<button class="modal-close" type="button" aria-label="关闭">×</button>';
     html += '<h2 id="modalTitle">'+esc(e.title)+'</h2>';
     html += '<p class="sub">'+esc(e.titleEn||'')+' · '+esc(e.id)+' · '+esc(e.poolLabel)+'</p>';
@@ -382,6 +596,8 @@
   }
 
   /* ---------- 事件 ---------- */
+  function refresh(){ if(state.view==='compare') renderCompare(); else render(); }
+
   playChips.addEventListener('click', function(ev){
     var btn = ev.target.closest ? ev.target.closest('.chip') : null;
     if(!btn) return;
@@ -389,29 +605,45 @@
     Array.prototype.forEach.call(playChips.querySelectorAll('.chip'), function(b){
       b.setAttribute('aria-pressed', b===btn ? 'true' : 'false');
     });
-    render();
+    refresh();
   });
+  originChips.addEventListener('click', function(ev){
+    var btn = ev.target.closest ? ev.target.closest('.chip') : null;
+    if(!btn) return;
+    state.origin = btn.getAttribute('data-origin');
+    Array.prototype.forEach.call(originChips.querySelectorAll('.chip'), function(b){
+      b.setAttribute('aria-pressed', b===btn ? 'true' : 'false');
+    });
+    refresh();
+  });
+  document.getElementById('tabList').addEventListener('click', function(){ setView('list'); });
+  document.getElementById('tabCompare').addEventListener('click', function(){ setView('compare'); });
   selects.addEventListener('change', function(ev){
     var sel = ev.target;
     if(sel.tagName!=='SELECT') return;
     state[sel.getAttribute('data-key')] = sel.value;
-    render();
+    refresh();
   });
   document.getElementById('q').addEventListener('input', function(ev){
     state.q = ev.target.value.trim();
-    render();
+    refresh();
   });
   document.getElementById('sort').addEventListener('change', function(ev){
     state.sort = ev.target.value;
-    render();
+    refresh();
   });
   document.getElementById('reset').addEventListener('click', function(){
-    state = {q:'', play:'', players:'', age:'', session:'', onboarding:'', mood:'', tech:'', price:'', evidence:'', sort:'fit'};
+    state = {q:'', origin:'', play:'', players:'', age:'', session:'', onboarding:'', mood:'', tech:'', price:'', evidence:'', sort:'fit', view:state.view};
     document.getElementById('q').value='';
     document.getElementById('sort').value='fit';
     Array.prototype.forEach.call(selects.querySelectorAll('select'), function(s){ s.value=''; });
     Array.prototype.forEach.call(playChips.querySelectorAll('.chip'), function(b,i){ b.setAttribute('aria-pressed', i===0?'true':'false'); });
-    render();
+    Array.prototype.forEach.call(originChips.querySelectorAll('.chip'), function(b,i){ b.setAttribute('aria-pressed', i===0?'true':'false'); });
+    refresh();
+  });
+  compareEl.addEventListener('click', function(ev){
+    var mini = ev.target.closest ? ev.target.closest('.mini') : null;
+    if(mini) openDetail(mini.getAttribute('data-id'));
   });
   grid.addEventListener('click', function(ev){
     var card = ev.target.closest ? ev.target.closest('.card') : null;
