@@ -1,0 +1,1914 @@
+{
+  "meta": {
+    "count": 16,
+    "sampledAt": "2026-11-04T07:18:09.288Z",
+    "source": "research/kids-fantasy/data/steam-demand-2026-11-04.json",
+    "method": "Steam storesearch + appdetails + SteamSpy appdetails + 商店页评测摘要 + Steam 社区近期评测文本抽样",
+    "caveats": [
+      "reviewTotal / positivePct 来自 SteamSpy 全语言合计，可能与 Steam 商店页显示的英文子集不同",
+      "ccuAtSample 是采样时刻在线人数，不是历史峰值；峰值未获取",
+      "maxPlayers 只在商店页官方文字可确认时填写，其余为 null",
+      "review 文本样本为近期的英文 30 条 + 简中 10 条/款，关键词计数是粗代理，不是情绪编码",
+      "近期评测为 Steam 商店页“近期”口径，未单独设置 day_range",
+      "Overcooked! 2 的 Steam API 初始价返回 48.49 USD，与常见 24.99 认知不符，已标注异常"
+    ],
+    "coveredFamilies": 12,
+    "totalFamilies": 23,
+    "uncoveredFamilies": [
+      "F04",
+      "F07",
+      "F08",
+      "S05",
+      "S06",
+      "S07",
+      "G1",
+      "G2",
+      "G3",
+      "G4",
+      "G5"
+    ],
+    "unclassified": [
+      "M10 Castle Crashers®"
+    ],
+    "boundaries": [
+      "价格、评测数、在线人数都是 2026-11-04T07:18Z 前后采样时点值，不是历史峰值或历史最低价。",
+      "评测数为 SteamSpy 全语言合计，与商店页英文子集口径可能不同。",
+      "人数只认官方原文；原文没写「未获取」，不按标签或类目反推。",
+      "玩法族映射是编者判据，不代表厂商或发行商分类。",
+      "「本样本内未见同族」只说明这 16 款里没有，不等于市场上没人做。"
+    ]
+  },
+  "entries": [
+    {
+      "id": "M01",
+      "origin": "market",
+      "title": "Overcooked! 2",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "F05",
+      "play": "煮与变",
+      "playKeys": [
+        "F05",
+        "F01"
+      ],
+      "playDesc": "烹饪、调味、发酵、塑形；核心是「生米怎么变熟」。",
+      "oneLiner": "Journey back to the Onion Kingdom and assemble your team of chefs in classic couch co-op or online play for up to four players.",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "4P"
+        ],
+        "note": "官方原文：up to four players（只解析出上限）",
+        "officialText": "Journey back to the Onion Kingdom and assemble your team of chefs in classic couch co-op or online play for up to four players. / ONLINE/LOCAL MULTIPLAYER MADNESS You’ll knead to work together (or against each other) to get the highest score in chaotic local and online multiplayer.",
+        "maxPlayers": "未获取"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏 / 在线合作）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 48.49,
+        "sampled": 16.48,
+        "discountPct": 66,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 72801,
+        "positivePct": 90.6,
+        "label": "Very Positive",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "切菜、煎煮、装盘对应「生米变熟」；食材与盘子靠抓取和交接，故并列抓与搬。",
+      "risk": "maxPlayers（商店页无人数文字，标记未获取）；peakCcu（SteamSpy 仅给采样时 ccu）；wishlist / sales / regional（未获取）",
+      "lineage": "同族自有条目 24 条（I001 吸面长龙、I002 果冻托盘、I003 糖丝转轮、I004 西瓜渡河 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "I001",
+        "I002",
+        "I003",
+        "I004",
+        "I005",
+        "I006",
+        "I007",
+        "I008",
+        "I009",
+        "I037",
+        "I038",
+        "I039",
+        "I040",
+        "I041",
+        "I042",
+        "I043",
+        "I044",
+        "I045",
+        "I091",
+        "I092",
+        "I093",
+        "I103",
+        "I104",
+        "I105"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/728880/",
+      "releaseYear": "2018",
+      "releaseDate": "Aug 7, 2018",
+      "sampledAt": "2026-11-04T07:18:09.288Z",
+      "detail": {
+        "Steam 标签": "Multiplayer、Online Co-Op、Local Co-Op、Co-op、Casual、Cooking、Funny、4 Player Local、Indie、Local Multiplayer",
+        "Steam 类目": "Single-player、Multi-player、PvP、Online PvP、Shared/Split Screen PvP、Co-op、Online Co-op、Shared/Split Screen Co-op、Shared/Split Screen、Steam Achievements、Full controller support、Steam Trading Cards、Steam Cloud、Remote Play on Phone、Remote Play on Tablet、Remote Play on TV、Remote Play Together、Family Sharing",
+        "官方人数原文": "Journey back to the Onion Kingdom and assemble your team of chefs in classic couch co-op or online play for up to four players. / ONLINE/LOCAL MULTIPLAYER MADNESS You’ll knead to work together (or against each other) to get the highest score in chaotic local and online multiplayer.",
+        "官方标注上限": "未获取",
+        "初始价（USD）": "48.49",
+        "采样价（USD）": "16.48",
+        "采样折扣": "66%",
+        "评测数": "72801",
+        "好评率": "90.6%",
+        "采样时在线": "2107",
+        "拥有人数区间": "2,000,000 .. 5,000,000",
+        "采样时间": "2026-11-04T07:18:09.288Z"
+      },
+      "source": {
+        "file": "research/kids-fantasy/data/steam-demand-2026-11-04.json",
+        "pointer": "#/results/0",
+        "urls": [
+          "https://store.steampowered.com/api/storesearch/?term=Overcooked!%202",
+          "https://store.steampowered.com/api/appdetails?appids=728880",
+          "https://steamspy.com/api.php?request=appdetails&appid=728880",
+          "https://store.steampowered.com/app/728880/?l=english&cc=us",
+          "https://steamcommunity.com/app/728880/reviews/?browsefilter=mostrecent&l=english"
+        ],
+        "meta": "Steam storesearch + appdetails + SteamSpy appdetails + 商店页评测摘要 + Steam 社区近期评测文本抽样"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M02",
+      "origin": "market",
+      "title": "Overcooked! All You Can Eat",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "F05",
+      "play": "煮与变",
+      "playKeys": [
+        "F05",
+        "F01"
+      ],
+      "playDesc": "烹饪、调味、发酵、塑形；核心是「生米怎么变熟」。",
+      "oneLiner": "All You Can Eat is a chaotic cooking game where players need to work together (or alone) to serve as many dishes as they can before the timer runs out.",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "1P"
+        ],
+        "note": "官方原文出现 or alone；多人上限未获取",
+        "officialText": "All You Can Eat is a chaotic cooking game where players need to work together (or alone) to serve as many dishes as they can before the timer runs out. / Goes Online For the first time ever, online multiplayer has been fully integrated into Overcooked! / Cross Platform Multiplayer Enjoy the cooking chaos with all of your friends using cross platform multiplayer and voice chat. / A shared multiplayer queue means reduced waiting times for games, more time for culinary carnage! / Players can enjoy campaign, survival and practice modes, and new to All You Can Eat - assist mode! / All You Can Eat contains features to allow as many players as possible to join in the food frenzy!",
+        "maxPlayers": "未获取"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏 / 在线合作）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 39.99,
+        "sampled": 39.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 6141,
+        "positivePct": 72.6,
+        "label": "Mixed",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "同为备餐上菜循环（煮与变），端盘与递菜仍需抓取搬运（抓与搬）。",
+      "risk": "maxPlayers（商店页无人数文字，标记未获取）；peakCcu（SteamSpy 仅给采样时 ccu）；wishlist / sales / regional（未获取）",
+      "lineage": "同族自有条目 24 条（I001 吸面长龙、I002 果冻托盘、I003 糖丝转轮、I004 西瓜渡河 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "I001",
+        "I002",
+        "I003",
+        "I004",
+        "I005",
+        "I006",
+        "I007",
+        "I008",
+        "I009",
+        "I037",
+        "I038",
+        "I039",
+        "I040",
+        "I041",
+        "I042",
+        "I043",
+        "I044",
+        "I045",
+        "I091",
+        "I092",
+        "I093",
+        "I103",
+        "I104",
+        "I105"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/1243830/",
+      "releaseYear": "2021",
+      "releaseDate": "Mar 23, 2021",
+      "sampledAt": "2026-11-04T07:18:09.288Z",
+      "detail": {
+        "Steam 标签": "Multiplayer、Online Co-Op、Local Co-Op、Cooking、Casual、Simulation、Family Friendly、Local Multiplayer、Cute、Funny",
+        "Steam 类目": "Single-player、Multi-player、PvP、Online PvP、Shared/Split Screen PvP、Co-op、Online Co-op、Shared/Split Screen Co-op、Shared/Split Screen、Cross-Platform Multiplayer、Steam Achievements、Full controller support、Remote Play Together、Family Sharing",
+        "官方人数原文": "All You Can Eat is a chaotic cooking game where players need to work together (or alone) to serve as many dishes as they can before the timer runs out. / Goes Online For the first time ever, online multiplayer has been fully integrated into Overcooked! / Cross Platform Multiplayer Enjoy the cooking chaos with all of your friends using cross platform multiplayer and voice chat. / A shared multiplayer queue means reduced waiting times for games, more time for culinary carnage! / Players can enjoy campaign, survival and practice modes, and new to All You Can Eat - assist mode! / All You Can Eat contains features to allow as many players as possible to join in the food frenzy!",
+        "官方标注上限": "未获取",
+        "初始价（USD）": "39.99",
+        "采样价（USD）": "39.99",
+        "采样折扣": "0%",
+        "评测数": "6141",
+        "好评率": "72.6%",
+        "采样时在线": "325",
+        "拥有人数区间": "500,000 .. 1,000,000",
+        "采样时间": "2026-11-04T07:18:09.288Z"
+      },
+      "source": {
+        "file": "research/kids-fantasy/data/steam-demand-2026-11-04.json",
+        "pointer": "#/results/1",
+        "urls": [
+          "https://store.steampowered.com/api/storesearch/?term=Overcooked!%20All%20You%20Can%20Eat",
+          "https://store.steampowered.com/api/appdetails?appids=1243830",
+          "https://steamspy.com/api.php?request=appdetails&appid=1243830",
+          "https://store.steampowered.com/app/1243830/?l=english&cc=us",
+          "https://steamcommunity.com/app/1243830/reviews/?browsefilter=mostrecent&l=english"
+        ],
+        "meta": "Steam storesearch + appdetails + SteamSpy appdetails + 商店页评测摘要 + Steam 社区近期评测文本抽样"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M03",
+      "origin": "market",
+      "title": "PICO PARK",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "F02",
+      "play": "搭与塌",
+      "playKeys": [
+        "F02",
+        "S08"
+      ],
+      "playDesc": "堆叠、搭建、封口、守缺口；核心是「什么时候会塌」。",
+      "oneLiner": "PICO PARK is a cooperative local/online multiplay action puzzle game for 2-8 players.",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "2P",
+          "3P",
+          "4P"
+        ],
+        "note": "官方原文 2-8 players；本库人数筛选只到 4P",
+        "officialText": "PICO PARK is a cooperative local/online multiplay action puzzle game for 2-8 players. / The rule is quite simple: Get all the keys and get to the goal and clear , but all 48 levels have special gimmicks designed specifically for multiplayer. / The 2016 version of this link has been renamed PICO PARK:Classic Edition [Flexible Level] Each level of PICO PARK can be cleared when players get the key,unlock the door and all pl",
+        "maxPlayers": "8"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏 / 在线合作）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 4.99,
+        "sampled": 4.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 28499,
+        "positivePct": 90.8,
+        "label": "Very Positive",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "叠人梯、压开关、搬箱子属于搭与塌；钥匙要逐段送到门口，属于接力传递。",
+      "risk": "peakCcu（SteamSpy 仅给采样时 ccu）；wishlist / sales / regional（未获取）",
+      "lineage": "同族自有条目 20 条（I010 饼干地基、I011 鸟巢承重、I012 枕头堡垒、I013 纸箱城堡 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "I010",
+        "I011",
+        "I012",
+        "I013",
+        "I014",
+        "I015",
+        "I016",
+        "I017",
+        "I018",
+        "I094",
+        "I095",
+        "I096",
+        "A57",
+        "A58",
+        "A59",
+        "A60",
+        "A61",
+        "A62",
+        "A63",
+        "A64"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/1509960/",
+      "releaseYear": "2021",
+      "releaseDate": "May 7, 2021",
+      "sampledAt": "2026-11-04T07:18:09.288Z",
+      "detail": {
+        "Steam 标签": "Multiplayer、Online Co-Op、Puzzle-Platformer、Co-op、Local Co-Op、Casual、Cute、Local Multiplayer、Platformer、2D",
+        "Steam 类目": "Multi-player、Co-op、Online Co-op、Shared/Split Screen Co-op、Shared/Split Screen、Family Sharing",
+        "官方人数原文": "PICO PARK is a cooperative local/online multiplay action puzzle game for 2-8 players. / The rule is quite simple: Get all the keys and get to the goal and clear , but all 48 levels have special gimmicks designed specifically for multiplayer. / The 2016 version of this link has been renamed PICO PARK:Classic Edition [Flexible Level] Each level of PICO PARK can be cleared when players get the key,unlock the door and all pl",
+        "官方标注上限": "8",
+        "初始价（USD）": "4.99",
+        "采样价（USD）": "4.99",
+        "采样折扣": "0%",
+        "评测数": "28499",
+        "好评率": "90.8%",
+        "采样时在线": "124",
+        "拥有人数区间": "1,000,000 .. 2,000,000",
+        "采样时间": "2026-11-04T07:18:09.288Z"
+      },
+      "source": {
+        "file": "research/kids-fantasy/data/steam-demand-2026-11-04.json",
+        "pointer": "#/results/2",
+        "urls": [
+          "https://store.steampowered.com/api/storesearch/?term=PICO%20PARK",
+          "https://store.steampowered.com/api/appdetails?appids=1509960",
+          "https://steamspy.com/api.php?request=appdetails&appid=1509960",
+          "https://store.steampowered.com/app/1509960/?l=english&cc=us",
+          "https://steamcommunity.com/app/1509960/reviews/?browsefilter=mostrecent&l=english"
+        ],
+        "meta": "Steam storesearch + appdetails + SteamSpy appdetails + 商店页评测摘要 + Steam 社区近期评测文本抽样"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M04",
+      "origin": "market",
+      "title": "PICO PARK 2",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "F02",
+      "play": "搭与塌",
+      "playKeys": [
+        "F02",
+        "S08"
+      ],
+      "playDesc": "堆叠、搭建、封口、守缺口；核心是「什么时候会塌」。",
+      "oneLiner": "As with the previous iteration, this game can be played locally or online from two players all the way to eight.",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "2P",
+          "3P",
+          "4P"
+        ],
+        "note": "官方原文 two players all the way to eight；本库只到 4P",
+        "officialText": "* When playing with 2 players on a keyboard, use of the right Ctrl key may be required. / As with the previous iteration, this game can be played locally or online from two players all the way to eight. / All levels can be played no matter how many players you have, so jump in with your friends and take 'em on! / Also, up to 7 players can join online with a single PC.",
+        "maxPlayers": "7"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏 / 在线合作）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 8.99,
+        "sampled": 8.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 3415,
+        "positivePct": 89.8,
+        "label": "Very Positive",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "与初代同一套叠人/压机关与钥匙接力结构，故映射相同两族。",
+      "risk": "peakCcu（SteamSpy 仅给采样时 ccu）；wishlist / sales / regional（未获取）",
+      "lineage": "同族自有条目 20 条（I010 饼干地基、I011 鸟巢承重、I012 枕头堡垒、I013 纸箱城堡 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "I010",
+        "I011",
+        "I012",
+        "I013",
+        "I014",
+        "I015",
+        "I016",
+        "I017",
+        "I018",
+        "I094",
+        "I095",
+        "I096",
+        "A57",
+        "A58",
+        "A59",
+        "A60",
+        "A61",
+        "A62",
+        "A63",
+        "A64"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/2644470/",
+      "releaseYear": "2024",
+      "releaseDate": "Sep 12, 2024",
+      "sampledAt": "2026-11-04T07:18:09.288Z",
+      "detail": {
+        "Steam 标签": "Casual、Multiplayer、Action、Online Co-Op、Psychological Horror、Platformer、Co-op、Cute、Side Scroller、Local Multiplayer",
+        "Steam 类目": "Multi-player、Co-op、Online Co-op、Shared/Split Screen Co-op、Shared/Split Screen、Cross-Platform Multiplayer、Steam Achievements、DualShock Controller Support、DualShock Controller Support、DualSense Controller Support、DualSense Controller Support、Steam Input API Support、Partial Controller Support、Steam Cloud、Remote Play Together、Family Sharing",
+        "官方人数原文": "* When playing with 2 players on a keyboard, use of the right Ctrl key may be required. / As with the previous iteration, this game can be played locally or online from two players all the way to eight. / All levels can be played no matter how many players you have, so jump in with your friends and take 'em on! / Also, up to 7 players can join online with a single PC.",
+        "官方标注上限": "7",
+        "初始价（USD）": "8.99",
+        "采样价（USD）": "8.99",
+        "采样折扣": "0%",
+        "评测数": "3415",
+        "好评率": "89.8%",
+        "采样时在线": "185",
+        "拥有人数区间": "200,000 .. 500,000",
+        "采样时间": "2026-11-04T07:18:09.288Z"
+      },
+      "source": {
+        "file": "research/kids-fantasy/data/steam-demand-2026-11-04.json",
+        "pointer": "#/results/3",
+        "urls": [
+          "https://store.steampowered.com/api/storesearch/?term=PICO%20PARK%202",
+          "https://store.steampowered.com/api/appdetails?appids=2644470",
+          "https://steamspy.com/api.php?request=appdetails&appid=2644470",
+          "https://store.steampowered.com/app/2644470/?l=english&cc=us",
+          "https://steamcommunity.com/app/2644470/reviews/?browsefilter=mostrecent&l=english"
+        ],
+        "meta": "Steam storesearch + appdetails + SteamSpy appdetails + 商店页评测摘要 + Steam 社区近期评测文本抽样"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M05",
+      "origin": "market",
+      "title": "Moving Out",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "F01",
+      "play": "抓与搬",
+      "playKeys": [
+        "F01",
+        "S01"
+      ],
+      "playDesc": "抓取、托举、交接、搬运；核心是「负载会不会掉」。",
+      "oneLiner": "Up to four players can cozy up on the couch to argue over the best way to move a couch.",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "4P"
+        ],
+        "note": "官方原文 Up to four players",
+        "officialText": "Up to four players can cozy up on the couch to argue over the best way to move a couch.",
+        "maxPlayers": "未获取"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 24.99,
+        "sampled": 24.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 2269,
+        "positivePct": 78.8,
+        "label": "Very Positive",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "搬家具的核心是抓取托举与「别让东西掉」（抓与搬）；四人同时抬同一件（共同搬运）。",
+      "risk": "maxPlayers（商店页无人数文字，标记未获取）；peakCcu（SteamSpy 仅给采样时 ccu）；wishlist / sales / regional（未获取）",
+      "lineage": "同族自有条目 20 条（I001 吸面长龙、I002 果冻托盘、I003 糖丝转轮、I004 西瓜渡河 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "I001",
+        "I002",
+        "I003",
+        "I004",
+        "I005",
+        "I006",
+        "I007",
+        "I008",
+        "I009",
+        "I091",
+        "I092",
+        "I093",
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A08"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/996770/",
+      "releaseYear": "2020",
+      "releaseDate": "Apr 28, 2020",
+      "sampledAt": "2026-11-04T07:18:09.288Z",
+      "detail": {
+        "Steam 标签": "Casual、Indie、Action、Simulation、Local Co-Op、Co-op、Local Multiplayer、Multiplayer、4 Player Local、Funny",
+        "Steam 类目": "Single-player、Multi-player、Co-op、Shared/Split Screen Co-op、Shared/Split Screen、Steam Achievements、Full controller support、Adjustable Text Size、Camera Comfort、Color Alternatives、Custom Volume Controls、Adjustable Difficulty、Playable without Timed Input、Subtitle Options、Steam Cloud、Remote Play on Phone、Remote Play on Tablet、Remote Play on TV、Remote Play Together、Family Sharing",
+        "官方人数原文": "Up to four players can cozy up on the couch to argue over the best way to move a couch.",
+        "官方标注上限": "未获取",
+        "初始价（USD）": "24.99",
+        "采样价（USD）": "24.99",
+        "采样折扣": "0%",
+        "评测数": "2269",
+        "好评率": "78.8%",
+        "采样时在线": "14",
+        "拥有人数区间": "200,000 .. 500,000",
+        "采样时间": "2026-11-04T07:18:09.288Z"
+      },
+      "source": {
+        "file": "research/kids-fantasy/data/steam-demand-2026-11-04.json",
+        "pointer": "#/results/4",
+        "urls": [
+          "https://store.steampowered.com/api/storesearch/?term=Moving%20Out",
+          "https://store.steampowered.com/api/appdetails?appids=996770",
+          "https://steamspy.com/api.php?request=appdetails&appid=996770",
+          "https://store.steampowered.com/app/996770/?l=english&cc=us",
+          "https://steamcommunity.com/app/996770/reviews/?browsefilter=mostrecent&l=english"
+        ],
+        "meta": "Steam storesearch + appdetails + SteamSpy appdetails + 商店页评测摘要 + Steam 社区近期评测文本抽样"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M06",
+      "origin": "market",
+      "title": "Moving Out 2",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "F01",
+      "play": "抓与搬",
+      "playKeys": [
+        "F01",
+        "S01"
+      ],
+      "playDesc": "抓取、托举、交接、搬运；核心是「负载会不会掉」。",
+      "oneLiner": "MULTI-DIMENSIONAL LOCAL & ONLINE MULTIPLAYER Friends who move together, groove together!",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [],
+        "note": "官方只写 local/online multiplayer，人数未获取",
+        "officialText": "MULTI-DIMENSIONAL LOCAL & ONLINE MULTIPLAYER Friends who move together, groove together! / Whether you fancy some local co-op action or a cross-play online multiplayer session, we’ve got you signed, sealed and delivered!",
+        "maxPlayers": "未获取"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏 / 在线合作）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 29.99,
+        "sampled": 29.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 385,
+        "positivePct": 80,
+        "label": "Mixed",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "续作仍是多人共同搬家具，机制族不变。",
+      "risk": "maxPlayers（商店页无人数文字，标记未获取）；peakCcu（SteamSpy 仅给采样时 ccu）；wishlist / sales / regional（未获取）",
+      "lineage": "同族自有条目 20 条（I001 吸面长龙、I002 果冻托盘、I003 糖丝转轮、I004 西瓜渡河 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "I001",
+        "I002",
+        "I003",
+        "I004",
+        "I005",
+        "I006",
+        "I007",
+        "I008",
+        "I009",
+        "I091",
+        "I092",
+        "I093",
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A08"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/1641700/",
+      "releaseYear": "2023",
+      "releaseDate": "Aug 15, 2023",
+      "sampledAt": "2026-11-04T07:18:09.288Z",
+      "detail": {
+        "Steam 标签": "Casual、Satire、Colorful、Stylized、Cartoony、1980s、Simulation、Driving、3D、Online Co-Op",
+        "Steam 类目": "Single-player、Multi-player、Co-op、Online Co-op、Shared/Split Screen Co-op、Shared/Split Screen、Cross-Platform Multiplayer、Steam Achievements、Full controller support、Adjustable Text Size、Camera Comfort、Custom Volume Controls、Adjustable Difficulty、Playable without Timed Input、Subtitle Options、Steam Cloud、Remote Play Together、Family Sharing",
+        "官方人数原文": "MULTI-DIMENSIONAL LOCAL & ONLINE MULTIPLAYER Friends who move together, groove together! / Whether you fancy some local co-op action or a cross-play online multiplayer session, we’ve got you signed, sealed and delivered!",
+        "官方标注上限": "未获取",
+        "初始价（USD）": "29.99",
+        "采样价（USD）": "29.99",
+        "采样折扣": "0%",
+        "评测数": "385",
+        "好评率": "80%",
+        "采样时在线": "14",
+        "拥有人数区间": "20,000 .. 50,000",
+        "采样时间": "2026-11-04T07:18:09.288Z"
+      },
+      "source": {
+        "file": "research/kids-fantasy/data/steam-demand-2026-11-04.json",
+        "pointer": "#/results/5",
+        "urls": [
+          "https://store.steampowered.com/api/storesearch/?term=Moving%20Out%202",
+          "https://store.steampowered.com/api/appdetails?appids=1641700",
+          "https://steamspy.com/api.php?request=appdetails&appid=1641700",
+          "https://store.steampowered.com/app/1641700/?l=english&cc=us",
+          "https://steamcommunity.com/app/1641700/reviews/?browsefilter=mostrecent&l=english"
+        ],
+        "meta": "Steam storesearch + appdetails + SteamSpy appdetails + 商店页评测摘要 + Steam 社区近期评测文本抽样"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M07",
+      "origin": "market",
+      "title": "Human Fall Flat",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "F01",
+      "play": "抓与搬",
+      "playKeys": [
+        "F01",
+        "F02"
+      ],
+      "playDesc": "抓取、托举、交接、搬运；核心是「负载会不会掉」。",
+      "oneLiner": "Join 60 million players across all formats, and explore more than 5,000 unofficial levels from our community creators too!",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "4P"
+        ],
+        "note": "官方原文 online multiplayer for up to 8；本库只到 4P，本地人数未获取",
+        "officialText": "Join 60 million players across all formats, and explore more than 5,000 unofficial levels from our community creators too! / Online multiplayer for up to 8 players transforms the way Human Fall Flat is played. / The Human Fall Flat Workshop, unique to Steam, is a fantastic tool which, used alongside Unity, enables players to build their own Human Fall Flat content and share it with others",
+        "maxPlayers": "8"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 19.99,
+        "sampled": 5.99,
+        "discountPct": 70,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 213640,
+        "positivePct": 94.7,
+        "label": "Very Positive",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "抓握攀爬与摆动是抓与搬；堆箱子、搭人梯过关是搭与塌。",
+      "risk": "peakCcu（SteamSpy 仅给采样时 ccu）；wishlist / sales / regional（未获取）",
+      "lineage": "同族自有条目 24 条（I001 吸面长龙、I002 果冻托盘、I003 糖丝转轮、I004 西瓜渡河 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "I001",
+        "I002",
+        "I003",
+        "I004",
+        "I005",
+        "I006",
+        "I007",
+        "I008",
+        "I009",
+        "I010",
+        "I011",
+        "I012",
+        "I013",
+        "I014",
+        "I015",
+        "I016",
+        "I017",
+        "I018",
+        "I091",
+        "I092",
+        "I093",
+        "I094",
+        "I095",
+        "I096"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/477160/",
+      "releaseYear": "2016",
+      "releaseDate": "Jul 22, 2016",
+      "sampledAt": "2026-11-04T07:18:09.288Z",
+      "detail": {
+        "Steam 标签": "Co-op、Funny、Puzzle、Adventure、Physics、Multiplayer、Sandbox、Puzzle-Platformer、Action、Open World",
+        "Steam 类目": "Single-player、Multi-player、PvP、Online PvP、Co-op、Shared/Split Screen Co-op、Shared/Split Screen、Steam Achievements、Full controller support、Steam Trading Cards、Steam Workshop、Color Alternatives、Custom Volume Controls、Keyboard Only Option、Playable without Timed Input、Stereo Sound、Surround Sound、Steam Cloud、Stats、Remote Play on TV、Remote Play Together、Family Sharing",
+        "官方人数原文": "Join 60 million players across all formats, and explore more than 5,000 unofficial levels from our community creators too! / Online multiplayer for up to 8 players transforms the way Human Fall Flat is played. / The Human Fall Flat Workshop, unique to Steam, is a fantastic tool which, used alongside Unity, enables players to build their own Human Fall Flat content and share it with others",
+        "官方标注上限": "8",
+        "初始价（USD）": "19.99",
+        "采样价（USD）": "5.99",
+        "采样折扣": "70%",
+        "评测数": "213640",
+        "好评率": "94.7%",
+        "采样时在线": "950",
+        "拥有人数区间": "10,000,000 .. 20,000,000",
+        "采样时间": "2026-11-04T07:18:09.288Z"
+      },
+      "source": {
+        "file": "research/kids-fantasy/data/steam-demand-2026-11-04.json",
+        "pointer": "#/results/6",
+        "urls": [
+          "https://store.steampowered.com/api/storesearch/?term=Human%20Fall%20Flat",
+          "https://store.steampowered.com/api/appdetails?appids=477160",
+          "https://steamspy.com/api.php?request=appdetails&appid=477160",
+          "https://store.steampowered.com/app/477160/?l=english&cc=us",
+          "https://steamcommunity.com/app/477160/reviews/?browsefilter=mostrecent&l=english"
+        ],
+        "meta": "Steam storesearch + appdetails + SteamSpy appdetails + 商店页评测摘要 + Steam 社区近期评测文本抽样"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M08",
+      "origin": "market",
+      "title": "Unrailed!",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "F02",
+      "play": "搭与塌",
+      "playKeys": [
+        "F02",
+        "S04",
+        "S08"
+      ],
+      "playDesc": "堆叠、搭建、封口、守缺口；核心是「什么时候会塌」。",
+      "oneLiner": "is a chaotic online and couch co-op multiplayer railroad construction game where you work together with your friends as a team to build a train track across endless procedurally ge PLAY WITH OR AGAINST YOUR FRIENDS Play cooperatively with up to four players in a single team or challenge the co-op skills of your friends in a two versus two game.",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "4P"
+        ],
+        "note": "官方原文 up to four players",
+        "officialText": "is a chaotic online and couch co-op multiplayer railroad construction game where you work together with your friends as a team to build a train track across endless procedurally ge. / PLAY WITH OR AGAINST YOUR FRIENDS Play cooperatively with up to four players in a single team or challenge the co-op skills of your friends in a two versus two game. / OVERVIEW An intense and chaotic railroad construction experience Online and local couch co-op multiplayer (also mixing both possible) Procedurally generated worlds with 4 different",
+        "maxPlayers": "4"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏 / 在线合作）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 19.99,
+        "sampled": 19.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 18669,
+        "positivePct": 93.3,
+        "label": "Very Positive",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "持续铺轨属于搭与塌；木材/铁只有一份要分配（旅途资源）；铺轨要一段段交接（接力传递）。",
+      "risk": "peakCcu（SteamSpy 仅给采样时 ccu）；wishlist / sales / regional（未获取）",
+      "lineage": "同族自有条目 28 条（I010 饼干地基、I011 鸟巢承重、I012 枕头堡垒、I013 纸箱城堡 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "I010",
+        "I011",
+        "I012",
+        "I013",
+        "I014",
+        "I015",
+        "I016",
+        "I017",
+        "I018",
+        "I094",
+        "I095",
+        "I096",
+        "A25",
+        "A26",
+        "A27",
+        "A28",
+        "A29",
+        "A30",
+        "A31",
+        "A32",
+        "A57",
+        "A58",
+        "A59",
+        "A60",
+        "A61",
+        "A62",
+        "A63",
+        "A64"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/1016920/",
+      "releaseYear": "2020",
+      "releaseDate": "Sep 23, 2020",
+      "sampledAt": "2026-11-04T07:18:09.288Z",
+      "detail": {
+        "Steam 标签": "Multiplayer、Co-op、Online Co-Op、Local Co-Op、Casual、Trains、Local Multiplayer、Action、Procedural Generation、Indie",
+        "Steam 类目": "Single-player、Multi-player、PvP、Online PvP、Shared/Split Screen PvP、Co-op、Online Co-op、Shared/Split Screen Co-op、Shared/Split Screen、Cross-Platform Multiplayer、Steam Achievements、Full controller support、Steam Trading Cards、Gamepad Recommended、DualShock Controller Support、DualShock Controller Support、DualSense Controller Support、DualSense Controller Support、Steam Leaderboards、Remote Play on Phone、Remote Play on Tablet、Remote Play on TV、Remote Play Together、Family Sharing",
+        "官方人数原文": "is a chaotic online and couch co-op multiplayer railroad construction game where you work together with your friends as a team to build a train track across endless procedurally ge. / PLAY WITH OR AGAINST YOUR FRIENDS Play cooperatively with up to four players in a single team or challenge the co-op skills of your friends in a two versus two game. / OVERVIEW An intense and chaotic railroad construction experience Online and local couch co-op multiplayer (also mixing both possible) Procedurally generated worlds with 4 different",
+        "官方标注上限": "4",
+        "初始价（USD）": "19.99",
+        "采样价（USD）": "19.99",
+        "采样折扣": "0%",
+        "评测数": "18669",
+        "好评率": "93.3%",
+        "采样时在线": "182",
+        "拥有人数区间": "1,000,000 .. 2,000,000",
+        "采样时间": "2026-11-04T07:18:09.288Z"
+      },
+      "source": {
+        "file": "research/kids-fantasy/data/steam-demand-2026-11-04.json",
+        "pointer": "#/results/7",
+        "urls": [
+          "https://store.steampowered.com/api/storesearch/?term=Unrailed!",
+          "https://store.steampowered.com/api/appdetails?appids=1016920",
+          "https://steamspy.com/api.php?request=appdetails&appid=1016920",
+          "https://store.steampowered.com/app/1016920/?l=english&cc=us",
+          "https://steamcommunity.com/app/1016920/reviews/?browsefilter=mostrecent&l=english"
+        ],
+        "meta": "Steam storesearch + appdetails + SteamSpy appdetails + 商店页评测摘要 + Steam 社区近期评测文本抽样"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M09",
+      "origin": "market",
+      "title": "PlateUp!",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "F05",
+      "play": "煮与变",
+      "playKeys": [
+        "F05",
+        "F02"
+      ],
+      "playDesc": "烹饪、调味、发酵、塑形；核心是「生米怎么变熟」。",
+      "oneLiner": "Up to four players build and run a restaurant from scratch, choosing dishes, buying and placing appliances Players have free rein to design their restaurant which will expand and develop between shifts – with additional content and challenges unlocked through progression.",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "4P"
+        ],
+        "note": "官方原文 Up to four players",
+        "officialText": "Up to four players build and run a restaurant from scratch, choosing dishes, buying and placing appliances. / Players have free rein to design their restaurant which will expand and develop between shifts – with additional content and challenges unlocked through progression.",
+        "maxPlayers": "未获取"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏 / 在线合作）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 19.99,
+        "sampled": 19.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 23401,
+        "positivePct": 94.9,
+        "label": "Very Positive",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "选菜、加工、上菜是煮与变；自由摆放设备与扩建店面是搭与塌。",
+      "risk": "maxPlayers（商店页无人数文字，标记未获取）；peakCcu（SteamSpy 仅给采样时 ccu）；wishlist / sales / regional（未获取）",
+      "lineage": "同族自有条目 24 条（I010 饼干地基、I011 鸟巢承重、I012 枕头堡垒、I013 纸箱城堡 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "I010",
+        "I011",
+        "I012",
+        "I013",
+        "I014",
+        "I015",
+        "I016",
+        "I017",
+        "I018",
+        "I037",
+        "I038",
+        "I039",
+        "I040",
+        "I041",
+        "I042",
+        "I043",
+        "I044",
+        "I045",
+        "I094",
+        "I095",
+        "I096",
+        "I103",
+        "I104",
+        "I105"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/1599600/",
+      "releaseYear": "2022",
+      "releaseDate": "Aug 4, 2022",
+      "sampledAt": "2026-11-04T07:18:09.288Z",
+      "detail": {
+        "Steam 标签": "Co-op、Management、Cooking、Rogue-lite、Building、Local Co-Op、Rogue-like、Cute、Procedural Generation、Funny",
+        "Steam 类目": "Single-player、Multi-player、Co-op、Online Co-op、Shared/Split Screen Co-op、Shared/Split Screen、Steam Achievements、Full controller support、Steam Workshop、Steam Cloud、Remote Play on TV、Remote Play Together、Family Sharing",
+        "官方人数原文": "Up to four players build and run a restaurant from scratch, choosing dishes, buying and placing appliances. / Players have free rein to design their restaurant which will expand and develop between shifts – with additional content and challenges unlocked through progression.",
+        "官方标注上限": "未获取",
+        "初始价（USD）": "19.99",
+        "采样价（USD）": "19.99",
+        "采样折扣": "0%",
+        "评测数": "23401",
+        "好评率": "94.9%",
+        "采样时在线": "832",
+        "拥有人数区间": "1,000,000 .. 2,000,000",
+        "采样时间": "2026-11-04T07:18:09.288Z"
+      },
+      "source": {
+        "file": "research/kids-fantasy/data/steam-demand-2026-11-04.json",
+        "pointer": "#/results/8",
+        "urls": [
+          "https://store.steampowered.com/api/storesearch/?term=PlateUp!",
+          "https://store.steampowered.com/api/appdetails?appids=1599600",
+          "https://steamspy.com/api.php?request=appdetails&appid=1599600",
+          "https://store.steampowered.com/app/1599600/?l=english&cc=us",
+          "https://steamcommunity.com/app/1599600/reviews/?browsefilter=mostrecent&l=english"
+        ],
+        "meta": "Steam storesearch + appdetails + SteamSpy appdetails + 商店页评测摘要 + Steam 社区近期评测文本抽样"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M10",
+      "origin": "market",
+      "title": "Castle Crashers®",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "UNMAPPED",
+      "play": "未归类",
+      "playKeys": [],
+      "playDesc": "本样本内未映射到现有玩法族",
+      "oneLiner": "Game Modes Arena: battle other players in team matches or free-for-all!",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [],
+        "note": "官方抓取文本只描述 Arena 模式，人数未获取",
+        "officialText": "Game Modes Arena: battle other players in team matches or free-for-all!",
+        "maxPlayers": "未获取"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏 / 在线合作）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 14.99,
+        "sampled": 14.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 125598,
+        "positivePct": 96.1,
+        "label": "Overwhelmingly Positive",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "未归类：核心是横版格斗与竞技场对战，本库 23 个玩法族里没有「战斗/对抗」族，不硬塞。",
+      "risk": "maxPlayers（商店页无人数文字，标记未获取）；peakCcu（SteamSpy 仅给采样时 ccu）；wishlist / sales / regional（未获取）",
+      "lineage": "同族自有条目：0 条",
+      "relatedOwn": [],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/204360/",
+      "releaseYear": "2012",
+      "releaseDate": "Sep 26, 2012",
+      "sampledAt": "2026-11-04T07:18:09.288Z",
+      "detail": {
+        "Steam 标签": "2D、Online Co-Op、Co-op、Beat 'em up、Hack and Slash、Funny、Adventure、4 Player Local、Local Co-Op、Multiplayer",
+        "Steam 类目": "Single-player、Multi-player、PvP、Online PvP、Shared/Split Screen PvP、Co-op、Online Co-op、Shared/Split Screen Co-op、Shared/Split Screen、Steam Achievements、Full controller support、Steam Trading Cards、Steam Workshop、Custom Volume Controls、Gamepad Recommended、DualShock Controller Support、DualShock Controller Support、DualSense Controller Support、DualSense Controller Support、Steam Input API Support、Stereo Sound、Steam Cloud、Steam Leaderboards、Remote Play on Phone、Remote Play on Tablet、Remote Play on TV、Remote Play Together、Family Sharing",
+        "官方人数原文": "Game Modes Arena: battle other players in team matches or free-for-all!",
+        "官方标注上限": "未获取",
+        "初始价（USD）": "14.99",
+        "采样价（USD）": "14.99",
+        "采样折扣": "0%",
+        "评测数": "125598",
+        "好评率": "96.1%",
+        "采样时在线": "443",
+        "拥有人数区间": "5,000,000 .. 10,000,000",
+        "采样时间": "2026-11-04T07:18:09.288Z"
+      },
+      "source": {
+        "file": "research/kids-fantasy/data/steam-demand-2026-11-04.json",
+        "pointer": "#/results/9",
+        "urls": [
+          "https://store.steampowered.com/api/storesearch/?term=Castle%20Crashers",
+          "https://store.steampowered.com/api/appdetails?appids=204360",
+          "https://steamspy.com/api.php?request=appdetails&appid=204360",
+          "https://store.steampowered.com/app/204360/?l=english&cc=us",
+          "https://steamcommunity.com/app/204360/reviews/?browsefilter=mostrecent&l=english"
+        ],
+        "meta": "Steam storesearch + appdetails + SteamSpy appdetails + 商店页评测摘要 + Steam 社区近期评测文本抽样"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M11",
+      "origin": "market",
+      "title": "KeyWe",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "F06",
+      "play": "收与分",
+      "playKeys": [
+        "F06",
+        "S03"
+      ],
+      "playDesc": "收集、分类、配额、公平分配；核心是「谁拿哪一份」。",
+      "oneLiner": "未获取",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [],
+        "note": "官方描述未抓到人数，未获取",
+        "officialText": "未获取",
+        "maxPlayers": "未获取"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏 / 在线合作）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 24.99,
+        "sampled": 24.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 1860,
+        "positivePct": 90.6,
+        "label": "Very Positive",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "分拣、盖章、贴标对应收集与分类（收与分）；两只鸟分工守不同工位（角色互补）。",
+      "risk": "maxPlayers（商店页无人数文字，标记未获取）；peakCcu（SteamSpy 仅给采样时 ccu）；wishlist / sales / regional（未获取）",
+      "lineage": "同族自有条目 20 条（I046 我切你选、I047 糖果配额、I048 便当格子、I049 果盘配色 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "I046",
+        "I047",
+        "I048",
+        "I049",
+        "I050",
+        "I051",
+        "I052",
+        "I053",
+        "I054",
+        "I106",
+        "I107",
+        "I108",
+        "A17",
+        "A18",
+        "A19",
+        "A20",
+        "A21",
+        "A22",
+        "A23",
+        "A24"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/1242980/",
+      "releaseYear": "2021",
+      "releaseDate": "Aug 31, 2021",
+      "sampledAt": "2026-11-04T07:18:09.288Z",
+      "detail": {
+        "Steam 标签": "Co-op、Puzzle-Platformer、Cute、Casual、Co-op Campaign、Indie、3D Platformer、Local Co-Op、Colorful、Family Friendly",
+        "Steam 类目": "Single-player、Multi-player、Co-op、Online Co-op、Shared/Split Screen Co-op、Shared/Split Screen、Steam Achievements、Full controller support、Remote Play Together、Family Sharing",
+        "官方人数原文": "未获取",
+        "官方标注上限": "未获取",
+        "初始价（USD）": "24.99",
+        "采样价（USD）": "24.99",
+        "采样折扣": "0%",
+        "评测数": "1860",
+        "好评率": "90.6%",
+        "采样时在线": "9",
+        "拥有人数区间": "20,000 .. 50,000",
+        "采样时间": "2026-11-04T07:18:09.288Z"
+      },
+      "source": {
+        "file": "research/kids-fantasy/data/steam-demand-2026-11-04.json",
+        "pointer": "#/results/10",
+        "urls": [
+          "https://store.steampowered.com/api/storesearch/?term=KeyWe",
+          "https://store.steampowered.com/api/appdetails?appids=1242980",
+          "https://steamspy.com/api.php?request=appdetails&appid=1242980",
+          "https://store.steampowered.com/app/1242980/?l=english&cc=us",
+          "https://steamcommunity.com/app/1242980/reviews/?browsefilter=mostrecent&l=english"
+        ],
+        "meta": "Steam storesearch + appdetails + SteamSpy appdetails + 商店页评测摘要 + Steam 社区近期评测文本抽样"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M12",
+      "origin": "market",
+      "title": "Biped",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "F09",
+      "play": "拍与仿",
+      "playKeys": [
+        "F09",
+        "F10"
+      ],
+      "playDesc": "节奏、接唱、同步、模仿；核心是「跟不跟得上拍」。",
+      "oneLiner": "CONQUER TWO-PLAYER CO-OP Enjoy the adventure solo or grab a friend or a family member and have a blast together in co-op mode.",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "1P",
+          "2P"
+        ],
+        "note": "官方原文 solo or two-player co-op",
+        "officialText": "CONQUER TWO-PLAYER CO-OP Enjoy the adventure solo or grab a friend or a family member and have a blast together in co-op mode.",
+        "maxPlayers": "未获取"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏 / 在线合作）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 14.99,
+        "sampled": 14.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 8822,
+        "positivePct": 86.1,
+        "label": "Mostly Positive",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "两条腿必须同步迈步，接近节奏同步（拍与仿）；解谜靠路线与地形推进（滑与路）。",
+      "risk": "maxPlayers（商店页无人数文字，标记未获取）；peakCcu（SteamSpy 仅给采样时 ccu）；wishlist / sales / regional（未获取）",
+      "lineage": "同族自有条目 24 条（I073 搅拌节拍、I074 切菜节奏、I075 蛙鸣合唱、I076 鸟叫接龙 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "I073",
+        "I074",
+        "I075",
+        "I076",
+        "I077",
+        "I078",
+        "I079",
+        "I080",
+        "I081",
+        "I082",
+        "I083",
+        "I084",
+        "I085",
+        "I086",
+        "I087",
+        "I088",
+        "I089",
+        "I090",
+        "I115",
+        "I116",
+        "I117",
+        "I118",
+        "I119",
+        "I120"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/1071870/",
+      "releaseYear": "2020",
+      "releaseDate": "Mar 26, 2020",
+      "sampledAt": "2026-11-04T07:18:09.288Z",
+      "detail": {
+        "Steam 标签": "Character Customization、Emotional、Co-op、PvE、Action、Multiplayer、Relaxing、Casual、Nature、Funny",
+        "Steam 类目": "Single-player、Multi-player、Co-op、Online Co-op、Shared/Split Screen Co-op、Cross-Platform Multiplayer、Steam Achievements、Full controller support、Steam Trading Cards、Steam Workshop、Steam Workshop、Custom Volume Controls、Mouse Only Option、Playable without Timed Input、DualShock Controller Support、DualShock Controller Support、DualSense Controller Support、DualSense Controller Support、Stereo Sound、Steam Cloud、Includes level editor、Remote Play on Phone、Remote Play on TV、Remote Play Together、Family Sharing",
+        "官方人数原文": "CONQUER TWO-PLAYER CO-OP Enjoy the adventure solo or grab a friend or a family member and have a blast together in co-op mode.",
+        "官方标注上限": "未获取",
+        "初始价（USD）": "14.99",
+        "采样价（USD）": "14.99",
+        "采样折扣": "0%",
+        "评测数": "8822",
+        "好评率": "86.1%",
+        "采样时在线": "300",
+        "拥有人数区间": "500,000 .. 1,000,000",
+        "采样时间": "2026-11-04T07:18:09.288Z"
+      },
+      "source": {
+        "file": "research/kids-fantasy/data/steam-demand-2026-11-04.json",
+        "pointer": "#/results/11",
+        "urls": [
+          "https://store.steampowered.com/api/storesearch/?term=Biped",
+          "https://store.steampowered.com/api/appdetails?appids=1071870",
+          "https://steamspy.com/api.php?request=appdetails&appid=1071870",
+          "https://store.steampowered.com/app/1071870/?l=english&cc=us",
+          "https://steamcommunity.com/app/1071870/reviews/?browsefilter=mostrecent&l=english"
+        ],
+        "meta": "Steam storesearch + appdetails + SteamSpy appdetails + 商店页评测摘要 + Steam 社区近期评测文本抽样"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M13",
+      "origin": "market",
+      "title": "Trine 4: The Nightmare Prince",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "S03",
+      "play": "角色互补",
+      "playKeys": [
+        "S03",
+        "F02"
+      ],
+      "playDesc": "四种能力缺一不可；核心问题是「谁先上、谁等」。",
+      "oneLiner": "Trine 4 reaches new heights in the series, bringing the most complete gameplay experience ever to fans and new players alike!",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "1P",
+          "4P"
+        ],
+        "note": "官方原文 solo、up to 4 players；中间档位未逐条写明",
+        "officialText": "Trine 4 reaches new heights in the series, bringing the most complete gameplay experience ever to fans and new players alike! / Local and online multiplayer. / Play with up to 4 players online or in local co-op. / Solve puzzles - solo or with friends - that feature fire, air, light, magnets, electricity and more, with challenges tailored to the number of players.",
+        "maxPlayers": "4"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏 / 在线合作）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 29.99,
+        "sampled": 29.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 13379,
+        "positivePct": 89.1,
+        "label": "Very Positive",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "法师/骑士/盗贼能力缺一不可（角色互补）；用箱子、藤蔓、光桥搭出通路（搭与塌）。",
+      "risk": "peakCcu（SteamSpy 仅给采样时 ccu）；wishlist / sales / regional（未获取）",
+      "lineage": "同族自有条目 20 条（I010 饼干地基、I011 鸟巢承重、I012 枕头堡垒、I013 纸箱城堡 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "I010",
+        "I011",
+        "I012",
+        "I013",
+        "I014",
+        "I015",
+        "I016",
+        "I017",
+        "I018",
+        "I094",
+        "I095",
+        "I096",
+        "A17",
+        "A18",
+        "A19",
+        "A20",
+        "A21",
+        "A22",
+        "A23",
+        "A24"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/690640/",
+      "releaseYear": "2019",
+      "releaseDate": "Oct 8, 2019",
+      "sampledAt": "2026-11-04T07:18:09.288Z",
+      "detail": {
+        "Steam 标签": "Puzzle-Platformer、Local Co-Op、Online Co-Op、Action-Adventure、Co-op、Beautiful、Fantasy、2.5D、Multiplayer、Adventure",
+        "Steam 类目": "Single-player、Multi-player、Co-op、Online Co-op、Shared/Split Screen Co-op、Shared/Split Screen、Steam Achievements、Full controller support、Steam Trading Cards、Adjustable Text Size、Custom Volume Controls、Adjustable Difficulty、Stereo Sound、Subtitle Options、Steam Cloud、Remote Play on Tablet、Remote Play on TV、Remote Play Together、Family Sharing",
+        "官方人数原文": "Trine 4 reaches new heights in the series, bringing the most complete gameplay experience ever to fans and new players alike! / Local and online multiplayer. / Play with up to 4 players online or in local co-op. / Solve puzzles - solo or with friends - that feature fire, air, light, magnets, electricity and more, with challenges tailored to the number of players.",
+        "官方标注上限": "4",
+        "初始价（USD）": "29.99",
+        "采样价（USD）": "29.99",
+        "采样折扣": "0%",
+        "评测数": "13379",
+        "好评率": "89.1%",
+        "采样时在线": "76",
+        "拥有人数区间": "1,000,000 .. 2,000,000",
+        "采样时间": "2026-11-04T07:18:09.288Z"
+      },
+      "source": {
+        "file": "research/kids-fantasy/data/steam-demand-2026-11-04.json",
+        "pointer": "#/results/12",
+        "urls": [
+          "https://store.steampowered.com/api/storesearch/?term=Trine%204%3A%20The%20Nightmare%20Prince",
+          "https://store.steampowered.com/api/appdetails?appids=690640",
+          "https://steamspy.com/api.php?request=appdetails&appid=690640",
+          "https://store.steampowered.com/app/690640/?l=english&cc=us",
+          "https://steamcommunity.com/app/690640/reviews/?browsefilter=mostrecent&l=english"
+        ],
+        "meta": "Steam storesearch + appdetails + SteamSpy appdetails + 商店页评测摘要 + Steam 社区近期评测文本抽样"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M14",
+      "origin": "market",
+      "title": "Lovers in a Dangerous Spacetime",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "S03",
+      "play": "角色互补",
+      "playKeys": [
+        "S03",
+        "F03"
+      ],
+      "playDesc": "四种能力缺一不可；核心问题是「谁先上、谁等」。",
+      "oneLiner": "LOVERS IN A DANGEROUS SPACETIME is a frantic 1- to 4-player couch co-op action space shooter.",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "1P",
+          "2P",
+          "3P",
+          "4P"
+        ],
+        "note": "官方原文 1- to 4-player couch co-op",
+        "officialText": "LOVERS IN A DANGEROUS SPACETIME is a frantic 1- to 4-player couch co-op action space shooter. / LOCAL CO-OP GAMEPLAY 2 to 4 players (or 1 player plus a loyal AI space-pet) need to work together to man the different battle stations, dashing back and forth between weapons, shie. / All players fill important roles at all times, and nobody gets left behind. / A NEW EXPERIENCE EVERY TIME Randomized level layouts mean that all players will be exploring fresh areas every time you play. / SIMPLE CONTROLS, DEEP CHALLENGE Controlling your spacenaut is so simple that anyone can jump in quickly, but getting all players to work together like a well-oiled machine, battlin",
+        "maxPlayers": "未获取"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 14.99,
+        "sampled": 14.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 3866,
+        "positivePct": 93,
+        "label": "未获取",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "四座炮台/护盾/引擎要轮流值守（角色互补）；开火与弹道是抛与落。",
+      "risk": "maxPlayers（商店页无人数文字，标记未获取）；peakCcu（SteamSpy 仅给采样时 ccu）；wishlist / sales / regional（未获取）",
+      "lineage": "同族自有条目 20 条（I019 抛饼翻面、I020 爆米花接碗、I021 果酱弹弓、I022 汤圆入锅 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "I019",
+        "I020",
+        "I021",
+        "I022",
+        "I023",
+        "I024",
+        "I025",
+        "I026",
+        "I027",
+        "I097",
+        "I098",
+        "I099",
+        "A17",
+        "A18",
+        "A19",
+        "A20",
+        "A21",
+        "A22",
+        "A23",
+        "A24"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/252110/",
+      "releaseYear": "2015",
+      "releaseDate": "Sep 9, 2015",
+      "sampledAt": "2026-11-04T07:18:09.288Z",
+      "detail": {
+        "Steam 标签": "Local Co-Op、4 Player Local、Co-op、Local Multiplayer、Multiplayer、Co-op Campaign、Action、Space、Indie、Cute",
+        "Steam 类目": "Single-player、Multi-player、Co-op、Shared/Split Screen Co-op、Shared/Split Screen、Steam Achievements、Full controller support、Steam Trading Cards、Custom Volume Controls、Adjustable Difficulty、Keyboard Only Option、Stereo Sound、Steam Cloud、Remote Play on Phone、Remote Play on Tablet、Remote Play on TV、Remote Play Together、Family Sharing",
+        "官方人数原文": "LOVERS IN A DANGEROUS SPACETIME is a frantic 1- to 4-player couch co-op action space shooter. / LOCAL CO-OP GAMEPLAY 2 to 4 players (or 1 player plus a loyal AI space-pet) need to work together to man the different battle stations, dashing back and forth between weapons, shie. / All players fill important roles at all times, and nobody gets left behind. / A NEW EXPERIENCE EVERY TIME Randomized level layouts mean that all players will be exploring fresh areas every time you play. / SIMPLE CONTROLS, DEEP CHALLENGE Controlling your spacenaut is so simple that anyone can jump in quickly, but getting all players to work together like a well-oiled machine, battlin",
+        "官方标注上限": "未获取",
+        "初始价（USD）": "14.99",
+        "采样价（USD）": "14.99",
+        "采样折扣": "0%",
+        "评测数": "3866",
+        "好评率": "93%",
+        "采样时在线": "7",
+        "拥有人数区间": "200,000 .. 500,000",
+        "采样时间": "2026-11-04T07:18:09.288Z"
+      },
+      "source": {
+        "file": "research/kids-fantasy/data/steam-demand-2026-11-04.json",
+        "pointer": "#/results/13",
+        "urls": [
+          "https://store.steampowered.com/api/storesearch/?term=Lovers%20in%20a%20Dangerous%20Spacetime",
+          "https://store.steampowered.com/api/appdetails?appids=252110",
+          "https://steamspy.com/api.php?request=appdetails&appid=252110",
+          "https://store.steampowered.com/app/252110/?l=english&cc=us",
+          "https://steamcommunity.com/app/252110/reviews/?browsefilter=mostrecent&l=english"
+        ],
+        "meta": "Steam storesearch + appdetails + SteamSpy appdetails + 商店页评测摘要 + Steam 社区近期评测文本抽样"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M15",
+      "origin": "market",
+      "title": "Chained Together",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "F10",
+      "play": "滑与路",
+      "playKeys": [
+        "F10"
+      ],
+      "playDesc": "滑行、滚动、路线、排队；核心是「这条路怎么走」。",
+      "oneLiner": "未获取",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [],
+        "note": "官方抓取文本是系统需求，人数未获取",
+        "officialText": "未获取",
+        "maxPlayers": "未获取"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏 / 在线合作）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 4.99,
+        "sampled": 4.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 53138,
+        "positivePct": 90.7,
+        "label": "Very Positive",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "锁链绑定后的攀爬与路线选择，映射到滑与路；没有可对应的搬运/搭建核心。",
+      "risk": "maxPlayers（商店页无人数文字，标记未获取）；peakCcu（SteamSpy 仅给采样时 ccu）；wishlist / sales / regional（未获取）",
+      "lineage": "同族自有条目 12 条（I082 果皮滑道、I083 汤勺滑梯、I084 蜗牛赛道、I085 企鹅滑行 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "I082",
+        "I083",
+        "I084",
+        "I085",
+        "I086",
+        "I087",
+        "I088",
+        "I089",
+        "I090",
+        "I118",
+        "I119",
+        "I120"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/2567870/",
+      "releaseYear": "2024",
+      "releaseDate": "Jun 19, 2024",
+      "sampledAt": "2026-11-04T07:18:09.288Z",
+      "detail": {
+        "Steam 标签": "Co-op、Adventure、Casual、Platformer、Puzzle-Platformer、Simulation、Action-Adventure、3D Platformer、Third Person、Exploration",
+        "Steam 类目": "Single-player、Multi-player、Co-op、Online Co-op、Shared/Split Screen Co-op、Shared/Split Screen、Partial Controller Support、Remote Play Together、Family Sharing",
+        "官方人数原文": "未获取",
+        "官方标注上限": "未获取",
+        "初始价（USD）": "4.99",
+        "采样价（USD）": "4.99",
+        "采样折扣": "0%",
+        "评测数": "53138",
+        "好评率": "90.7%",
+        "采样时在线": "1154",
+        "拥有人数区间": "2,000,000 .. 5,000,000",
+        "采样时间": "2026-11-04T07:18:09.288Z"
+      },
+      "source": {
+        "file": "research/kids-fantasy/data/steam-demand-2026-11-04.json",
+        "pointer": "#/results/14",
+        "urls": [
+          "https://store.steampowered.com/api/storesearch/?term=Chained%20Together",
+          "https://store.steampowered.com/api/appdetails?appids=2567870",
+          "https://steamspy.com/api.php?request=appdetails&appid=2567870",
+          "https://store.steampowered.com/app/2567870/?l=english&cc=us",
+          "https://steamcommunity.com/app/2567870/reviews/?browsefilter=mostrecent&l=english"
+        ],
+        "meta": "Steam storesearch + appdetails + SteamSpy appdetails + 商店页评测摘要 + Steam 社区近期评测文本抽样"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M16",
+      "origin": "market",
+      "title": "Death Squared",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "F10",
+      "play": "滑与路",
+      "playKeys": [
+        "F10",
+        "S02"
+      ],
+      "playDesc": "滑行、滚动、路线、排队；核心是「这条路怎么走」。",
+      "oneLiner": "OK back to the usual description; Death Squared is a cooperative puzzle game for 1, 2 or 4 players, best enjoyed with loved ones who don't mind a little arguing for the greater goo Each player needs to guide a robot to a colour-coded goal, but the path is beset with deadly traps and hazards.",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "1P",
+          "2P",
+          "4P"
+        ],
+        "note": "官方原文 1, 2 or 4 players",
+        "officialText": "OK back to the usual description; Death Squared is a cooperative puzzle game for 1, 2 or 4 players, best enjoyed with loved ones who don't mind a little arguing for the greater goo. / Each player needs to guide a robot to a colour-coded goal, but the path is beset with deadly traps and hazards. / Teams of players will need close observation and communication to keep each other alive and discover a solution together. / Complete the main campaign with one or two players, then take a group into four-player Party Mode for the ultimate teamwork trial! / He's a legend 80x puzzling levels in the Story levels 40x 4 Player Party levels 45x Vault Levels (too hard for the main game) New for 2025: 42 new 2 Player levels in Extra Vault We",
+        "maxPlayers": "未获取"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 14.99,
+        "sampled": 14.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 658,
+        "positivePct": 89.2,
+        "label": "未获取",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "机器人走位到色块目标是路线题（滑与路）；靠观察与喊话避免互相害死，接近视野/信息分工，但官方未写分屏。",
+      "risk": "maxPlayers（商店页无人数文字，标记未获取）；peakCcu（SteamSpy 仅给采样时 ccu）；wishlist / sales / regional（未获取）",
+      "lineage": "同族自有条目 20 条（I082 果皮滑道、I083 汤勺滑梯、I084 蜗牛赛道、I085 企鹅滑行 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "I082",
+        "I083",
+        "I084",
+        "I085",
+        "I086",
+        "I087",
+        "I088",
+        "I089",
+        "I090",
+        "I118",
+        "I119",
+        "I120",
+        "A09",
+        "A10",
+        "A11",
+        "A12",
+        "A13",
+        "A14",
+        "A15",
+        "A16"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/471810/",
+      "releaseYear": "2017",
+      "releaseDate": "Mar 13, 2017",
+      "sampledAt": "2026-11-04T07:18:09.288Z",
+      "detail": {
+        "Steam 标签": "Puzzle、Local Co-Op、Co-op、Funny、Sokoban、4 Player Local、Minimalist、Family Friendly、Singleplayer、Casual",
+        "Steam 类目": "Single-player、Multi-player、PvP、Shared/Split Screen PvP、Co-op、Shared/Split Screen Co-op、Shared/Split Screen、Steam Achievements、Full controller support、Steam Trading Cards、Captions available、Color Alternatives、Custom Volume Controls、Gamepad Recommended、Keyboard Only Option、Playable without Timed Input、DualShock Controller Support、DualShock Controller Support、DualSense Controller Support、DualSense Controller Support、Steam Cloud、Stats、Remote Play on Phone、Remote Play on Tablet、Remote Play on TV、Remote Play Together、Family Sharing",
+        "官方人数原文": "OK back to the usual description; Death Squared is a cooperative puzzle game for 1, 2 or 4 players, best enjoyed with loved ones who don't mind a little arguing for the greater goo. / Each player needs to guide a robot to a colour-coded goal, but the path is beset with deadly traps and hazards. / Teams of players will need close observation and communication to keep each other alive and discover a solution together. / Complete the main campaign with one or two players, then take a group into four-player Party Mode for the ultimate teamwork trial! / He's a legend 80x puzzling levels in the Story levels 40x 4 Player Party levels 45x Vault Levels (too hard for the main game) New for 2025: 42 new 2 Player levels in Extra Vault We",
+        "官方标注上限": "未获取",
+        "初始价（USD）": "14.99",
+        "采样价（USD）": "14.99",
+        "采样折扣": "0%",
+        "评测数": "658",
+        "好评率": "89.2%",
+        "采样时在线": "4",
+        "拥有人数区间": "100,000 .. 200,000",
+        "采样时间": "2026-11-04T07:18:09.288Z"
+      },
+      "source": {
+        "file": "research/kids-fantasy/data/steam-demand-2026-11-04.json",
+        "pointer": "#/results/15",
+        "urls": [
+          "https://store.steampowered.com/api/storesearch/?term=Death%20Squared",
+          "https://store.steampowered.com/api/appdetails?appids=471810",
+          "https://steamspy.com/api.php?request=appdetails&appid=471810",
+          "https://store.steampowered.com/app/471810/?l=english&cc=us",
+          "https://steamcommunity.com/app/471810/reviews/?browsefilter=mostrecent&l=english"
+        ],
+        "meta": "Steam storesearch + appdetails + SteamSpy appdetails + 商店页评测摘要 + Steam 社区近期评测文本抽样"
+      },
+      "prototype": null
+    }
+  ]
+}
