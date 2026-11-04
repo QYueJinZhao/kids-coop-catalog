@@ -172,9 +172,9 @@
 <body>
 <header class="hero">
   <div class="wrap">
-    <p class="kicker">Game Catalog · v1.1</p>
+    <p class="kicker">Game Catalog · v1.2</p>
     <h1>儿童同屏合作游戏分类库</h1>
-    <p class="lede">把已有调研里的创意、冒险与原型结论，和 16 款 Steam 在售同类游戏放进同一套字段：玩法族、人数、年龄、单局时长、上手门槛、情绪基调、载体与价格带。玩法族沿用原池机制家族，不另起一套；市面条目只搬运可核实事实，缺的写「未获取」。</p>
+    <p class="lede">把已有调研里的创意、冒险与原型结论，和 38 款 Steam 在售同类游戏放进同一套字段：玩法族、人数、年龄、单局时长、上手门槛、情绪基调、载体与价格带。玩法族沿用原池机制家族，不另起一套；市面条目只搬运可核实事实，缺的写「未获取」。首轮采样 16 款，扩样本定向补齐 22 款。</p>
     <div class="stats" id="stats"></div>
   </div>
 </header>
@@ -220,9 +220,9 @@
   <section id="compare" class="compare" aria-label="玩法族对照视图"></section>
 
   <footer class="foot">
-    <p>数据来源：<code>ideas.json</code>（120 条）、<code>adventures.json</code>（64 条）、<code>adventures3.json</code>（40 条）、4 个 HTML 原型的 REPORT / FINAL-VERDICT，以及 <code>steam-demand-2026-11-04.json</code>（16 款 Steam 在售同类采样）。条目只做了结构化搬运与规则化派生，未改动原文。</p>
-    <p>证据等级：<b>E0</b> = 纸面推理；<b>E1</b> = HTML 原型 + 合成代理实测；<b>E2</b> = 真人试玩（全库 <b>0</b> 条）；<b>E3</b> = 外部可核实事实（市面 16 款，非试玩证据）。分类成立不等于玩法被验证。</p>
-    <p>市面对照边界：价格与评测数是采样时点值（非历史最低价、非峰值）；人数只认官方原文，原文没写就写「未获取」；玩法族映射是编者判据，不是厂商分类；「本样本内未见同族」不等于市场空白。</p>
+    <p>数据来源：<code>ideas.json</code>（120 条）、<code>adventures.json</code>（64 条）、<code>adventures3.json</code>（40 条）、4 个 HTML 原型的 REPORT / FINAL-VERDICT，以及 <code>steam-demand-2026-11-04.json</code>（首轮 16 款）和 <code>steam-expanded-2026-11-04.json</code>（定向补齐 22 款）。条目只做了结构化搬运与规则化派生，未改动原文。</p>
+    <p>证据等级：<b>E0</b> = 纸面推理；<b>E1</b> = HTML 原型 + 合成代理实测；<b>E2</b> = 真人试玩（全库 <b>0</b> 条）；<b>E3</b> = 外部可核实事实（市面 38 款，非试玩证据）。分类成立不等于玩法被验证。</p>
+    <p>市面对照边界：价格与评测数是采样时点值（非历史最低价、非峰值）；人数只认官方原文，原文没写就写「未获取」；玩法族映射是编者判据，不是厂商分类；「本样本内未见同族」不等于市场空白。扩样本是按空族定向补齐，23/23 覆盖不是随机抽样或市场统计。</p>
   </footer>
 </main>
 
@@ -267,11 +267,14 @@
   var marketCount = entries.filter(function(e){ return e.origin==='market'; }).length;
   var plays = Object.keys(meta.playDefs).length;
   var marketFamilies = uniq([].concat.apply([], entries.filter(function(e){ return e.origin==='market'; }).map(function(e){ return e.playKeys||[]; }))).length;
+  var marketMeta = meta.marketMeta || {};
+  var stillEmpty = (marketMeta.uncoveredFamilies || []).length;
   document.getElementById('stats').innerHTML = [
     '<span class="stat">收录 <b>'+entries.length+'</b> 条</span>',
     '<span class="stat">自有 <b>'+ownCount+'</b> · 市面 <b>'+marketCount+'</b></span>',
     '<span class="stat">玩法族 <b>'+plays+'</b> 类</span>',
-    '<span class="stat">市面覆盖 <b>'+marketFamilies+'</b> 类</span>',
+    '<span class="stat">市面覆盖 <b>'+marketFamilies+'/'+plays+'</b> 类</span>',
+    '<span class="stat">仍为空 <b>'+stillEmpty+'</b> 族</span>',
     '<span class="stat">真人试玩 <b>0</b></span>'
   ].join('');
 
@@ -411,6 +414,9 @@
 
   /* ---------- 玩法族对照视图 ---------- */
   var compareEl = document.getElementById('compare');
+  var marketTotal = entries.filter(function(e){ return e.origin==='market'; }).length;
+  var coveredFamilies = (meta.marketMeta && meta.marketMeta.coveredFamilies) || 0;
+  var emptyFamilies = (meta.marketMeta && meta.marketMeta.uncoveredFamilies ? meta.marketMeta.uncoveredFamilies.length : 0);
   function miniOwn(e){
     return '<button class="mini" type="button" data-id="'+esc(e.id)+'"><span class="mid">'+esc(e.id)+'</span>'+esc(e.title)+
       '<span class="subline">'+esc(e.playKey+' '+e.play)+' · '+esc(e.players.modes.join(' / ')||'人数待定')+' · E'+esc(e.evidence.level.slice(1))+'</span></button>';
@@ -436,7 +442,7 @@
     if(state.q) rows = rows.filter(function(r){ return r.own.length || r.market.length; });
     var un = vis.filter(function(e){ return e.origin==='market' && !(e.playKeys||[]).length; });
 
-    var html = '<p class="compare-lead">读法：按玩法族并列。左边是本库自有条目，右边是 16 款 Steam 采样里映射到该族的游戏。徽标「本样本内已有 / 未见」只描述这 16 款，不代表市场全貌；本视图不评分、不排序、不判断谁更好。搜索与玩法族筛选生效；来源筛选、人数/价格等下拉只作用于列表视图。</p>';
+    var html = '<p class="compare-lead">读法：按玩法族并列。左边是本库自有条目，右边是本样本 '+marketTotal+' 款 Steam 采样里映射到该族的游戏。徽标「本样本内已有 / 未见」只描述这 '+marketTotal+' 款，不代表市场全貌；本视图不评分、不排序、不判断谁更好。<br>扩样本后：<b>'+coveredFamilies+'/'+playKeys.length+'</b> 族有市面对照，<b>'+emptyFamilies+'</b> 族仍为空。仍为空才算「样本内反复未见」，但 0 族为空只是定向补齐的结果，依然不是市场空白。搜索与玩法族筛选生效；来源筛选、人数/价格等下拉只作用于列表视图。</p>';
     html += rows.map(function(r){
       var tag = r.market.length
         ? '<span class="tag has">本样本内已有 '+r.market.length+' 款</span>'
@@ -446,7 +452,7 @@
         : '<p class="none">本族暂无自有条目</p>';
       var mHtml = r.market.length
         ? r.market.map(miniMarket).join('')
-        : '<p class="none">这 16 款里没有映射到本族的游戏。</p>';
+        : '<p class="none">本样本 '+marketTotal+' 款里没有映射到本族的游戏。</p>';
       return '<div class="crow" data-row="'+esc(r.key)+'"><div class="crow-head"><h3>'+esc(r.key+' '+r.def.name)+'</h3>'+
         '<span class="num">自有 '+r.own.length+' 条 · 市面 '+r.market.length+' 款</span>'+tag+'</div>'+
         '<div class="crow-body"><div class="col"><h4>本库自有</h4>'+ownHtml+'</div>'+
@@ -457,7 +463,8 @@
       html += '<div class="crow" data-row="UNMAPPED"><div class="crow-head"><h3>未归类（市面）</h3>'+
         '<span class="num">自有 0 条 · 市面 '+un.length+' 款</span><span class="tag none">没有匹配的玩法族</span></div>'+
         '<div class="crow-body"><div class="col"><h4>本库自有</h4><p class="none">—</p></div>'+
-        '<div class="col right"><h4>市面对照（Steam 采样）</h4>'+un.map(miniMarket).join('')+'</div></div></div>';
+        '<div class="col right"><h4>市面对照（Steam 采样）</h4>'+un.map(miniMarket).join('')+'</div></div>'+
+        '<p class="none" style="margin:10px 0 0">这 '+un.length+' 款都以战斗 / 对抗为核心；本库 23 族里没有对应族，本轮不新增族（见 README「体系缺口」）。</p></div>';
     }
     compareEl.innerHTML = html;
   }

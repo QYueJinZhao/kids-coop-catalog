@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * 站点构建：data/catalog.json（自有 224 条）+ data/market.json（市面 16 款）
+ * 站点构建：data/catalog.json（自有 224 条）+ data/market.json（市面 38 款：首轮 16 + 扩样本 22）
  *            + scripts/template.html → index.html（单文件，file:// 可直接打开）
  *
  * 用法：node scripts/build.mjs
@@ -84,18 +84,19 @@ const entries = [...own, ...marketEntries];
 const combined = {
   meta: {
     ...catalog.meta,
-    version: '1.1',
+    version: '1.2',
     subtitle: `自有 ${own.length} 条 + 市面对照 ${marketEntries.length} 款，按玩法族并列可筛`,
     generatedAt: new Date().toISOString(),
     entryCount: entries.length,
     ownCount: own.length,
     marketCount: marketEntries.length,
-    evidenceNote: '全库 E2（真人试玩）= 0。4 条自有条目有 HTML 原型 + 合成代理实测（E1）；220 条为 E0；16 款市面对照为 E3（外部可核实事实，不是试玩证据）。',
+    evidenceNote: `全库 E2（真人试玩）= 0。4 条自有条目有 HTML 原型 + 合成代理实测（E1）；220 条为 E0；${marketEntries.length} 款市面对照为 E3（外部可核实事实，不是试玩证据）。`,
     gaps: [
       ...catalog.meta.gaps.filter((g) => !g.startsWith('外部商业同类未接入')),
-      `市面对照只覆盖 ${market.meta.coveredFamilies}/${market.meta.totalFamilies} 个玩法族；「本样本内未见同族」不等于市场空白。`,
+      `市面对照覆盖 ${market.meta.coveredFamilies}/${market.meta.totalFamilies} 个玩法族，仍为空 ${market.meta.uncoveredFamilies.length} 族；这是按空族定向补齐的结果，不是市场统计，也不等于市场空白。`,
+      market.meta.systemGap ? market.meta.systemGap.conclusion + market.meta.systemGap.decision : '',
       ...market.meta.boundaries,
-    ],
+    ].filter(Boolean),
     marketMeta: market.meta,
   },
   entries,

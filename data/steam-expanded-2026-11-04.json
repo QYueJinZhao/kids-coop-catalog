@@ -1,0 +1,960 @@
+{
+  "sampledAt": "2026-11-04T15:32:50.049Z",
+  "method": "Steam appdetails（名称 / 发行日期 / 类目 / 初始价 / 采样价 / 商店页官方文案）+ SteamSpy appdetails（评测数 / 好评率 / 采样时在线 / 拥有人数区间）",
+  "caveats": [
+    "本轮 22 款是为补齐 11 个空族做的定向采样，不是随机抽样，不能据此推断市场空白。",
+    "reviewTotal / positivePct 来自 SteamSpy 全语言合计，可能与 Steam 商店页英文子集不同。",
+    "ccuAtSample 是采样时刻在线人数，不是历史峰值。",
+    "价格是采样时点值，不是历史最低价；折扣与初始价分开记录。",
+    "人数只认官方原文；原文没有人数就写「未获取」，不按类目反推人数。",
+    "玩法族映射是编者判据，不代表厂商分类。"
+  ],
+  "results": [
+    {
+      "appid": 303590,
+      "name": "Hidden in Plain Sight",
+      "storeUrl": "https://store.steampowered.com/app/303590/?l=english&cc=us",
+      "releaseDate": "Jul 16, 2014",
+      "categories": [
+        "Multi-player",
+        "PvP",
+        "Shared/Split Screen PvP",
+        "Co-op",
+        "Shared/Split Screen Co-op",
+        "Shared/Split Screen",
+        "Full controller support",
+        "Remote Play on TV",
+        "Remote Play Together",
+        "Family Sharing"
+      ],
+      "steamTags": [],
+      "basePriceUSD": 5.99,
+      "priceAtSampleUSD": 5.99,
+      "discountPctAtSample": 0,
+      "reviewTotal": 845,
+      "positivePct": 99.2,
+      "recentLabel": null,
+      "ccuAtSample": 2,
+      "ownersRange": "50,000 .. 100,000",
+      "playerTextEvidence": [
+        "Hidden in Plain Sight is a set of local multiplayer (2-8 players) game modes that share a common theme: trying to accomplish goals without drawing attention to yourself."
+      ],
+      "oneLiner": "Hidden in Plain Sight is a local-multiplayer stealth party game. Blend into the crowd of AI characters and eliminate the other players before they eliminate you!",
+      "unavailable": [
+        "Steam 标签",
+        "近期评测标签",
+        "峰值在线",
+        "销量/愿望单/分区数据"
+      ],
+      "sources": [
+        "https://store.steampowered.com/api/appdetails?appids=303590&cc=us&l=english",
+        "https://steamspy.com/api.php?request=appdetails&appid=303590",
+        "https://store.steampowered.com/app/303590/?l=english&cc=us"
+      ]
+    },
+    {
+      "appid": 1741160,
+      "name": "Catch Me!",
+      "storeUrl": "https://store.steampowered.com/app/1741160/?l=english&cc=us",
+      "releaseDate": "Jan 24, 2023",
+      "categories": [
+        "Single-player",
+        "Multi-player",
+        "PvP",
+        "Online PvP",
+        "Co-op",
+        "Online Co-op",
+        "Steam Achievements",
+        "Full controller support",
+        "Family Sharing"
+      ],
+      "steamTags": [],
+      "basePriceUSD": 1.99,
+      "priceAtSampleUSD": 1.99,
+      "discountPctAtSample": 0,
+      "reviewTotal": 43,
+      "positivePct": 97.7,
+      "recentLabel": null,
+      "ccuAtSample": 0,
+      "ownersRange": "0 .. 20,000",
+      "playerTextEvidence": [
+        "Catch Me! is a competitive online platformer for 4 players and the most action loaded game of tag you have ever played with your friends."
+      ],
+      "oneLiner": "Compete online against your friends and other players in this chaotic and fast paced 4-player game of tag! Race across different locations, jump through windows, electrocute the other players, or throw cats at them. (No cats were harmed in the production of this game.)",
+      "unavailable": [
+        "Steam 标签",
+        "近期评测标签",
+        "峰值在线",
+        "销量/愿望单/分区数据"
+      ],
+      "sources": [
+        "https://store.steampowered.com/api/appdetails?appids=1741160&cc=us&l=english",
+        "https://steamspy.com/api.php?request=appdetails&appid=1741160",
+        "https://store.steampowered.com/app/1741160/?l=english&cc=us"
+      ]
+    },
+    {
+      "appid": 442070,
+      "name": "Drawful 2",
+      "storeUrl": "https://store.steampowered.com/app/442070/?l=english&cc=us",
+      "releaseDate": "Jun 20, 2016",
+      "categories": [
+        "Multi-player",
+        "PvP",
+        "Shared/Split Screen PvP",
+        "Steam Achievements",
+        "Full controller support",
+        "Steam Cloud",
+        "Remote Play on Phone",
+        "Remote Play on Tablet",
+        "Remote Play on TV",
+        "Remote Play Together",
+        "Family Sharing"
+      ],
+      "steamTags": [],
+      "basePriceUSD": 9.99,
+      "priceAtSampleUSD": 9.99,
+      "discountPctAtSample": 0,
+      "reviewTotal": 4019,
+      "positivePct": 74.2,
+      "recentLabel": null,
+      "ccuAtSample": 22,
+      "ownersRange": "500,000 .. 1,000,000",
+      "playerTextEvidence": [
+        "For 3-8 players and an audience of thousands!"
+      ],
+      "oneLiner": "For 3-8 players and an audience of thousands! Your phones or tablets are your controllers! The game of terrible drawings and hilariously wrong answers.",
+      "unavailable": [
+        "Steam 标签",
+        "近期评测标签",
+        "峰值在线",
+        "销量/愿望单/分区数据"
+      ],
+      "sources": [
+        "https://store.steampowered.com/api/appdetails?appids=442070&cc=us&l=english",
+        "https://steamspy.com/api.php?request=appdetails&appid=442070",
+        "https://store.steampowered.com/app/442070/?l=english&cc=us"
+      ]
+    },
+    {
+      "appid": 675500,
+      "name": "ACT IT OUT XL! A Charades Party Game",
+      "storeUrl": "https://store.steampowered.com/app/675500/?l=english&cc=us",
+      "releaseDate": "Mar 6, 2018",
+      "categories": [
+        "Single-player",
+        "Multi-player",
+        "PvP",
+        "Shared/Split Screen PvP",
+        "Steam Achievements",
+        "Full controller support",
+        "Remote Play Together",
+        "Family Sharing"
+      ],
+      "steamTags": [],
+      "basePriceUSD": 11.99,
+      "priceAtSampleUSD": 11.99,
+      "discountPctAtSample": 0,
+      "reviewTotal": 61,
+      "positivePct": 78.7,
+      "recentLabel": null,
+      "ccuAtSample": 0,
+      "ownersRange": "0 .. 20,000",
+      "playerTextEvidence": [
+        "Up to 8 players can compete against each other, work in teams, or play cooperatively."
+      ],
+      "oneLiner": "ACT IT OUT XL! is the multiplayer party game created to complete your games night! Get your friends or Twitch viewers to guess your favourite films, songs and video games as you describe, act, draw or sing them!",
+      "unavailable": [
+        "Steam 标签",
+        "近期评测标签",
+        "峰值在线",
+        "销量/愿望单/分区数据"
+      ],
+      "sources": [
+        "https://store.steampowered.com/api/appdetails?appids=675500&cc=us&l=english",
+        "https://steamspy.com/api.php?request=appdetails&appid=675500",
+        "https://store.steampowered.com/app/675500/?l=english&cc=us"
+      ]
+    },
+    {
+      "appid": 840010,
+      "name": "Garden Paws",
+      "storeUrl": "https://store.steampowered.com/app/840010/?l=english&cc=us",
+      "releaseDate": "Dec 18, 2018",
+      "categories": [
+        "Single-player",
+        "Multi-player",
+        "PvP",
+        "Online PvP",
+        "Co-op",
+        "Online Co-op",
+        "Steam Achievements",
+        "Steam Trading Cards",
+        "Steam Workshop",
+        "Partial Controller Support",
+        "Steam Cloud",
+        "Stats",
+        "Family Sharing"
+      ],
+      "steamTags": [],
+      "basePriceUSD": 19.99,
+      "priceAtSampleUSD": 19.99,
+      "discountPctAtSample": 0,
+      "reviewTotal": 2450,
+      "positivePct": 90.5,
+      "recentLabel": null,
+      "ccuAtSample": 23,
+      "ownersRange": "50,000 .. 100,000",
+      "playerTextEvidence": [
+        "You don't have to go alone on this new adventure, invite up to three friends to join you online."
+      ],
+      "oneLiner": "You have inherited your grandparents farm as they set off to travel the world. Work with Frank at the local construction shop to finish off the final touches on your new home. Aid Frank and Mayor Wilson in building up the town so it may reach it's full potential.",
+      "unavailable": [
+        "Steam 标签",
+        "近期评测标签",
+        "峰值在线",
+        "销量/愿望单/分区数据"
+      ],
+      "sources": [
+        "https://store.steampowered.com/api/appdetails?appids=840010&cc=us&l=english",
+        "https://steamspy.com/api.php?request=appdetails&appid=840010",
+        "https://store.steampowered.com/app/840010/?l=english&cc=us"
+      ]
+    },
+    {
+      "appid": 1424330,
+      "name": "Wobbledogs",
+      "storeUrl": "https://store.steampowered.com/app/1424330/?l=english&cc=us",
+      "releaseDate": "Mar 15, 2022",
+      "categories": [
+        "Single-player",
+        "Steam Achievements",
+        "Steam Trading Cards",
+        "Partial Controller Support",
+        "Steam Cloud",
+        "Family Sharing"
+      ],
+      "steamTags": [],
+      "basePriceUSD": 19.99,
+      "priceAtSampleUSD": 19.99,
+      "discountPctAtSample": 0,
+      "reviewTotal": 12145,
+      "positivePct": 98.2,
+      "recentLabel": null,
+      "ccuAtSample": 95,
+      "ownersRange": "200,000 .. 500,000",
+      "playerTextEvidence": [],
+      "oneLiner": "A 3D pet simulation where you raise your own personal hive of mutating dogs, physically simulated all the way down to their guts! Wobbledogs is a casual and chill sandbox for players of all ages who want to care for their very own virtual pets in a surprising, unique, and stress-free environment.",
+      "unavailable": [
+        "Steam 标签",
+        "近期评测标签",
+        "峰值在线",
+        "销量/愿望单/分区数据"
+      ],
+      "sources": [
+        "https://store.steampowered.com/api/appdetails?appids=1424330&cc=us&l=english",
+        "https://steamspy.com/api.php?request=appdetails&appid=1424330",
+        "https://store.steampowered.com/app/1424330/?l=english&cc=us"
+      ]
+    },
+    {
+      "appid": 1982340,
+      "name": "Blanc",
+      "storeUrl": "https://store.steampowered.com/app/1982340/?l=english&cc=us",
+      "releaseDate": "Feb 14, 2023",
+      "categories": [
+        "Multi-player",
+        "Co-op",
+        "Online Co-op",
+        "Shared/Split Screen Co-op",
+        "Shared/Split Screen",
+        "Steam Achievements",
+        "Full controller support",
+        "Custom Volume Controls",
+        "Keyboard Only Option",
+        "Steam Cloud",
+        "Family Sharing"
+      ],
+      "steamTags": [],
+      "basePriceUSD": 14.99,
+      "priceAtSampleUSD": 14.99,
+      "discountPctAtSample": 0,
+      "reviewTotal": 944,
+      "positivePct": 76.1,
+      "recentLabel": null,
+      "ccuAtSample": 4,
+      "ownersRange": "20,000 .. 50,000",
+      "playerTextEvidence": [
+        "Two players take control of either the wolf cub or the fawn."
+      ],
+      "oneLiner": "Blanc is an artistic cooperative adventure that follows the journey of a wolf cub and a fawn stranded in a vast, snowy wilderness. They must come together in an unlikely partnership to find their families.",
+      "unavailable": [
+        "Steam 标签",
+        "近期评测标签",
+        "峰值在线",
+        "销量/愿望单/分区数据"
+      ],
+      "sources": [
+        "https://store.steampowered.com/api/appdetails?appids=1982340&cc=us&l=english",
+        "https://steamspy.com/api.php?request=appdetails&appid=1982340",
+        "https://store.steampowered.com/app/1982340/?l=english&cc=us"
+      ]
+    },
+    {
+      "appid": 1328840,
+      "name": "Lost in Play",
+      "storeUrl": "https://store.steampowered.com/app/1328840/?l=english&cc=us",
+      "releaseDate": "Aug 10, 2022",
+      "categories": [
+        "Single-player",
+        "Steam Achievements",
+        "Full controller support",
+        "Steam Cloud",
+        "Family Sharing"
+      ],
+      "steamTags": [],
+      "basePriceUSD": 19.99,
+      "priceAtSampleUSD": 19.99,
+      "discountPctAtSample": 0,
+      "reviewTotal": 7049,
+      "positivePct": 98.2,
+      "recentLabel": null,
+      "ccuAtSample": 15,
+      "ownersRange": "200,000 .. 500,000",
+      "playerTextEvidence": [],
+      "oneLiner": "Solve puzzles, riddles, and embark on an exciting journey of discovery! Join Toto and Gal as they explore dreamscapes and befriend magical creatures. Lost in their imagination, the brother and sister must stick together and solve puzzles to find their way home.",
+      "unavailable": [
+        "Steam 标签",
+        "近期评测标签",
+        "峰值在线",
+        "销量/愿望单/分区数据"
+      ],
+      "sources": [
+        "https://store.steampowered.com/api/appdetails?appids=1328840&cc=us&l=english",
+        "https://steamspy.com/api.php?request=appdetails&appid=1328840",
+        "https://store.steampowered.com/app/1328840/?l=english&cc=us"
+      ]
+    },
+    {
+      "appid": 246900,
+      "name": "Viscera Cleanup Detail",
+      "storeUrl": "https://store.steampowered.com/app/246900/?l=english&cc=us",
+      "releaseDate": "Oct 23, 2015",
+      "categories": [
+        "Single-player",
+        "Multi-player",
+        "Co-op",
+        "Online Co-op",
+        "LAN Co-op",
+        "Shared/Split Screen Co-op",
+        "Shared/Split Screen",
+        "Steam Achievements",
+        "Full controller support",
+        "Steam Trading Cards",
+        "Steam Workshop",
+        "Steam Cloud",
+        "Includes level editor",
+        "Remote Play Together",
+        "Family Sharing"
+      ],
+      "steamTags": [],
+      "basePriceUSD": 12.99,
+      "priceAtSampleUSD": 12.99,
+      "discountPctAtSample": 0,
+      "reviewTotal": 22290,
+      "positivePct": 92.6,
+      "recentLabel": null,
+      "ccuAtSample": 140,
+      "ownersRange": "1,000,000 .. 2,000,000",
+      "playerTextEvidence": [],
+      "oneLiner": "In Viscera Cleanup Detail, you step into the boots of a space-station janitor tasked with cleaning up after various horrific sci-fi horror events. Instead of machineguns and plasma-rifles, your tools are a mop and bucket. That hero left a mess, and it's up to you to deal with the aftermath.",
+      "unavailable": [
+        "Steam 标签",
+        "近期评测标签",
+        "峰值在线",
+        "销量/愿望单/分区数据"
+      ],
+      "sources": [
+        "https://store.steampowered.com/api/appdetails?appids=246900&cc=us&l=english",
+        "https://steamspy.com/api.php?request=appdetails&appid=246900",
+        "https://store.steampowered.com/app/246900/?l=english&cc=us"
+      ]
+    },
+    {
+      "appid": 1290000,
+      "name": "PowerWash Simulator",
+      "storeUrl": "https://store.steampowered.com/app/1290000/?l=english&cc=us",
+      "releaseDate": "Jul 14, 2022",
+      "categories": [
+        "Single-player",
+        "Multi-player",
+        "Co-op",
+        "Online Co-op",
+        "Cross-Platform Multiplayer",
+        "Steam Achievements",
+        "Full controller support",
+        "Steam Trading Cards",
+        "DualShock Controller Support",
+        "DualShock Controller Support",
+        "DualSense Controller Support",
+        "DualSense Controller Support",
+        "Steam Cloud",
+        "Family Sharing"
+      ],
+      "steamTags": [],
+      "basePriceUSD": 24.99,
+      "priceAtSampleUSD": 24.99,
+      "discountPctAtSample": 0,
+      "reviewTotal": 52410,
+      "positivePct": 96.9,
+      "recentLabel": null,
+      "ccuAtSample": 2547,
+      "ownersRange": "1,000,000 .. 2,000,000",
+      "playerTextEvidence": [
+        "Lend a helping hand to your closest pal in Career Mode, or up to 6 friends can splash around in Free Play, tackling any job the host has already completed."
+      ],
+      "oneLiner": "Release the Pressure with PowerWash Simulator! Wash away your worries with the soothing sounds of high-pressure water. Fire up your power washer and blast away every speck of dirt and grime you can find, all with the simple satisfaction of power-washing to a sparkling finish.",
+      "unavailable": [
+        "Steam 标签",
+        "近期评测标签",
+        "峰值在线",
+        "销量/愿望单/分区数据"
+      ],
+      "sources": [
+        "https://store.steampowered.com/api/appdetails?appids=1290000&cc=us&l=english",
+        "https://steamspy.com/api.php?request=appdetails&appid=1290000",
+        "https://store.steampowered.com/app/1290000/?l=english&cc=us"
+      ]
+    },
+    {
+      "appid": 224480,
+      "name": "Octodad: Dadliest Catch",
+      "storeUrl": "https://store.steampowered.com/app/224480/?l=english&cc=us",
+      "releaseDate": "Jan 30, 2014",
+      "categories": [
+        "Single-player",
+        "Multi-player",
+        "Shared/Split Screen",
+        "Steam Achievements",
+        "Full controller support",
+        "Steam Trading Cards",
+        "Steam Workshop",
+        "DualShock Controller Support",
+        "DualShock Controller Support",
+        "DualSense Controller Support",
+        "DualSense Controller Support",
+        "Steam Cloud",
+        "Includes level editor",
+        "Remote Play on Phone",
+        "Remote Play on Tablet",
+        "Remote Play on TV",
+        "Remote Play Together",
+        "Family Sharing"
+      ],
+      "steamTags": [],
+      "basePriceUSD": 14.99,
+      "priceAtSampleUSD": 14.99,
+      "discountPctAtSample": 0,
+      "reviewTotal": 10155,
+      "positivePct": 93.9,
+      "recentLabel": null,
+      "ccuAtSample": 18,
+      "ownersRange": "1,000,000 .. 2,000,000",
+      "playerTextEvidence": [
+        "Gather family members and/or friends to control Octodad's limbs in co-op mode with 2 to 4 players."
+      ],
+      "oneLiner": "Octodad: Dadliest Catch is a game about destruction, deception, and fatherhood. The player controls Octodad, a dapper octopus masquerading as a human, as he goes about his life. Octodad's existence is a constant struggle, as he must master mundane tasks with his unwieldy boneless tentacles while simultaneously keeping his cephalopodan...",
+      "unavailable": [
+        "Steam 标签",
+        "近期评测标签",
+        "峰值在线",
+        "销量/愿望单/分区数据"
+      ],
+      "sources": [
+        "https://store.steampowered.com/api/appdetails?appids=224480&cc=us&l=english",
+        "https://steamspy.com/api.php?request=appdetails&appid=224480",
+        "https://store.steampowered.com/app/224480/?l=english&cc=us"
+      ]
+    },
+    {
+      "appid": 962130,
+      "name": "Grounded",
+      "storeUrl": "https://store.steampowered.com/app/962130/?l=english&cc=us",
+      "releaseDate": "Sep 27, 2022",
+      "categories": [
+        "Single-player",
+        "Multi-player",
+        "Co-op",
+        "Online Co-op",
+        "Full controller support",
+        "Steam Trading Cards",
+        "Steam Cloud",
+        "Remote Play on Tablet",
+        "Family Sharing"
+      ],
+      "steamTags": [],
+      "basePriceUSD": 39.99,
+      "priceAtSampleUSD": 39.99,
+      "discountPctAtSample": 0,
+      "reviewTotal": 84517,
+      "positivePct": 89.3,
+      "recentLabel": null,
+      "ccuAtSample": 2394,
+      "ownersRange": "2,000,000 .. 5,000,000",
+      "playerTextEvidence": [
+        "You can face the backyard alone or together, online, with up to three friends."
+      ],
+      "oneLiner": "The world is a vast, beautiful and dangerous place – especially when you have been shrunk to the size of an ant. Can you thrive alongside the hordes of giant insects, fighting to survive the perils of the backyard?",
+      "unavailable": [
+        "Steam 标签",
+        "近期评测标签",
+        "峰值在线",
+        "销量/愿望单/分区数据"
+      ],
+      "sources": [
+        "https://store.steampowered.com/api/appdetails?appids=962130&cc=us&l=english",
+        "https://steamspy.com/api.php?request=appdetails&appid=962130",
+        "https://store.steampowered.com/app/962130/?l=english&cc=us"
+      ]
+    },
+    {
+      "appid": 768200,
+      "name": "Smalland: Survive the Wilds",
+      "storeUrl": "https://store.steampowered.com/app/768200/?l=english&cc=us",
+      "releaseDate": "Feb 15, 2024",
+      "categories": [
+        "Single-player",
+        "Multi-player",
+        "Co-op",
+        "Online Co-op",
+        "Steam Achievements",
+        "Full controller support",
+        "Family Sharing"
+      ],
+      "steamTags": [],
+      "basePriceUSD": 34.99,
+      "priceAtSampleUSD": 34.99,
+      "discountPctAtSample": 0,
+      "reviewTotal": 8439,
+      "positivePct": 82.8,
+      "recentLabel": null,
+      "ccuAtSample": 338,
+      "ownersRange": "200,000 .. 500,000",
+      "playerTextEvidence": [
+        "Survive together Play alongside friends with support for up to 10 players in multiplayer."
+      ],
+      "oneLiner": "Experience a big adventure on a tiny scale! Enjoy multiplayer survival in a vast, hazardous world. Preparation is key when you're this small & at the bottom of the food chain. Craft weapons & armour, tame & ride creatures, build encampments & explore a strange new land.",
+      "unavailable": [
+        "Steam 标签",
+        "近期评测标签",
+        "峰值在线",
+        "销量/愿望单/分区数据"
+      ],
+      "sources": [
+        "https://store.steampowered.com/api/appdetails?appids=768200&cc=us&l=english",
+        "https://steamspy.com/api.php?request=appdetails&appid=768200",
+        "https://store.steampowered.com/app/768200/?l=english&cc=us"
+      ]
+    },
+    {
+      "appid": 1211020,
+      "name": "Wobbly Life",
+      "storeUrl": "https://store.steampowered.com/app/1211020/?l=english&cc=us",
+      "releaseDate": "Sep 18, 2025",
+      "categories": [
+        "Single-player",
+        "Multi-player",
+        "Co-op",
+        "Online Co-op",
+        "Shared/Split Screen Co-op",
+        "Shared/Split Screen",
+        "Steam Achievements",
+        "Full controller support",
+        "Steam Trading Cards",
+        "Steam Workshop",
+        "DualShock Controller Support",
+        "DualSense Controller Support",
+        "Steam Cloud",
+        "Remote Play on TV",
+        "Family Sharing"
+      ],
+      "steamTags": [],
+      "basePriceUSD": 24.99,
+      "priceAtSampleUSD": 16.24,
+      "discountPctAtSample": 35,
+      "reviewTotal": 26940,
+      "positivePct": 97,
+      "recentLabel": null,
+      "ccuAtSample": 625,
+      "ownersRange": "1,000,000 .. 2,000,000",
+      "playerTextEvidence": [
+        "1-4 players Online and Local split-screen co-op"
+      ],
+      "oneLiner": "Wobbly Life is a vibrant open-world physics sandbox. Play with your friends online or in local co-op, with exciting jobs, mini games and wacky story missions. Earn cash to spend in the world on clothes, vehicles and houses. There is a whole Wobbly World out there to explore!",
+      "unavailable": [
+        "Steam 标签",
+        "近期评测标签",
+        "峰值在线",
+        "销量/愿望单/分区数据"
+      ],
+      "sources": [
+        "https://store.steampowered.com/api/appdetails?appids=1211020&cc=us&l=english",
+        "https://steamspy.com/api.php?request=appdetails&appid=1211020",
+        "https://store.steampowered.com/app/1211020/?l=english&cc=us"
+      ]
+    },
+    {
+      "appid": 572890,
+      "name": "Pikuniku",
+      "storeUrl": "https://store.steampowered.com/app/572890/?l=english&cc=us",
+      "releaseDate": "Jan 24, 2019",
+      "categories": [
+        "Single-player",
+        "Multi-player",
+        "PvP",
+        "Shared/Split Screen PvP",
+        "Co-op",
+        "Shared/Split Screen Co-op",
+        "Shared/Split Screen",
+        "Steam Achievements",
+        "Steam Trading Cards",
+        "Partial Controller Support",
+        "Steam Cloud",
+        "Stats",
+        "Remote Play on Phone",
+        "Remote Play on Tablet",
+        "Remote Play Together",
+        "Family Sharing"
+      ],
+      "steamTags": [],
+      "basePriceUSD": 12.99,
+      "priceAtSampleUSD": 12.99,
+      "discountPctAtSample": 0,
+      "reviewTotal": 10001,
+      "positivePct": 95.8,
+      "recentLabel": null,
+      "ccuAtSample": 48,
+      "ownersRange": "500,000 .. 1,000,000",
+      "playerTextEvidence": [],
+      "oneLiner": "Pikuniku is an absurdly wonderful puzzle-exploration game that takes place in a strange but playful world where not everything is as happy as it seems. Help peculiar characters overcome struggles, uncover a deep state conspiracy, and start a little revolution in this delightful dystopian adventure!",
+      "unavailable": [
+        "Steam 标签",
+        "近期评测标签",
+        "峰值在线",
+        "销量/愿望单/分区数据"
+      ],
+      "sources": [
+        "https://store.steampowered.com/api/appdetails?appids=572890&cc=us&l=english",
+        "https://steamspy.com/api.php?request=appdetails&appid=572890",
+        "https://store.steampowered.com/app/572890/?l=english&cc=us"
+      ]
+    },
+    {
+      "appid": 972660,
+      "name": "Spiritfarer®: Farewell Edition",
+      "storeUrl": "https://store.steampowered.com/app/972660/?l=english&cc=us",
+      "releaseDate": "Aug 18, 2020",
+      "categories": [
+        "Single-player",
+        "Multi-player",
+        "Co-op",
+        "Shared/Split Screen Co-op",
+        "Steam Achievements",
+        "Full controller support",
+        "Steam Trading Cards",
+        "Steam Cloud",
+        "Remote Play on Phone",
+        "Remote Play on Tablet",
+        "Remote Play on TV",
+        "Remote Play Together",
+        "Family Sharing"
+      ],
+      "steamTags": [],
+      "basePriceUSD": 29.99,
+      "priceAtSampleUSD": 2.99,
+      "discountPctAtSample": 90,
+      "reviewTotal": 46417,
+      "positivePct": 95.2,
+      "recentLabel": null,
+      "ccuAtSample": 702,
+      "ownersRange": "1,000,000 .. 2,000,000",
+      "playerTextEvidence": [
+        "Join the adventure as Daffodil the cat, in two-player cooperative play."
+      ],
+      "oneLiner": "Spiritfarer® is a cozy management game about dying. As ferrymaster to the deceased, build a boat to explore the world, care for your spirit friends, and release them into the afterlife. The Spiritfarer Farewell Edition includes the heartwarming base game and three major content updates.",
+      "unavailable": [
+        "Steam 标签",
+        "近期评测标签",
+        "峰值在线",
+        "销量/愿望单/分区数据"
+      ],
+      "sources": [
+        "https://store.steampowered.com/api/appdetails?appids=972660&cc=us&l=english",
+        "https://steamspy.com/api.php?request=appdetails&appid=972660",
+        "https://store.steampowered.com/app/972660/?l=english&cc=us"
+      ]
+    },
+    {
+      "appid": 1123450,
+      "name": "Chicory: A Colorful Tale",
+      "storeUrl": "https://store.steampowered.com/app/1123450/?l=english&cc=us",
+      "releaseDate": "Jun 10, 2021",
+      "categories": [
+        "Single-player",
+        "Multi-player",
+        "Co-op",
+        "Shared/Split Screen Co-op",
+        "Shared/Split Screen",
+        "Steam Achievements",
+        "Full controller support",
+        "Steam Cloud",
+        "Remote Play Together",
+        "Family Sharing"
+      ],
+      "steamTags": [],
+      "basePriceUSD": 19.99,
+      "priceAtSampleUSD": 9.99,
+      "discountPctAtSample": 50,
+      "reviewTotal": 3420,
+      "positivePct": 97.7,
+      "recentLabel": null,
+      "ccuAtSample": 9,
+      "ownersRange": "200,000 .. 500,000",
+      "playerTextEvidence": [],
+      "oneLiner": "A top-down adventure game in a coloring book world full of vibrant characters. Use painting powers to explore, solve puzzles, make friends, and draw on anything! From creators on Wandersong + Celeste.",
+      "unavailable": [
+        "Steam 标签",
+        "近期评测标签",
+        "峰值在线",
+        "销量/愿望单/分区数据"
+      ],
+      "sources": [
+        "https://store.steampowered.com/api/appdetails?appids=1123450&cc=us&l=english",
+        "https://steamspy.com/api.php?request=appdetails&appid=1123450",
+        "https://store.steampowered.com/app/1123450/?l=english&cc=us"
+      ]
+    },
+    {
+      "appid": 1202900,
+      "name": "Assemble with Care",
+      "storeUrl": "https://store.steampowered.com/app/1202900/?l=english&cc=us",
+      "releaseDate": "Mar 26, 2020",
+      "categories": [
+        "Single-player",
+        "Steam Achievements",
+        "Camera Comfort",
+        "Color Alternatives",
+        "Custom Volume Controls",
+        "Mouse Only Option",
+        "Playable without Timed Input",
+        "Save Anytime",
+        "Steam Cloud",
+        "Family Sharing"
+      ],
+      "steamTags": [],
+      "basePriceUSD": 7.99,
+      "priceAtSampleUSD": 1.99,
+      "discountPctAtSample": 75,
+      "reviewTotal": 8690,
+      "positivePct": 90.8,
+      "recentLabel": null,
+      "ccuAtSample": 12,
+      "ownersRange": "200,000 .. 500,000",
+      "playerTextEvidence": [],
+      "oneLiner": "Repair old-school objects in this cozy puzzle game. Join antique-restorer Maria, as she arrives in the sun-soaked town of Bellariva and set out on a journey of helping the townsfolk reconnect.",
+      "unavailable": [
+        "Steam 标签",
+        "近期评测标签",
+        "峰值在线",
+        "销量/愿望单/分区数据"
+      ],
+      "sources": [
+        "https://store.steampowered.com/api/appdetails?appids=1202900&cc=us&l=english",
+        "https://steamspy.com/api.php?request=appdetails&appid=1202900",
+        "https://store.steampowered.com/app/1202900/?l=english&cc=us"
+      ]
+    },
+    {
+      "appid": 1177980,
+      "name": "Little Kitty, Big City",
+      "storeUrl": "https://store.steampowered.com/app/1177980/?l=english&cc=us",
+      "releaseDate": "May 9, 2024",
+      "categories": [
+        "Single-player",
+        "Steam Achievements",
+        "Full controller support",
+        "Steam Trading Cards",
+        "Adjustable Text Size",
+        "Camera Comfort",
+        "Custom Volume Controls",
+        "Gamepad Recommended",
+        "Playable without Timed Input",
+        "DualShock Controller Support",
+        "DualShock Controller Support",
+        "DualSense Controller Support",
+        "DualSense Controller Support",
+        "Save Anytime",
+        "Stereo Sound",
+        "Surround Sound",
+        "Steam Cloud",
+        "Family Sharing"
+      ],
+      "steamTags": [],
+      "basePriceUSD": 24.99,
+      "priceAtSampleUSD": 24.99,
+      "discountPctAtSample": 0,
+      "reviewTotal": 10785,
+      "positivePct": 96.5,
+      "recentLabel": null,
+      "ccuAtSample": 74,
+      "ownersRange": "200,000 .. 500,000",
+      "playerTextEvidence": [],
+      "oneLiner": "You're a curious little kitty with a big personality, on an adventure to find your way back home. Explore the city, make new friends with stray animals, wear delightful hats, and leave more than a little chaos in your wake. After all, isn't that what cats do best?",
+      "unavailable": [
+        "Steam 标签",
+        "近期评测标签",
+        "峰值在线",
+        "销量/愿望单/分区数据"
+      ],
+      "sources": [
+        "https://store.steampowered.com/api/appdetails?appids=1177980&cc=us&l=english",
+        "https://steamspy.com/api.php?request=appdetails&appid=1177980",
+        "https://store.steampowered.com/app/1177980/?l=english&cc=us"
+      ]
+    },
+    {
+      "appid": 285900,
+      "name": "Gang Beasts",
+      "storeUrl": "https://store.steampowered.com/app/285900/?l=english&cc=us",
+      "releaseDate": "Dec 12, 2017",
+      "categories": [
+        "Multi-player",
+        "PvP",
+        "Online PvP",
+        "Shared/Split Screen PvP",
+        "Shared/Split Screen",
+        "Steam Achievements",
+        "Full controller support",
+        "Remote Play on Phone",
+        "Remote Play on Tablet",
+        "Remote Play on TV",
+        "Remote Play Together",
+        "Family Sharing"
+      ],
+      "steamTags": [],
+      "basePriceUSD": 19.99,
+      "priceAtSampleUSD": 19.99,
+      "discountPctAtSample": 0,
+      "reviewTotal": 60270,
+      "positivePct": 85.1,
+      "recentLabel": null,
+      "ccuAtSample": 376,
+      "ownersRange": "2,000,000 .. 5,000,000",
+      "playerTextEvidence": [],
+      "oneLiner": "Gang Beasts is a silly multiplayer party game with surly gelatinous characters, brutal slapstick fight sequences, and absurd hazardous environments, set in the mean streets of Beef City.",
+      "unavailable": [
+        "Steam 标签",
+        "近期评测标签",
+        "峰值在线",
+        "销量/愿望单/分区数据"
+      ],
+      "sources": [
+        "https://store.steampowered.com/api/appdetails?appids=285900&cc=us&l=english",
+        "https://steamspy.com/api.php?request=appdetails&appid=285900",
+        "https://store.steampowered.com/app/285900/?l=english&cc=us"
+      ]
+    },
+    {
+      "appid": 312530,
+      "name": "Duck Game",
+      "storeUrl": "https://store.steampowered.com/app/312530/?l=english&cc=us",
+      "releaseDate": "Jun 4, 2015",
+      "categories": [
+        "Single-player",
+        "Multi-player",
+        "PvP",
+        "Online PvP",
+        "LAN PvP",
+        "Shared/Split Screen PvP",
+        "Shared/Split Screen",
+        "Steam Achievements",
+        "Full controller support",
+        "Steam Trading Cards",
+        "Steam Workshop",
+        "Steam Cloud",
+        "Includes level editor",
+        "Remote Play on Phone",
+        "Remote Play on Tablet",
+        "Remote Play on TV",
+        "Remote Play Together",
+        "Family Sharing"
+      ],
+      "steamTags": [],
+      "basePriceUSD": 12.99,
+      "priceAtSampleUSD": 12.99,
+      "discountPctAtSample": 0,
+      "reviewTotal": 38476,
+      "positivePct": 96.6,
+      "recentLabel": null,
+      "ccuAtSample": 112,
+      "ownersRange": "2,000,000 .. 5,000,000",
+      "playerTextEvidence": [
+        "2 to 8 PLAYERS + 4 Spectators in either Local Multiplayer Couch Combat, or Online Play!"
+      ],
+      "oneLiner": "Enter the futuristic year of 1984, an age where ducks run wild in a frantic battle for glory. Blast your friends with Shotguns, Net Guns, Mind Control Rays, Saxophones, Magnet Guns, and much, much more. This is DUCK GAME. Don't blink.",
+      "unavailable": [
+        "Steam 标签",
+        "近期评测标签",
+        "峰值在线",
+        "销量/愿望单/分区数据"
+      ],
+      "sources": [
+        "https://store.steampowered.com/api/appdetails?appids=312530&cc=us&l=english",
+        "https://steamspy.com/api.php?request=appdetails&appid=312530",
+        "https://store.steampowered.com/app/312530/?l=english&cc=us"
+      ]
+    },
+    {
+      "appid": 674940,
+      "name": "Stick Fight: The Game",
+      "storeUrl": "https://store.steampowered.com/app/674940/?l=english&cc=us",
+      "releaseDate": "Sep 28, 2017",
+      "categories": [
+        "Multi-player",
+        "PvP",
+        "Online PvP",
+        "Shared/Split Screen PvP",
+        "Shared/Split Screen",
+        "Partial Controller Support",
+        "Remote Play on Phone",
+        "Remote Play on Tablet",
+        "Remote Play Together",
+        "Family Sharing"
+      ],
+      "steamTags": [],
+      "basePriceUSD": 4.99,
+      "priceAtSampleUSD": 4.99,
+      "discountPctAtSample": 0,
+      "reviewTotal": 122658,
+      "positivePct": 93.5,
+      "recentLabel": null,
+      "ccuAtSample": 265,
+      "ownersRange": "2,000,000 .. 5,000,000",
+      "playerTextEvidence": [
+        "2 to 4 PLAYERS in either Local or Online Multiplayer (NO SINGLE PLAYER MODE)"
+      ],
+      "oneLiner": "Stick Fight is a physics-based couch/online fighting game where you battle it out as the iconic stick figures from the golden age of the internet.",
+      "unavailable": [
+        "Steam 标签",
+        "近期评测标签",
+        "峰值在线",
+        "销量/愿望单/分区数据"
+      ],
+      "sources": [
+        "https://store.steampowered.com/api/appdetails?appids=674940&cc=us&l=english",
+        "https://steamspy.com/api.php?request=appdetails&appid=674940",
+        "https://store.steampowered.com/app/674940/?l=english&cc=us"
+      ]
+    }
+  ]
+}

@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-11-04T15:17:09.877Z",
+  "generatedAt": "2026-11-04T15:41:00.802Z",
   "target": "index.html",
   "entries": {
-    "total": 240,
+    "total": 262,
     "own": 224,
-    "market": 16
+    "market": 38
   },
   "browser": "Chrome (playwright-core, headless)",
   "summary": {
-    "total": 43,
-    "passed": 43,
+    "total": 61,
+    "passed": 61,
     "failed": 0
   },
   "requests": {
@@ -21,24 +21,24 @@
   "pageErrors": [],
   "results": [
     {
-      "name": "条目数：列表渲染 240 条（自有 224 + 市面 16）",
+      "name": "条目数：列表渲染 262 条（自有 224 + 市面 38）",
       "ok": true,
-      "detail": "DOM 240 / 数据 240"
+      "detail": "DOM 262 / 数据 262"
     },
     {
-      "name": "头部统计：收录 240 / 自有 224 · 市面 16",
+      "name": "头部统计：收录 262 / 自有 224 · 市面 38",
       "ok": true,
-      "detail": "收录 240 条 自有 224 · 市面 16 玩法族 23 类 市面覆盖 12 类 真人试玩 0"
+      "detail": "收录 262 条 自有 224 · 市面 38 玩法族 23 类 市面覆盖 23/23 类 仍为空 0 族 真人试玩 0"
     },
     {
-      "name": "头部统计：市面覆盖 12 类",
+      "name": "头部统计：市面覆盖 23/23 类 · 仍为空 0 族",
       "ok": true,
-      "detail": "收录 240 条 自有 224 · 市面 16 玩法族 23 类 市面覆盖 12 类 真人试玩 0"
+      "detail": "收录 262 条 自有 224 · 市面 38 玩法族 23 类 市面覆盖 23/23 类 仍为空 0 族 真人试玩 0"
     },
     {
-      "name": "筛选：市面对照 16 条",
+      "name": "筛选：市面对照 38 条",
       "ok": true,
-      "detail": "DOM 16 / market 卡片 16 / 数据 16"
+      "detail": "DOM 38 / market 卡片 38 / 数据 38"
     },
     {
       "name": "筛选：自有创意 224 条",
@@ -46,7 +46,7 @@
       "detail": "DOM 224 / 数据 224"
     },
     {
-      "name": "重置来源筛选回到 240",
+      "name": "重置来源筛选回到 262",
       "ok": true,
       "detail": "已回到全部"
     },
@@ -86,19 +86,84 @@
       "detail": "市面侧有 M01"
     },
     {
-      "name": "对照行 F04 标为「本样本内未见对照」",
+      "name": "对照行 F04 扩样本后标为「本样本内已有」",
       "ok": true,
-      "detail": "tag.none 存在"
+      "detail": "tag.has 存在"
     },
     {
-      "name": "F04 左栏仍有自有条目",
+      "name": "F04 右栏含 Hidden in Plain Sight 与 Catch Me!",
       "ok": true,
-      "detail": "mini 6"
+      "detail": "新增 M17/M18"
     },
     {
-      "name": "未归类行含 Castle Crashers",
+      "name": "扩样本后 23 族都有市面对照",
       "ok": true,
-      "detail": "M10 在未归类行"
+      "detail": "23 行 tag.has"
+    },
+    {
+      "name": "原空族 F07 已有对照",
+      "ok": true,
+      "detail": "tag.has"
+    },
+    {
+      "name": "原空族 F08 已有对照",
+      "ok": true,
+      "detail": "tag.has"
+    },
+    {
+      "name": "原空族 S05 已有对照",
+      "ok": true,
+      "detail": "tag.has"
+    },
+    {
+      "name": "原空族 S06 已有对照",
+      "ok": true,
+      "detail": "tag.has"
+    },
+    {
+      "name": "原空族 S07 已有对照",
+      "ok": true,
+      "detail": "tag.has"
+    },
+    {
+      "name": "原空族 G1 已有对照",
+      "ok": true,
+      "detail": "tag.has"
+    },
+    {
+      "name": "原空族 G2 已有对照",
+      "ok": true,
+      "detail": "tag.has"
+    },
+    {
+      "name": "原空族 G3 已有对照",
+      "ok": true,
+      "detail": "tag.has"
+    },
+    {
+      "name": "原空族 G4 已有对照",
+      "ok": true,
+      "detail": "tag.has"
+    },
+    {
+      "name": "原空族 G5 已有对照",
+      "ok": true,
+      "detail": "tag.has"
+    },
+    {
+      "name": "对照视图说明扩样本覆盖数与仍空族数",
+      "ok": true,
+      "detail": "读法：按玩法族并列。左边是本库自有条目，右边是本样本 38 款 Steam 采样里映射到该族的游戏。徽标「本样本内已有 / 未见」只描述这 38 款，不代表市场全貌；本视图不评分、不排序、不判断谁更好。 扩样本后：23/23 族有市面对照，0 族仍为空。仍为空才算「样本内反复未见」，但 0 族为空只是定向补齐的结果，依然不是市场空白。搜索与玩法族筛选生效；来源筛选、人数/价格等下拉只作用于列表视图。"
+    },
+    {
+      "name": "未归类行含 4 款战斗/对抗游戏",
+      "ok": true,
+      "detail": "M10/M36/M37/M38"
+    },
+    {
+      "name": "未归类行标注体系缺口与不新增族",
+      "ok": true,
+      "detail": "缺口说明在行内"
     },
     {
       "name": "对照视图 + 玩法族 F05 只剩 1 行",
@@ -139,6 +204,31 @@
       "name": "市面详情有 Steam 商店页链接",
       "ok": true,
       "detail": "appid 1509960"
+    },
+    {
+      "name": "扩样本详情 M27 Octodad 有 2-4 人官方原文与 S07 映射",
+      "ok": true,
+      "detail": "×"
+    },
+    {
+      "name": "扩样本详情 M27 Steam 链接正确",
+      "ok": true,
+      "detail": "appid 224480"
+    },
+    {
+      "name": "扩样本详情 M25 Viscera 人数未获取且映射 S06",
+      "ok": true,
+      "detail": "M25 缺项按未获取"
+    },
+    {
+      "name": "扩样本详情 M25 不做适配分评分",
+      "ok": true,
+      "detail": "无评分"
+    },
+    {
+      "name": "扩样本详情 M17 HIPS 照抄 2-8 players 官方原文",
+      "ok": true,
+      "detail": "M17 原文在"
     },
     {
       "name": "搜索「PICO PARK」命中 2 款市面游戏",

@@ -55,16 +55,17 @@ check(`条目数：列表渲染 ${total} 条（自有 ${own.length} + 市面 ${m
   cardCount === total, `DOM ${cardCount} / 数据 ${total}`);
 
 const statsText = (await page.locator('#stats').innerText()).replace(/\s+/g, ' ');
-check('头部统计：收录 240 / 自有 224 · 市面 16',
-  new RegExp(`收录 ${total} 条`).test(statsText) && /自有 224 · 市面 16/.test(statsText), statsText.slice(0, 120));
-check('头部统计：市面覆盖 12 类', /市面覆盖 12 类/.test(statsText), statsText.slice(0, 160));
+check('头部统计：收录 262 / 自有 224 · 市面 38',
+  new RegExp(`收录 ${total} 条`).test(statsText) && new RegExp(`自有 ${own.length} · 市面 ${market.entries.length}`).test(statsText), statsText.slice(0, 140));
+check('头部统计：市面覆盖 23/23 类 · 仍为空 0 族',
+  new RegExp(`市面覆盖 ${market.meta.coveredFamilies}/${market.meta.totalFamilies} 类`).test(statsText) && new RegExp(`仍为空 ${market.meta.uncoveredFamilies.length} 族`).test(statsText), statsText.slice(0, 180));
 
 /* ---------- 2. 两类筛选 ---------- */
 await page.click('.chip[data-origin="market"]');
 await page.waitForTimeout(60);
 const marketCards = await page.locator('#grid .card').count();
 const marketOnly = await page.locator('#grid .card[data-origin="market"]').count();
-check('筛选：市面对照 16 条', marketCards === market.entries.length && marketOnly === market.entries.length,
+check(`筛选：市面对照 ${market.entries.length} 条`, marketCards === market.entries.length && marketOnly === market.entries.length,
   `DOM ${marketCards} / market 卡片 ${marketOnly} / 数据 ${market.entries.length}`);
 
 await page.click('.chip[data-origin="own"]');
@@ -74,7 +75,7 @@ check('筛选：自有创意 224 条', ownCards === own.length, `DOM ${ownCards}
 
 await page.click('#reset');
 await page.waitForTimeout(60);
-check('重置来源筛选回到 240', (await page.locator('#grid .card').count()) === total, '已回到全部');
+check('重置来源筛选回到 262', (await page.locator('#grid .card').count()) === total, '已回到全部');
 
 /* ---------- 3. 玩法族筛选（自有 + 市面同族） ---------- */
 const f01All = countBy((e) => (e.playKeys || [e.playKey]).includes('F01'));
@@ -105,10 +106,18 @@ const rowF05 = page.locator('#compare .crow[data-row="F05"]');
 check('对照行 F05 标为「本样本内已有」', (await rowF05.locator('.tag.has').count()) === 1, 'tag.has 存在');
 check('对照行 F05 右栏含 Overcooked! 2', (await rowF05.innerText()).includes('Overcooked! 2'), '市面侧有 M01');
 const rowF04 = page.locator('#compare .crow[data-row="F04"]');
-check('对照行 F04 标为「本样本内未见对照」', (await rowF04.locator('.tag.none').count()) === 1, 'tag.none 存在');
-check('F04 左栏仍有自有条目', (await rowF04.locator('.mini').count()) > 0, `mini ${await rowF04.locator('.mini').count()}`);
+check('对照行 F04 扩样本后标为「本样本内已有」', (await rowF04.locator('.tag.has').count()) === 1, 'tag.has 存在');
+check('F04 右栏含 Hidden in Plain Sight 与 Catch Me!', (await rowF04.innerText()).includes('Hidden in Plain Sight') && (await rowF04.innerText()).includes('Catch Me!'), '新增 M17/M18');
+check('扩样本后 23 族都有市面对照', (await page.locator('#compare .crow:not([data-row="UNMAPPED"]) .tag.has').count()) === 23, '23 行 tag.has');
+for (const k of ['F07', 'F08', 'S05', 'S06', 'S07', 'G1', 'G2', 'G3', 'G4', 'G5']) {
+  check(`原空族 ${k} 已有对照`, (await page.locator(`#compare .crow[data-row="${k}"] .tag.has`).count()) === 1, 'tag.has');
+}
+const lead = await page.locator('#compare .compare-lead').innerText();
+check('对照视图说明扩样本覆盖数与仍空族数', /23\/23/.test(lead) && /0 族仍为空/.test(lead) && lead.includes('定向补齐'), lead.replace(/\s+/g, ' ').slice(0, 220));
 const unmapped = page.locator('#compare .crow[data-row="UNMAPPED"]');
-check('未归类行含 Castle Crashers', (await unmapped.innerText()).includes('Castle Crashers'), 'M10 在未归类行');
+const unmappedText = await unmapped.innerText();
+check('未归类行含 4 款战斗/对抗游戏', ['Castle Crashers', 'Gang Beasts', 'Duck Game', 'Stick Fight'].every((x) => unmappedText.includes(x)), 'M10/M36/M37/M38');
+check('未归类行标注体系缺口与不新增族', unmappedText.includes('体系缺口') && unmappedText.includes('4 款'), '缺口说明在行内');
 
 /* 对照视图内玩法族筛选 */
 await page.click('.chip[data-play="F05"]');
@@ -134,6 +143,32 @@ check('市面详情有官方人数原文与 E3', m3.includes('官方支持人数
 check('市面详情有映射判据与谱系关联', m3.includes('映射判据') && m3.includes('机制谱系关联'), '两段都在');
 check('市面详情不做适配分评分', !m3.includes('适配分'), '无适配分');
 check('市面详情有 Steam 商店页链接', (await page.locator('#modalCard a.btn-link').getAttribute('href')) === 'https://store.steampowered.com/app/1509960/', 'appid 1509960');
+await page.keyboard.press('Escape');
+await page.waitForTimeout(80);
+
+/* 扩样本条目详情：人数原文、映射族、缺项不推断 */
+await page.fill('#q', '');
+await page.waitForTimeout(100);
+await page.locator('#compare .mini[data-id="M27"]').first().click();
+await page.waitForSelector('.modal.open');
+const m27 = await page.locator('#modalCard').innerText();
+check('扩样本详情 M27 Octodad 有 2-4 人官方原文与 S07 映射', m27.includes('2 to 4 players') && m27.includes('S07') && m27.includes('共同伪装'), m27.split('\n')[0]);
+check('扩样本详情 M27 Steam 链接正确', (await page.locator('#modalCard a.btn-link').getAttribute('href')) === 'https://store.steampowered.com/app/224480/', 'appid 224480');
+await page.keyboard.press('Escape');
+await page.waitForTimeout(80);
+
+await page.locator('#compare .mini[data-id="M25"]').first().click();
+await page.waitForSelector('.modal.open');
+const m25 = await page.locator('#modalCard').innerText();
+check('扩样本详情 M25 Viscera 人数未获取且映射 S06', m25.includes('官方支持人数') && m25.includes('未获取') && m25.includes('S06') && m25.includes('把世界修好'), 'M25 缺项按未获取');
+check('扩样本详情 M25 不做适配分评分', !m25.includes('适配分'), '无评分');
+await page.keyboard.press('Escape');
+await page.waitForTimeout(80);
+
+await page.locator('#compare .mini[data-id="M17"]').first().click();
+await page.waitForSelector('.modal.open');
+const m17 = await page.locator('#modalCard').innerText();
+check('扩样本详情 M17 HIPS 照抄 2-8 players 官方原文', m17.includes('2-8 players') && m17.includes('F04') && m17.includes('追与藏'), 'M17 原文在');
 await page.keyboard.press('Escape');
 await page.waitForTimeout(80);
 

@@ -1,41 +1,51 @@
 {
   "meta": {
-    "count": 16,
-    "sampledAt": "2026-11-04T07:18:09.288Z",
-    "source": "research/kids-fantasy/data/steam-demand-2026-11-04.json",
-    "method": "Steam storesearch + appdetails + SteamSpy appdetails + 商店页评测摘要 + Steam 社区近期评测文本抽样",
+    "count": 38,
+    "sampledAt": "2026-11-04T15:32:50.049Z",
+    "firstSampledAt": "2026-11-04T07:18:09.288Z",
+    "source": "两批：research/kids-fantasy/data/steam-demand-2026-11-04.json（M01–M16）+ data/steam-expanded-2026-11-04.json（M17–M38）",
+    "method": "Steam storesearch + appdetails + SteamSpy appdetails + 商店页评测摘要 + Steam 社区近期评测文本抽样；扩样本：Steam appdetails（名称 / 发行日期 / 类目 / 初始价 / 采样价 / 商店页官方文案）+ SteamSpy appdetails（评测数 / 好评率 / 采样时在线 / 拥有人数区间）",
     "caveats": [
       "reviewTotal / positivePct 来自 SteamSpy 全语言合计，可能与 Steam 商店页显示的英文子集不同",
       "ccuAtSample 是采样时刻在线人数，不是历史峰值；峰值未获取",
       "maxPlayers 只在商店页官方文字可确认时填写，其余为 null",
       "review 文本样本为近期的英文 30 条 + 简中 10 条/款，关键词计数是粗代理，不是情绪编码",
       "近期评测为 Steam 商店页“近期”口径，未单独设置 day_range",
-      "Overcooked! 2 的 Steam API 初始价返回 48.49 USD，与常见 24.99 认知不符，已标注异常"
+      "Overcooked! 2 的 Steam API 初始价返回 48.49 USD，与常见 24.99 认知不符，已标注异常",
+      "本轮 22 款是为补齐 11 个空族做的定向采样，不是随机抽样，不能据此推断市场空白。",
+      "reviewTotal / positivePct 来自 SteamSpy 全语言合计，可能与 Steam 商店页英文子集不同。",
+      "ccuAtSample 是采样时刻在线人数，不是历史峰值。",
+      "价格是采样时点值，不是历史最低价；折扣与初始价分开记录。",
+      "人数只认官方原文；原文没有人数就写「未获取」，不按类目反推人数。",
+      "玩法族映射是编者判据，不代表厂商分类。"
     ],
-    "coveredFamilies": 12,
+    "coveredFamilies": 23,
     "totalFamilies": 23,
-    "uncoveredFamilies": [
-      "F04",
-      "F07",
-      "F08",
-      "S05",
-      "S06",
-      "S07",
-      "G1",
-      "G2",
-      "G3",
-      "G4",
-      "G5"
-    ],
+    "uncoveredFamilies": [],
     "unclassified": [
-      "M10 Castle Crashers®"
+      "M10 Castle Crashers®",
+      "M36 Gang Beasts",
+      "M37 Duck Game",
+      "M38 Stick Fight: The Game"
     ],
+    "systemGap": {
+      "conclusion": "新样本里又有 3 款落不进 23 族（连同首轮 Castle Crashers 共 4 款），核心都是战斗 / 对抗；分类体系缺的是「战斗 / 对抗」这一整类。",
+      "evidence": [
+        "M10 Castle Crashers®",
+        "M36 Gang Beasts",
+        "M37 Duck Game",
+        "M38 Stick Fight: The Game"
+      ],
+      "decision": "本轮不新增族；只记入 README 的体系缺口一节。"
+    },
     "boundaries": [
-      "价格、评测数、在线人数都是 2026-11-04T07:18Z 前后采样时点值，不是历史峰值或历史最低价。",
+      "价格、评测数、在线人数都是采样时点值（首轮 2026-11-04T07:18:09.288Z；扩样本 2026-11-04T15:32:50.049Z），不是历史峰值或历史最低价。",
       "评测数为 SteamSpy 全语言合计，与商店页英文子集口径可能不同。",
-      "人数只认官方原文；原文没写「未获取」，不按标签或类目反推。",
+      "人数只认官方原文；原文没写「未获取」，不按标签或类目反推人数。",
       "玩法族映射是编者判据，不代表厂商或发行商分类。",
-      "「本样本内未见同族」只说明这 16 款里没有，不等于市场上没人做。"
+      "23/23 族有对照是「按空族定向补齐」的结果，不是随机抽样或市场统计。",
+      "本样本内仍为空 0 族只表示每族至少找到 1 款可核实条目；「本样本内反复未见」才是较弱信号，但仍不等于市场空白。",
+      "未归类 4 款全部以战斗 / 对抗为核心，说明分类体系缺这一整类；本轮不新增族。"
     ]
   },
   "entries": [
@@ -1907,6 +1917,2251 @@
           "https://steamcommunity.com/app/471810/reviews/?browsefilter=mostrecent&l=english"
         ],
         "meta": "Steam storesearch + appdetails + SteamSpy appdetails + 商店页评测摘要 + Steam 社区近期评测文本抽样"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M17",
+      "origin": "market",
+      "title": "Hidden in Plain Sight",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "F04",
+      "play": "追与藏",
+      "playKeys": [
+        "F04"
+      ],
+      "playDesc": "追逐、躲藏、伪装、追踪；核心是「看不看得见」。",
+      "oneLiner": "Hidden in Plain Sight is a local-multiplayer stealth party game. Blend into the crowd of AI characters and eliminate the other players before they eliminate you!",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "2P",
+          "3P",
+          "4P"
+        ],
+        "note": "官方原文：local multiplayer (2-8 players)；本库人数档只到 4P",
+        "officialText": "Hidden in Plain Sight is a set of local multiplayer (2-8 players) game modes that share a common theme: trying to accomplish goals without drawing attention to yourself.",
+        "maxPlayers": "8"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 5.99,
+        "sampled": 5.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 845,
+        "positivePct": 99.2,
+        "label": "未获取",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "在相同 NPC 人群中伪装、完成目标并找机会淘汰他人；核心是「看不看得见」，映射追与藏。",
+      "risk": "Steam 标签；近期评测标签；峰值在线；销量/愿望单/分区数据",
+      "lineage": "同族自有条目 12 条（I028 变色躲猫猫、I029 猫鼠换位、I030 老鹰护雏、I031 鱼群散开 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "I028",
+        "I029",
+        "I030",
+        "I031",
+        "I032",
+        "I033",
+        "I034",
+        "I035",
+        "I036",
+        "I100",
+        "I101",
+        "I102"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/303590/",
+      "releaseYear": "2014",
+      "releaseDate": "Jul 16, 2014",
+      "sampledAt": "2026-11-04T15:32:50.049Z",
+      "detail": {
+        "Steam 标签": "未获取",
+        "Steam 类目": "Multi-player、PvP、Shared/Split Screen PvP、Co-op、Shared/Split Screen Co-op、Shared/Split Screen、Full controller support、Remote Play on TV、Remote Play Together、Family Sharing",
+        "官方人数原文": "Hidden in Plain Sight is a set of local multiplayer (2-8 players) game modes that share a common theme: trying to accomplish goals without drawing attention to yourself.",
+        "官方标注上限": "8",
+        "初始价（USD）": "5.99",
+        "采样价（USD）": "5.99",
+        "采样折扣": "0%",
+        "评测数": "845",
+        "好评率": "99.2%",
+        "采样时在线": "2",
+        "拥有人数区间": "50,000 .. 100,000",
+        "采样时间": "2026-11-04T15:32:50.049Z"
+      },
+      "source": {
+        "file": "data/steam-expanded-2026-11-04.json",
+        "pointer": "#/results/0",
+        "urls": [
+          "https://store.steampowered.com/api/appdetails?appids=303590&cc=us&l=english",
+          "https://steamspy.com/api.php?request=appdetails&appid=303590",
+          "https://store.steampowered.com/app/303590/?l=english&cc=us"
+        ],
+        "meta": "Steam appdetails（名称 / 发行日期 / 类目 / 初始价 / 采样价 / 商店页官方文案）+ SteamSpy appdetails（评测数 / 好评率 / 采样时在线 / 拥有人数区间）"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M18",
+      "origin": "market",
+      "title": "Catch Me!",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "F04",
+      "play": "追与藏",
+      "playKeys": [
+        "F04"
+      ],
+      "playDesc": "追逐、躲藏、伪装、追踪；核心是「看不看得见」。",
+      "oneLiner": "Compete online against your friends and other players in this chaotic and fast paced 4-player game of tag! Race across different locations, jump through windows, electrocute the other players, or throw cats at them.",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "4P"
+        ],
+        "note": "官方原文：competitive online platformer for 4 players",
+        "officialText": "Catch Me! is a competitive online platformer for 4 players and the most action loaded game of tag you have ever played with your friends.",
+        "maxPlayers": "4"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（在线合作）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 1.99,
+        "sampled": 1.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 43,
+        "positivePct": 97.7,
+        "label": "未获取",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "4 人线上捉迷藏：一人跑、其他人追，核心是追逐与被看见，映射追与藏（对抗性较强）。",
+      "risk": "Steam 标签；近期评测标签；峰值在线；销量/愿望单/分区数据",
+      "lineage": "同族自有条目 12 条（I028 变色躲猫猫、I029 猫鼠换位、I030 老鹰护雏、I031 鱼群散开 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "I028",
+        "I029",
+        "I030",
+        "I031",
+        "I032",
+        "I033",
+        "I034",
+        "I035",
+        "I036",
+        "I100",
+        "I101",
+        "I102"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/1741160/",
+      "releaseYear": "2023",
+      "releaseDate": "Jan 24, 2023",
+      "sampledAt": "2026-11-04T15:32:50.049Z",
+      "detail": {
+        "Steam 标签": "未获取",
+        "Steam 类目": "Single-player、Multi-player、PvP、Online PvP、Co-op、Online Co-op、Steam Achievements、Full controller support、Family Sharing",
+        "官方人数原文": "Catch Me! is a competitive online platformer for 4 players and the most action loaded game of tag you have ever played with your friends.",
+        "官方标注上限": "4",
+        "初始价（USD）": "1.99",
+        "采样价（USD）": "1.99",
+        "采样折扣": "0%",
+        "评测数": "43",
+        "好评率": "97.7%",
+        "采样时在线": "0",
+        "拥有人数区间": "0 .. 20,000",
+        "采样时间": "2026-11-04T15:32:50.049Z"
+      },
+      "source": {
+        "file": "data/steam-expanded-2026-11-04.json",
+        "pointer": "#/results/1",
+        "urls": [
+          "https://store.steampowered.com/api/appdetails?appids=1741160&cc=us&l=english",
+          "https://steamspy.com/api.php?request=appdetails&appid=1741160",
+          "https://store.steampowered.com/app/1741160/?l=english&cc=us"
+        ],
+        "meta": "Steam appdetails（名称 / 发行日期 / 类目 / 初始价 / 采样价 / 商店页官方文案）+ SteamSpy appdetails（评测数 / 好评率 / 采样时在线 / 拥有人数区间）"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M19",
+      "origin": "market",
+      "title": "Drawful 2",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "F07",
+      "play": "演与猜",
+      "playKeys": [
+        "F07"
+      ],
+      "playDesc": "扮演、模仿、身份隐藏、猜认；核心是「你演得像不像」。",
+      "oneLiner": "For 3-8 players and an audience of thousands! Your phones or tablets are your controllers!",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "3P",
+          "4P"
+        ],
+        "note": "官方原文：For 3-8 players；本库人数档只到 4P",
+        "officialText": "For 3-8 players and an audience of thousands!",
+        "maxPlayers": "8"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（单人 / 平台信息见官方类目）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 9.99,
+        "sampled": 9.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 4019,
+        "positivePct": 74.2,
+        "label": "未获取",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "用画和描述让别人猜原词，猜与演是同一轮的核心，映射演与猜。",
+      "risk": "Steam 标签；近期评测标签；峰值在线；销量/愿望单/分区数据",
+      "lineage": "同族自有条目 12 条（I055 食物哑剧、I056 动物模仿秀、I057 谁在壳里、I058 尾巴是谁 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "I055",
+        "I056",
+        "I057",
+        "I058",
+        "I059",
+        "I060",
+        "I061",
+        "I062",
+        "I063",
+        "I109",
+        "I110",
+        "I111"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/442070/",
+      "releaseYear": "2016",
+      "releaseDate": "Jun 20, 2016",
+      "sampledAt": "2026-11-04T15:32:50.049Z",
+      "detail": {
+        "Steam 标签": "未获取",
+        "Steam 类目": "Multi-player、PvP、Shared/Split Screen PvP、Steam Achievements、Full controller support、Steam Cloud、Remote Play on Phone、Remote Play on Tablet、Remote Play on TV、Remote Play Together、Family Sharing",
+        "官方人数原文": "For 3-8 players and an audience of thousands!",
+        "官方标注上限": "8",
+        "初始价（USD）": "9.99",
+        "采样价（USD）": "9.99",
+        "采样折扣": "0%",
+        "评测数": "4019",
+        "好评率": "74.2%",
+        "采样时在线": "22",
+        "拥有人数区间": "500,000 .. 1,000,000",
+        "采样时间": "2026-11-04T15:32:50.049Z"
+      },
+      "source": {
+        "file": "data/steam-expanded-2026-11-04.json",
+        "pointer": "#/results/2",
+        "urls": [
+          "https://store.steampowered.com/api/appdetails?appids=442070&cc=us&l=english",
+          "https://steamspy.com/api.php?request=appdetails&appid=442070",
+          "https://store.steampowered.com/app/442070/?l=english&cc=us"
+        ],
+        "meta": "Steam appdetails（名称 / 发行日期 / 类目 / 初始价 / 采样价 / 商店页官方文案）+ SteamSpy appdetails（评测数 / 好评率 / 采样时在线 / 拥有人数区间）"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M20",
+      "origin": "market",
+      "title": "ACT IT OUT XL! A Charades Party Game",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "F07",
+      "play": "演与猜",
+      "playKeys": [
+        "F07"
+      ],
+      "playDesc": "扮演、模仿、身份隐藏、猜认；核心是「你演得像不像」。",
+      "oneLiner": "ACT IT OUT XL! is the multiplayer party game created to complete your games night!",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "4P"
+        ],
+        "note": "官方原文：Up to 8 players；本库人数档只到 4P",
+        "officialText": "Up to 8 players can compete against each other, work in teams, or play cooperatively.",
+        "maxPlayers": "8"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（单人 / 平台信息见官方类目）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 11.99,
+        "sampled": 11.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 61,
+        "positivePct": 78.7,
+        "label": "未获取",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "用描述、表演、画画或唱歌让队友猜，直接对应演与猜。",
+      "risk": "Steam 标签；近期评测标签；峰值在线；销量/愿望单/分区数据",
+      "lineage": "同族自有条目 12 条（I055 食物哑剧、I056 动物模仿秀、I057 谁在壳里、I058 尾巴是谁 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "I055",
+        "I056",
+        "I057",
+        "I058",
+        "I059",
+        "I060",
+        "I061",
+        "I062",
+        "I063",
+        "I109",
+        "I110",
+        "I111"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/675500/",
+      "releaseYear": "2018",
+      "releaseDate": "Mar 6, 2018",
+      "sampledAt": "2026-11-04T15:32:50.049Z",
+      "detail": {
+        "Steam 标签": "未获取",
+        "Steam 类目": "Single-player、Multi-player、PvP、Shared/Split Screen PvP、Steam Achievements、Full controller support、Remote Play Together、Family Sharing",
+        "官方人数原文": "Up to 8 players can compete against each other, work in teams, or play cooperatively.",
+        "官方标注上限": "8",
+        "初始价（USD）": "11.99",
+        "采样价（USD）": "11.99",
+        "采样折扣": "0%",
+        "评测数": "61",
+        "好评率": "78.7%",
+        "采样时在线": "0",
+        "拥有人数区间": "0 .. 20,000",
+        "采样时间": "2026-11-04T15:32:50.049Z"
+      },
+      "source": {
+        "file": "data/steam-expanded-2026-11-04.json",
+        "pointer": "#/results/3",
+        "urls": [
+          "https://store.steampowered.com/api/appdetails?appids=675500&cc=us&l=english",
+          "https://steamspy.com/api.php?request=appdetails&appid=675500",
+          "https://store.steampowered.com/app/675500/?l=english&cc=us"
+        ],
+        "meta": "Steam appdetails（名称 / 发行日期 / 类目 / 初始价 / 采样价 / 商店页官方文案）+ SteamSpy appdetails（评测数 / 好评率 / 采样时在线 / 拥有人数区间）"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M21",
+      "origin": "market",
+      "title": "Garden Paws",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "F08",
+      "play": "养与共生",
+      "playKeys": [
+        "F08"
+      ],
+      "playDesc": "喂养、照料、共生、成长、迁徙；核心是「它能不能活」。",
+      "oneLiner": "You have inherited your grandparents farm as they set off to travel the world. Work with Frank at the local construction shop to finish off the final touches on your new home.",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "4P"
+        ],
+        "note": "官方原文：invite up to three friends（含房主上限 4 人）",
+        "officialText": "You don't have to go alone on this new adventure, invite up to three friends to join you online.",
+        "maxPlayers": "未获取"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（在线合作）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 19.99,
+        "sampled": 19.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 2450,
+        "positivePct": 90.5,
+        "label": "未获取",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "驯养动物、经营农场、照顾小镇与动物成长，核心是照料与共生，映射养与共生。",
+      "risk": "Steam 标签；近期评测标签；峰值在线；销量/愿望单/分区数据",
+      "lineage": "同族自有条目 12 条（I064 喂饱小兽、I065 种豆日记、I066 寄居蟹换壳、I067 犀鸟与树 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "I064",
+        "I065",
+        "I066",
+        "I067",
+        "I068",
+        "I069",
+        "I070",
+        "I071",
+        "I072",
+        "I112",
+        "I113",
+        "I114"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/840010/",
+      "releaseYear": "2018",
+      "releaseDate": "Dec 18, 2018",
+      "sampledAt": "2026-11-04T15:32:50.049Z",
+      "detail": {
+        "Steam 标签": "未获取",
+        "Steam 类目": "Single-player、Multi-player、PvP、Online PvP、Co-op、Online Co-op、Steam Achievements、Steam Trading Cards、Steam Workshop、Partial Controller Support、Steam Cloud、Stats、Family Sharing",
+        "官方人数原文": "You don't have to go alone on this new adventure, invite up to three friends to join you online.",
+        "官方标注上限": "未获取",
+        "初始价（USD）": "19.99",
+        "采样价（USD）": "19.99",
+        "采样折扣": "0%",
+        "评测数": "2450",
+        "好评率": "90.5%",
+        "采样时在线": "23",
+        "拥有人数区间": "50,000 .. 100,000",
+        "采样时间": "2026-11-04T15:32:50.049Z"
+      },
+      "source": {
+        "file": "data/steam-expanded-2026-11-04.json",
+        "pointer": "#/results/4",
+        "urls": [
+          "https://store.steampowered.com/api/appdetails?appids=840010&cc=us&l=english",
+          "https://steamspy.com/api.php?request=appdetails&appid=840010",
+          "https://store.steampowered.com/app/840010/?l=english&cc=us"
+        ],
+        "meta": "Steam appdetails（名称 / 发行日期 / 类目 / 初始价 / 采样价 / 商店页官方文案）+ SteamSpy appdetails（评测数 / 好评率 / 采样时在线 / 拥有人数区间）"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M22",
+      "origin": "market",
+      "title": "Wobbledogs",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "F08",
+      "play": "养与共生",
+      "playKeys": [
+        "F08"
+      ],
+      "playDesc": "喂养、照料、共生、成长、迁徙；核心是「它能不能活」。",
+      "oneLiner": "A 3D pet simulation where you raise your own personal hive of mutating dogs, physically simulated all the way down to their guts! Wobbledogs is a casual and chill sandbox for players of all ages who want to care for thei…",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "1P"
+        ],
+        "note": "Steam 类目 Single-player；官方人数原文未写",
+        "officialText": "未获取",
+        "maxPlayers": "未获取"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（单人 / 平台信息见官方类目）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 19.99,
+        "sampled": 19.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 12145,
+        "positivePct": 98.2,
+        "label": "未获取",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "喂养、繁育、观察宠物长大与变异，核心是照料与成长，映射养与共生。",
+      "risk": "Steam 标签；近期评测标签；峰值在线；销量/愿望单/分区数据",
+      "lineage": "同族自有条目 12 条（I064 喂饱小兽、I065 种豆日记、I066 寄居蟹换壳、I067 犀鸟与树 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "I064",
+        "I065",
+        "I066",
+        "I067",
+        "I068",
+        "I069",
+        "I070",
+        "I071",
+        "I072",
+        "I112",
+        "I113",
+        "I114"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/1424330/",
+      "releaseYear": "2022",
+      "releaseDate": "Mar 15, 2022",
+      "sampledAt": "2026-11-04T15:32:50.049Z",
+      "detail": {
+        "Steam 标签": "未获取",
+        "Steam 类目": "Single-player、Steam Achievements、Steam Trading Cards、Partial Controller Support、Steam Cloud、Family Sharing",
+        "官方人数原文": "未获取",
+        "官方标注上限": "未获取",
+        "初始价（USD）": "19.99",
+        "采样价（USD）": "19.99",
+        "采样折扣": "0%",
+        "评测数": "12145",
+        "好评率": "98.2%",
+        "采样时在线": "95",
+        "拥有人数区间": "200,000 .. 500,000",
+        "采样时间": "2026-11-04T15:32:50.049Z"
+      },
+      "source": {
+        "file": "data/steam-expanded-2026-11-04.json",
+        "pointer": "#/results/5",
+        "urls": [
+          "https://store.steampowered.com/api/appdetails?appids=1424330&cc=us&l=english",
+          "https://steamspy.com/api.php?request=appdetails&appid=1424330",
+          "https://store.steampowered.com/app/1424330/?l=english&cc=us"
+        ],
+        "meta": "Steam appdetails（名称 / 发行日期 / 类目 / 初始价 / 采样价 / 商店页官方文案）+ SteamSpy appdetails（评测数 / 好评率 / 采样时在线 / 拥有人数区间）"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M23",
+      "origin": "market",
+      "title": "Blanc",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "S05",
+      "play": "迷路与重逢",
+      "playKeys": [
+        "S05",
+        "G5"
+      ],
+      "playDesc": "队伍会走散；核心问题是「留下什么记号、谁回来找」。",
+      "oneLiner": "Blanc is an artistic cooperative adventure that follows the journey of a wolf cub and a fawn stranded in a vast, snowy wilderness. They must come together in an unlikely partnership to find their families.",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "2P"
+        ],
+        "note": "官方原文：Two players take control of either the wolf cub or the fawn",
+        "officialText": "Two players take control of either the wolf cub or the fawn.",
+        "maxPlayers": "2"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏 / 在线合作）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 14.99,
+        "sampled": 14.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 944,
+        "positivePct": 76.1,
+        "label": "未获取",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "幼狼与幼鹿在暴风雪中迷路，沿家人脚印互相扶持找回家；对应迷路与重逢，也对应走失与带回。",
+      "risk": "Steam 标签；近期评测标签；峰值在线；销量/愿望单/分区数据",
+      "lineage": "同族自有条目 12 条（A33 面包屑回家、A34 声音绳、A35 走散的影子、A36 三条岔路 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "A33",
+        "A34",
+        "A35",
+        "A36",
+        "A37",
+        "A38",
+        "A39",
+        "A40",
+        "B37",
+        "B38",
+        "B39",
+        "B40"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/1982340/",
+      "releaseYear": "2023",
+      "releaseDate": "Feb 14, 2023",
+      "sampledAt": "2026-11-04T15:32:50.049Z",
+      "detail": {
+        "Steam 标签": "未获取",
+        "Steam 类目": "Multi-player、Co-op、Online Co-op、Shared/Split Screen Co-op、Shared/Split Screen、Steam Achievements、Full controller support、Custom Volume Controls、Keyboard Only Option、Steam Cloud、Family Sharing",
+        "官方人数原文": "Two players take control of either the wolf cub or the fawn.",
+        "官方标注上限": "2",
+        "初始价（USD）": "14.99",
+        "采样价（USD）": "14.99",
+        "采样折扣": "0%",
+        "评测数": "944",
+        "好评率": "76.1%",
+        "采样时在线": "4",
+        "拥有人数区间": "20,000 .. 50,000",
+        "采样时间": "2026-11-04T15:32:50.049Z"
+      },
+      "source": {
+        "file": "data/steam-expanded-2026-11-04.json",
+        "pointer": "#/results/6",
+        "urls": [
+          "https://store.steampowered.com/api/appdetails?appids=1982340&cc=us&l=english",
+          "https://steamspy.com/api.php?request=appdetails&appid=1982340",
+          "https://store.steampowered.com/app/1982340/?l=english&cc=us"
+        ],
+        "meta": "Steam appdetails（名称 / 发行日期 / 类目 / 初始价 / 采样价 / 商店页官方文案）+ SteamSpy appdetails（评测数 / 好评率 / 采样时在线 / 拥有人数区间）"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M24",
+      "origin": "market",
+      "title": "Lost in Play",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "S05",
+      "play": "迷路与重逢",
+      "playKeys": [
+        "S05"
+      ],
+      "playDesc": "队伍会走散；核心问题是「留下什么记号、谁回来找」。",
+      "oneLiner": "Solve puzzles, riddles, and embark on an exciting journey of discovery! Join Toto and Gal as they explore dreamscapes and befriend magical creatures.",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "1P"
+        ],
+        "note": "Steam 类目 Single-player；官方人数原文未写",
+        "officialText": "未获取",
+        "maxPlayers": "未获取"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（单人 / 平台信息见官方类目）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 19.99,
+        "sampled": 19.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 7049,
+        "positivePct": 98.2,
+        "label": "未获取",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "一对兄妹在想象世界里走失，靠解谜找路回家；核心是迷路与重逢，映射 S05。",
+      "risk": "Steam 标签；近期评测标签；峰值在线；销量/愿望单/分区数据",
+      "lineage": "同族自有条目 8 条（A33 面包屑回家、A34 声音绳、A35 走散的影子、A36 三条岔路 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "A33",
+        "A34",
+        "A35",
+        "A36",
+        "A37",
+        "A38",
+        "A39",
+        "A40"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/1328840/",
+      "releaseYear": "2022",
+      "releaseDate": "Aug 10, 2022",
+      "sampledAt": "2026-11-04T15:32:50.049Z",
+      "detail": {
+        "Steam 标签": "未获取",
+        "Steam 类目": "Single-player、Steam Achievements、Full controller support、Steam Cloud、Family Sharing",
+        "官方人数原文": "未获取",
+        "官方标注上限": "未获取",
+        "初始价（USD）": "19.99",
+        "采样价（USD）": "19.99",
+        "采样折扣": "0%",
+        "评测数": "7049",
+        "好评率": "98.2%",
+        "采样时在线": "15",
+        "拥有人数区间": "200,000 .. 500,000",
+        "采样时间": "2026-11-04T15:32:50.049Z"
+      },
+      "source": {
+        "file": "data/steam-expanded-2026-11-04.json",
+        "pointer": "#/results/7",
+        "urls": [
+          "https://store.steampowered.com/api/appdetails?appids=1328840&cc=us&l=english",
+          "https://steamspy.com/api.php?request=appdetails&appid=1328840",
+          "https://store.steampowered.com/app/1328840/?l=english&cc=us"
+        ],
+        "meta": "Steam appdetails（名称 / 发行日期 / 类目 / 初始价 / 采样价 / 商店页官方文案）+ SteamSpy appdetails（评测数 / 好评率 / 采样时在线 / 拥有人数区间）"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M25",
+      "origin": "market",
+      "title": "Viscera Cleanup Detail",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "S06",
+      "play": "把世界修好",
+      "playKeys": [
+        "S06"
+      ],
+      "playDesc": "环境坏了要修；核心问题是「四个人各自守哪道工序」。",
+      "oneLiner": "In Viscera Cleanup Detail, you step into the boots of a space-station janitor tasked with cleaning up after various horrific sci-fi horror events. Instead of machineguns and plasma-rifles, your tools are a mop and bucket…",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [],
+        "note": "官方只写可邀请朋友一起打扫与分屏合作，人数未获取",
+        "officialText": "未获取",
+        "maxPlayers": "未获取"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏 / 在线合作）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 12.99,
+        "sampled": 12.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 22290,
+        "positivePct": 92.6,
+        "label": "未获取",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "清理受灾设施、把现场恢复原状，多人分工打扫，对应把世界修好。",
+      "risk": "Steam 标签；近期评测标签；峰值在线；销量/愿望单/分区数据",
+      "lineage": "同族自有条目 8 条（A41 补天小队、A42 修桥的甲虫、A43 漏水的云、A44 歪掉的钟 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "A41",
+        "A42",
+        "A43",
+        "A44",
+        "A45",
+        "A46",
+        "A47",
+        "A48"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/246900/",
+      "releaseYear": "2015",
+      "releaseDate": "Oct 23, 2015",
+      "sampledAt": "2026-11-04T15:32:50.049Z",
+      "detail": {
+        "Steam 标签": "未获取",
+        "Steam 类目": "Single-player、Multi-player、Co-op、Online Co-op、LAN Co-op、Shared/Split Screen Co-op、Shared/Split Screen、Steam Achievements、Full controller support、Steam Trading Cards、Steam Workshop、Steam Cloud、Includes level editor、Remote Play Together、Family Sharing",
+        "官方人数原文": "未获取",
+        "官方标注上限": "未获取",
+        "初始价（USD）": "12.99",
+        "采样价（USD）": "12.99",
+        "采样折扣": "0%",
+        "评测数": "22290",
+        "好评率": "92.6%",
+        "采样时在线": "140",
+        "拥有人数区间": "1,000,000 .. 2,000,000",
+        "采样时间": "2026-11-04T15:32:50.049Z"
+      },
+      "source": {
+        "file": "data/steam-expanded-2026-11-04.json",
+        "pointer": "#/results/8",
+        "urls": [
+          "https://store.steampowered.com/api/appdetails?appids=246900&cc=us&l=english",
+          "https://steamspy.com/api.php?request=appdetails&appid=246900",
+          "https://store.steampowered.com/app/246900/?l=english&cc=us"
+        ],
+        "meta": "Steam appdetails（名称 / 发行日期 / 类目 / 初始价 / 采样价 / 商店页官方文案）+ SteamSpy appdetails（评测数 / 好评率 / 采样时在线 / 拥有人数区间）"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M26",
+      "origin": "market",
+      "title": "PowerWash Simulator",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "S06",
+      "play": "把世界修好",
+      "playKeys": [
+        "S06"
+      ],
+      "playDesc": "环境坏了要修；核心问题是「四个人各自守哪道工序」。",
+      "oneLiner": "Release the Pressure with PowerWash Simulator! Wash away your worries with the soothing sounds of high-pressure water.",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "2P",
+          "4P"
+        ],
+        "note": "官方原文：Career 可 2 人互助；Free Play 最多 6 人（本库只到 4P）",
+        "officialText": "Lend a helping hand to your closest pal in Career Mode, or up to 6 friends can splash around in Free Play, tackling any job the host has already completed.",
+        "maxPlayers": "6"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（在线合作）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 24.99,
+        "sampled": 24.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 52410,
+        "positivePct": 96.9,
+        "label": "未获取",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "冲洗脏污、恢复建筑原貌，合作分工清理，对应把世界修好。",
+      "risk": "Steam 标签；近期评测标签；峰值在线；销量/愿望单/分区数据",
+      "lineage": "同族自有条目 8 条（A41 补天小队、A42 修桥的甲虫、A43 漏水的云、A44 歪掉的钟 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "A41",
+        "A42",
+        "A43",
+        "A44",
+        "A45",
+        "A46",
+        "A47",
+        "A48"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/1290000/",
+      "releaseYear": "2022",
+      "releaseDate": "Jul 14, 2022",
+      "sampledAt": "2026-11-04T15:32:50.049Z",
+      "detail": {
+        "Steam 标签": "未获取",
+        "Steam 类目": "Single-player、Multi-player、Co-op、Online Co-op、Cross-Platform Multiplayer、Steam Achievements、Full controller support、Steam Trading Cards、DualShock Controller Support、DualShock Controller Support、DualSense Controller Support、DualSense Controller Support、Steam Cloud、Family Sharing",
+        "官方人数原文": "Lend a helping hand to your closest pal in Career Mode, or up to 6 friends can splash around in Free Play, tackling any job the host has already completed.",
+        "官方标注上限": "6",
+        "初始价（USD）": "24.99",
+        "采样价（USD）": "24.99",
+        "采样折扣": "0%",
+        "评测数": "52410",
+        "好评率": "96.9%",
+        "采样时在线": "2547",
+        "拥有人数区间": "1,000,000 .. 2,000,000",
+        "采样时间": "2026-11-04T15:32:50.049Z"
+      },
+      "source": {
+        "file": "data/steam-expanded-2026-11-04.json",
+        "pointer": "#/results/9",
+        "urls": [
+          "https://store.steampowered.com/api/appdetails?appids=1290000&cc=us&l=english",
+          "https://steamspy.com/api.php?request=appdetails&appid=1290000",
+          "https://store.steampowered.com/app/1290000/?l=english&cc=us"
+        ],
+        "meta": "Steam appdetails（名称 / 发行日期 / 类目 / 初始价 / 采样价 / 商店页官方文案）+ SteamSpy appdetails（评测数 / 好评率 / 采样时在线 / 拥有人数区间）"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M27",
+      "origin": "market",
+      "title": "Octodad: Dadliest Catch",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "S07",
+      "play": "共同伪装",
+      "playKeys": [
+        "S07"
+      ],
+      "playDesc": "四个人扮成一个东西；核心问题是「谁动谁露馅」。",
+      "oneLiner": "Octodad: Dadliest Catch is a game about destruction, deception, and fatherhood. The player controls Octodad, a dapper octopus masquerading as a human, as he goes about his life.",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "2P",
+          "3P",
+          "4P"
+        ],
+        "note": "官方原文：co-op mode with 2 to 4 players",
+        "officialText": "Gather family members and/or friends to control Octodad's limbs in co-op mode with 2 to 4 players.",
+        "maxPlayers": "4"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 14.99,
+        "sampled": 14.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 10155,
+        "positivePct": 93.9,
+        "label": "未获取",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "2-4 人各自控制章鱼爸爸的一条肢体，共同扮成一个「正常人类」，谁乱动谁露馅，直接对应共同伪装。",
+      "risk": "Steam 标签；近期评测标签；峰值在线；销量/愿望单/分区数据",
+      "lineage": "同族自有条目 8 条（A49 扮成一座桥、A50 一群羊、A51 移动的石头、A52 四人长颈鹿 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "A49",
+        "A50",
+        "A51",
+        "A52",
+        "A53",
+        "A54",
+        "A55",
+        "A56"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/224480/",
+      "releaseYear": "2014",
+      "releaseDate": "Jan 30, 2014",
+      "sampledAt": "2026-11-04T15:32:50.049Z",
+      "detail": {
+        "Steam 标签": "未获取",
+        "Steam 类目": "Single-player、Multi-player、Shared/Split Screen、Steam Achievements、Full controller support、Steam Trading Cards、Steam Workshop、DualShock Controller Support、DualShock Controller Support、DualSense Controller Support、DualSense Controller Support、Steam Cloud、Includes level editor、Remote Play on Phone、Remote Play on Tablet、Remote Play on TV、Remote Play Together、Family Sharing",
+        "官方人数原文": "Gather family members and/or friends to control Octodad's limbs in co-op mode with 2 to 4 players.",
+        "官方标注上限": "4",
+        "初始价（USD）": "14.99",
+        "采样价（USD）": "14.99",
+        "采样折扣": "0%",
+        "评测数": "10155",
+        "好评率": "93.9%",
+        "采样时在线": "18",
+        "拥有人数区间": "1,000,000 .. 2,000,000",
+        "采样时间": "2026-11-04T15:32:50.049Z"
+      },
+      "source": {
+        "file": "data/steam-expanded-2026-11-04.json",
+        "pointer": "#/results/10",
+        "urls": [
+          "https://store.steampowered.com/api/appdetails?appids=224480&cc=us&l=english",
+          "https://steamspy.com/api.php?request=appdetails&appid=224480",
+          "https://store.steampowered.com/app/224480/?l=english&cc=us"
+        ],
+        "meta": "Steam appdetails（名称 / 发行日期 / 类目 / 初始价 / 采样价 / 商店页官方文案）+ SteamSpy appdetails（评测数 / 好评率 / 采样时在线 / 拥有人数区间）"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M28",
+      "origin": "market",
+      "title": "Grounded",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "G1",
+      "play": "尺度突变 / 巨大日常",
+      "playKeys": [
+        "G1"
+      ],
+      "playDesc": "按童话母题分组，玩法须由机制承载（见原池硬规则）",
+      "oneLiner": "The world is a vast, beautiful and dangerous place – especially when you have been shrunk to the size of an ant. Can you thrive alongside the hordes of giant insects, fighting to survive the perils of the backyard?",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "4P"
+        ],
+        "note": "官方原文：online with up to three friends（含本人上限 4）",
+        "officialText": "You can face the backyard alone or together, online, with up to three friends.",
+        "maxPlayers": "未获取"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（在线合作）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 39.99,
+        "sampled": 39.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 84517,
+        "positivePct": 89.3,
+        "label": "未获取",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "被缩小到后院尺度，日常物品变成巨大地形与资源，对应尺度突变 / 巨大日常。",
+      "risk": "Steam 标签；近期评测标签；峰值在线；销量/愿望单/分区数据",
+      "lineage": "同族自有条目 8 条（B01 桌下的夜航、B02 雨滴里的码头、B03 巨人丢的纽扣、B04 一勺汤的海 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/962130/",
+      "releaseYear": "2022",
+      "releaseDate": "Sep 27, 2022",
+      "sampledAt": "2026-11-04T15:32:50.049Z",
+      "detail": {
+        "Steam 标签": "未获取",
+        "Steam 类目": "Single-player、Multi-player、Co-op、Online Co-op、Full controller support、Steam Trading Cards、Steam Cloud、Remote Play on Tablet、Family Sharing",
+        "官方人数原文": "You can face the backyard alone or together, online, with up to three friends.",
+        "官方标注上限": "未获取",
+        "初始价（USD）": "39.99",
+        "采样价（USD）": "39.99",
+        "采样折扣": "0%",
+        "评测数": "84517",
+        "好评率": "89.3%",
+        "采样时在线": "2394",
+        "拥有人数区间": "2,000,000 .. 5,000,000",
+        "采样时间": "2026-11-04T15:32:50.049Z"
+      },
+      "source": {
+        "file": "data/steam-expanded-2026-11-04.json",
+        "pointer": "#/results/11",
+        "urls": [
+          "https://store.steampowered.com/api/appdetails?appids=962130&cc=us&l=english",
+          "https://steamspy.com/api.php?request=appdetails&appid=962130",
+          "https://store.steampowered.com/app/962130/?l=english&cc=us"
+        ],
+        "meta": "Steam appdetails（名称 / 发行日期 / 类目 / 初始价 / 采样价 / 商店页官方文案）+ SteamSpy appdetails（评测数 / 好评率 / 采样时在线 / 拥有人数区间）"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M29",
+      "origin": "market",
+      "title": "Smalland: Survive the Wilds",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "G1",
+      "play": "尺度突变 / 巨大日常",
+      "playKeys": [
+        "G1"
+      ],
+      "playDesc": "按童话母题分组，玩法须由机制承载（见原池硬规则）",
+      "oneLiner": "Experience a big adventure on a tiny scale! Enjoy multiplayer survival in a vast, hazardous world.",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "4P"
+        ],
+        "note": "官方原文：up to 10 players；本库人数档只到 4P",
+        "officialText": "Survive together Play alongside friends with support for up to 10 players in multiplayer.",
+        "maxPlayers": "10"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（在线合作）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 34.99,
+        "sampled": 34.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 8439,
+        "positivePct": 82.8,
+        "label": "未获取",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "以微小体型在放大的自然环境中生存建造，日常尺度被放大，对应尺度突变 / 巨大日常。",
+      "risk": "Steam 标签；近期评测标签；峰值在线；销量/愿望单/分区数据",
+      "lineage": "同族自有条目 8 条（B01 桌下的夜航、B02 雨滴里的码头、B03 巨人丢的纽扣、B04 一勺汤的海 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/768200/",
+      "releaseYear": "2024",
+      "releaseDate": "Feb 15, 2024",
+      "sampledAt": "2026-11-04T15:32:50.049Z",
+      "detail": {
+        "Steam 标签": "未获取",
+        "Steam 类目": "Single-player、Multi-player、Co-op、Online Co-op、Steam Achievements、Full controller support、Family Sharing",
+        "官方人数原文": "Survive together Play alongside friends with support for up to 10 players in multiplayer.",
+        "官方标注上限": "10",
+        "初始价（USD）": "34.99",
+        "采样价（USD）": "34.99",
+        "采样折扣": "0%",
+        "评测数": "8439",
+        "好评率": "82.8%",
+        "采样时在线": "338",
+        "拥有人数区间": "200,000 .. 500,000",
+        "采样时间": "2026-11-04T15:32:50.049Z"
+      },
+      "source": {
+        "file": "data/steam-expanded-2026-11-04.json",
+        "pointer": "#/results/12",
+        "urls": [
+          "https://store.steampowered.com/api/appdetails?appids=768200&cc=us&l=english",
+          "https://steamspy.com/api.php?request=appdetails&appid=768200",
+          "https://store.steampowered.com/app/768200/?l=english&cc=us"
+        ],
+        "meta": "Steam appdetails（名称 / 发行日期 / 类目 / 初始价 / 采样价 / 商店页官方文案）+ SteamSpy appdetails（评测数 / 好评率 / 采样时在线 / 拥有人数区间）"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M30",
+      "origin": "market",
+      "title": "Wobbly Life",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "G2",
+      "play": "善意怪人 / 古怪规则",
+      "playKeys": [
+        "G2"
+      ],
+      "playDesc": "按童话母题分组，玩法须由机制承载（见原池硬规则）",
+      "oneLiner": "Wobbly Life is a vibrant open-world physics sandbox. Play with your friends online or in local co-op, with exciting jobs, mini games and wacky story missions.",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "1P",
+          "2P",
+          "3P",
+          "4P"
+        ],
+        "note": "官方原文：1-4 players Online and Local split-screen co-op",
+        "officialText": "1-4 players Online and Local split-screen co-op",
+        "maxPlayers": "4"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏 / 在线合作）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 24.99,
+        "sampled": 16.24,
+        "discountPct": 35,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 26940,
+        "positivePct": 97,
+        "label": "未获取",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "古怪小镇、夸张物理与荒诞零工构成规则感，角色是可笑的善意怪人，对应善意怪人 / 古怪规则。",
+      "risk": "Steam 标签；近期评测标签；峰值在线；销量/愿望单/分区数据",
+      "lineage": "同族自有条目 8 条（B09 必须先笑的桥、B10 只能倒退的林子、B11 借影子的人、B12 交换名字的集市 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "B09",
+        "B10",
+        "B11",
+        "B12",
+        "B21",
+        "B22",
+        "B23",
+        "B24"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/1211020/",
+      "releaseYear": "2025",
+      "releaseDate": "Sep 18, 2025",
+      "sampledAt": "2026-11-04T15:32:50.049Z",
+      "detail": {
+        "Steam 标签": "未获取",
+        "Steam 类目": "Single-player、Multi-player、Co-op、Online Co-op、Shared/Split Screen Co-op、Shared/Split Screen、Steam Achievements、Full controller support、Steam Trading Cards、Steam Workshop、DualShock Controller Support、DualSense Controller Support、Steam Cloud、Remote Play on TV、Family Sharing",
+        "官方人数原文": "1-4 players Online and Local split-screen co-op",
+        "官方标注上限": "4",
+        "初始价（USD）": "24.99",
+        "采样价（USD）": "16.24",
+        "采样折扣": "35%",
+        "评测数": "26940",
+        "好评率": "97%",
+        "采样时在线": "625",
+        "拥有人数区间": "1,000,000 .. 2,000,000",
+        "采样时间": "2026-11-04T15:32:50.049Z"
+      },
+      "source": {
+        "file": "data/steam-expanded-2026-11-04.json",
+        "pointer": "#/results/13",
+        "urls": [
+          "https://store.steampowered.com/api/appdetails?appids=1211020&cc=us&l=english",
+          "https://steamspy.com/api.php?request=appdetails&appid=1211020",
+          "https://store.steampowered.com/app/1211020/?l=english&cc=us"
+        ],
+        "meta": "Steam appdetails（名称 / 发行日期 / 类目 / 初始价 / 采样价 / 商店页官方文案）+ SteamSpy appdetails（评测数 / 好评率 / 采样时在线 / 拥有人数区间）"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M31",
+      "origin": "market",
+      "title": "Pikuniku",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "G2",
+      "play": "善意怪人 / 古怪规则",
+      "playKeys": [
+        "G2"
+      ],
+      "playDesc": "按童话母题分组，玩法须由机制承载（见原池硬规则）",
+      "oneLiner": "Pikuniku is an absurdly wonderful puzzle-exploration game that takes place in a strange but playful world where not everything is as happy as it seems. Help peculiar characters overcome struggles, uncover a deep state co…",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [],
+        "note": "官方只写 local multiplayer，人数未获取",
+        "officialText": "未获取",
+        "maxPlayers": "未获取"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 12.99,
+        "sampled": 12.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 10001,
+        "positivePct": 95.8,
+        "label": "未获取",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "古怪角色提出不合常理的请求，玩家在荒诞规则里帮忙，对应善意怪人 / 古怪规则。",
+      "risk": "Steam 标签；近期评测标签；峰值在线；销量/愿望单/分区数据",
+      "lineage": "同族自有条目 8 条（B09 必须先笑的桥、B10 只能倒退的林子、B11 借影子的人、B12 交换名字的集市 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "B09",
+        "B10",
+        "B11",
+        "B12",
+        "B21",
+        "B22",
+        "B23",
+        "B24"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/572890/",
+      "releaseYear": "2019",
+      "releaseDate": "Jan 24, 2019",
+      "sampledAt": "2026-11-04T15:32:50.049Z",
+      "detail": {
+        "Steam 标签": "未获取",
+        "Steam 类目": "Single-player、Multi-player、PvP、Shared/Split Screen PvP、Co-op、Shared/Split Screen Co-op、Shared/Split Screen、Steam Achievements、Steam Trading Cards、Partial Controller Support、Steam Cloud、Stats、Remote Play on Phone、Remote Play on Tablet、Remote Play Together、Family Sharing",
+        "官方人数原文": "未获取",
+        "官方标注上限": "未获取",
+        "初始价（USD）": "12.99",
+        "采样价（USD）": "12.99",
+        "采样折扣": "0%",
+        "评测数": "10001",
+        "好评率": "95.8%",
+        "采样时在线": "48",
+        "拥有人数区间": "500,000 .. 1,000,000",
+        "采样时间": "2026-11-04T15:32:50.049Z"
+      },
+      "source": {
+        "file": "data/steam-expanded-2026-11-04.json",
+        "pointer": "#/results/14",
+        "urls": [
+          "https://store.steampowered.com/api/appdetails?appids=572890&cc=us&l=english",
+          "https://steamspy.com/api.php?request=appdetails&appid=572890",
+          "https://store.steampowered.com/app/572890/?l=english&cc=us"
+        ],
+        "meta": "Steam appdetails（名称 / 发行日期 / 类目 / 初始价 / 采样价 / 商店页官方文案）+ SteamSpy appdetails（评测数 / 好评率 / 采样时在线 / 拥有人数区间）"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M32",
+      "origin": "market",
+      "title": "Spiritfarer®: Farewell Edition",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "G3",
+      "play": "告别 / 被看见 / 留下记号",
+      "playKeys": [
+        "G3"
+      ],
+      "playDesc": "按童话母题分组，玩法须由机制承载（见原池硬规则）",
+      "oneLiner": "Spiritfarer® is a cozy management game about dying. As ferrymaster to the deceased, build a boat to explore the world, care for your spirit friends, and release them into the afterlife.",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "2P"
+        ],
+        "note": "官方原文：two-player cooperative play（Daffodil 猫）",
+        "officialText": "Join the adventure as Daffodil the cat, in two-player cooperative play.",
+        "maxPlayers": "2"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 29.99,
+        "sampled": 2.99,
+        "discountPct": 90,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 46417,
+        "positivePct": 95.2,
+        "label": "未获取",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "照料灵魂乘客并逐一道别，留下记忆与船上的痕迹，对应告别 / 被看见 / 留下记号。",
+      "risk": "Steam 标签；近期评测标签；峰值在线；销量/愿望单/分区数据",
+      "lineage": "同族自有条目 12 条（B13 把声音留在树上、B14 离队的小灯、B15 送一颗星星回家、B16 记住每个名字的风 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "B13",
+        "B14",
+        "B15",
+        "B16",
+        "B17",
+        "B18",
+        "B19",
+        "B20",
+        "B25",
+        "B26",
+        "B27",
+        "B28"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/972660/",
+      "releaseYear": "2020",
+      "releaseDate": "Aug 18, 2020",
+      "sampledAt": "2026-11-04T15:32:50.049Z",
+      "detail": {
+        "Steam 标签": "未获取",
+        "Steam 类目": "Single-player、Multi-player、Co-op、Shared/Split Screen Co-op、Steam Achievements、Full controller support、Steam Trading Cards、Steam Cloud、Remote Play on Phone、Remote Play on Tablet、Remote Play on TV、Remote Play Together、Family Sharing",
+        "官方人数原文": "Join the adventure as Daffodil the cat, in two-player cooperative play.",
+        "官方标注上限": "2",
+        "初始价（USD）": "29.99",
+        "采样价（USD）": "2.99",
+        "采样折扣": "90%",
+        "评测数": "46417",
+        "好评率": "95.2%",
+        "采样时在线": "702",
+        "拥有人数区间": "1,000,000 .. 2,000,000",
+        "采样时间": "2026-11-04T15:32:50.049Z"
+      },
+      "source": {
+        "file": "data/steam-expanded-2026-11-04.json",
+        "pointer": "#/results/15",
+        "urls": [
+          "https://store.steampowered.com/api/appdetails?appids=972660&cc=us&l=english",
+          "https://steamspy.com/api.php?request=appdetails&appid=972660",
+          "https://store.steampowered.com/app/972660/?l=english&cc=us"
+        ],
+        "meta": "Steam appdetails（名称 / 发行日期 / 类目 / 初始价 / 采样价 / 商店页官方文案）+ SteamSpy appdetails（评测数 / 好评率 / 采样时在线 / 拥有人数区间）"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M33",
+      "origin": "market",
+      "title": "Chicory: A Colorful Tale",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "G4",
+      "play": "无用却重要 / 修补守候",
+      "playKeys": [
+        "G4"
+      ],
+      "playDesc": "按童话母题分组，玩法须由机制承载（见原池硬规则）",
+      "oneLiner": "A top-down adventure game in a coloring book world full of vibrant characters. Use painting powers to explore, solve puzzles, make friends, and draw on anything!",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [],
+        "note": "官方只写 local co-op，人数未获取",
+        "officialText": "未获取",
+        "maxPlayers": "未获取"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 19.99,
+        "sampled": 9.99,
+        "discountPct": 50,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 3420,
+        "positivePct": 97.7,
+        "label": "未获取",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "用一支看似无用的画笔把失去颜色的世界一点点补回来，对应无用却重要 / 修补守候。",
+      "risk": "Steam 标签；近期评测标签；峰值在线；销量/愿望单/分区数据",
+      "lineage": "同族自有条目 8 条（B29 补一只漏雨的云、B30 给巨人系鞋带、B31 把月亮擦干净、B32 替冬天存一罐夏天 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "B29",
+        "B30",
+        "B31",
+        "B32",
+        "B33",
+        "B34",
+        "B35",
+        "B36"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/1123450/",
+      "releaseYear": "2021",
+      "releaseDate": "Jun 10, 2021",
+      "sampledAt": "2026-11-04T15:32:50.049Z",
+      "detail": {
+        "Steam 标签": "未获取",
+        "Steam 类目": "Single-player、Multi-player、Co-op、Shared/Split Screen Co-op、Shared/Split Screen、Steam Achievements、Full controller support、Steam Cloud、Remote Play Together、Family Sharing",
+        "官方人数原文": "未获取",
+        "官方标注上限": "未获取",
+        "初始价（USD）": "19.99",
+        "采样价（USD）": "9.99",
+        "采样折扣": "50%",
+        "评测数": "3420",
+        "好评率": "97.7%",
+        "采样时在线": "9",
+        "拥有人数区间": "200,000 .. 500,000",
+        "采样时间": "2026-11-04T15:32:50.049Z"
+      },
+      "source": {
+        "file": "data/steam-expanded-2026-11-04.json",
+        "pointer": "#/results/16",
+        "urls": [
+          "https://store.steampowered.com/api/appdetails?appids=1123450&cc=us&l=english",
+          "https://steamspy.com/api.php?request=appdetails&appid=1123450",
+          "https://store.steampowered.com/app/1123450/?l=english&cc=us"
+        ],
+        "meta": "Steam appdetails（名称 / 发行日期 / 类目 / 初始价 / 采样价 / 商店页官方文案）+ SteamSpy appdetails（评测数 / 好评率 / 采样时在线 / 拥有人数区间）"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M34",
+      "origin": "market",
+      "title": "Assemble with Care",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "G4",
+      "play": "无用却重要 / 修补守候",
+      "playKeys": [
+        "G4"
+      ],
+      "playDesc": "按童话母题分组，玩法须由机制承载（见原池硬规则）",
+      "oneLiner": "Repair old-school objects in this cozy puzzle game. Join antique-restorer Maria, as she arrives in the sun-soaked town of Bellariva and set out on a journey of helping the townsfolk reconnect.",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "1P"
+        ],
+        "note": "Steam 类目 Single-player；官方人数原文未写",
+        "officialText": "未获取",
+        "maxPlayers": "未获取"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（单人 / 平台信息见官方类目）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 7.99,
+        "sampled": 1.99,
+        "discountPct": 75,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 8690,
+        "positivePct": 90.8,
+        "label": "未获取",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "修理旧物、听物品主人的故事，修补本身就是陪伴与守候，对应无用却重要 / 修补守候。",
+      "risk": "Steam 标签；近期评测标签；峰值在线；销量/愿望单/分区数据",
+      "lineage": "同族自有条目 8 条（B29 补一只漏雨的云、B30 给巨人系鞋带、B31 把月亮擦干净、B32 替冬天存一罐夏天 等）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "B29",
+        "B30",
+        "B31",
+        "B32",
+        "B33",
+        "B34",
+        "B35",
+        "B36"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/1202900/",
+      "releaseYear": "2020",
+      "releaseDate": "Mar 26, 2020",
+      "sampledAt": "2026-11-04T15:32:50.049Z",
+      "detail": {
+        "Steam 标签": "未获取",
+        "Steam 类目": "Single-player、Steam Achievements、Camera Comfort、Color Alternatives、Custom Volume Controls、Mouse Only Option、Playable without Timed Input、Save Anytime、Steam Cloud、Family Sharing",
+        "官方人数原文": "未获取",
+        "官方标注上限": "未获取",
+        "初始价（USD）": "7.99",
+        "采样价（USD）": "1.99",
+        "采样折扣": "75%",
+        "评测数": "8690",
+        "好评率": "90.8%",
+        "采样时在线": "12",
+        "拥有人数区间": "200,000 .. 500,000",
+        "采样时间": "2026-11-04T15:32:50.049Z"
+      },
+      "source": {
+        "file": "data/steam-expanded-2026-11-04.json",
+        "pointer": "#/results/17",
+        "urls": [
+          "https://store.steampowered.com/api/appdetails?appids=1202900&cc=us&l=english",
+          "https://steamspy.com/api.php?request=appdetails&appid=1202900",
+          "https://store.steampowered.com/app/1202900/?l=english&cc=us"
+        ],
+        "meta": "Steam appdetails（名称 / 发行日期 / 类目 / 初始价 / 采样价 / 商店页官方文案）+ SteamSpy appdetails（评测数 / 好评率 / 采样时在线 / 拥有人数区间）"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M35",
+      "origin": "market",
+      "title": "Little Kitty, Big City",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "G5",
+      "play": "走失 / 重逢 / 带回",
+      "playKeys": [
+        "G5"
+      ],
+      "playDesc": "按童话母题分组，玩法须由机制承载（见原池硬规则）",
+      "oneLiner": "You're a curious little kitty with a big personality, on an adventure to find your way back home. Explore the city, make new friends with stray animals, wear delightful hats, and leave more than a little chaos in your wa…",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "1P"
+        ],
+        "note": "Steam 类目 Single-player；官方人数原文未写",
+        "officialText": "未获取",
+        "maxPlayers": "未获取"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（单人 / 平台信息见官方类目）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 24.99,
+        "sampled": 24.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 10785,
+        "positivePct": 96.5,
+        "label": "未获取",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "小猫走失在城市里，一路交朋友、找路回家，对应走失 / 重逢 / 带回。",
+      "risk": "Steam 标签；近期评测标签；峰值在线；销量/愿望单/分区数据",
+      "lineage": "同族自有条目 4 条（B37 雾里点名、B38 把回声带回家、B39 跟着脚印回来、B40 灯塔转一圈）；按玩法族并列，不是直接谱系引用",
+      "relatedOwn": [
+        "B37",
+        "B38",
+        "B39",
+        "B40"
+      ],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/1177980/",
+      "releaseYear": "2024",
+      "releaseDate": "May 9, 2024",
+      "sampledAt": "2026-11-04T15:32:50.049Z",
+      "detail": {
+        "Steam 标签": "未获取",
+        "Steam 类目": "Single-player、Steam Achievements、Full controller support、Steam Trading Cards、Adjustable Text Size、Camera Comfort、Custom Volume Controls、Gamepad Recommended、Playable without Timed Input、DualShock Controller Support、DualShock Controller Support、DualSense Controller Support、DualSense Controller Support、Save Anytime、Stereo Sound、Surround Sound、Steam Cloud、Family Sharing",
+        "官方人数原文": "未获取",
+        "官方标注上限": "未获取",
+        "初始价（USD）": "24.99",
+        "采样价（USD）": "24.99",
+        "采样折扣": "0%",
+        "评测数": "10785",
+        "好评率": "96.5%",
+        "采样时在线": "74",
+        "拥有人数区间": "200,000 .. 500,000",
+        "采样时间": "2026-11-04T15:32:50.049Z"
+      },
+      "source": {
+        "file": "data/steam-expanded-2026-11-04.json",
+        "pointer": "#/results/18",
+        "urls": [
+          "https://store.steampowered.com/api/appdetails?appids=1177980&cc=us&l=english",
+          "https://steamspy.com/api.php?request=appdetails&appid=1177980",
+          "https://store.steampowered.com/app/1177980/?l=english&cc=us"
+        ],
+        "meta": "Steam appdetails（名称 / 发行日期 / 类目 / 初始价 / 采样价 / 商店页官方文案）+ SteamSpy appdetails（评测数 / 好评率 / 采样时在线 / 拥有人数区间）"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M36",
+      "origin": "market",
+      "title": "Gang Beasts",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "UNMAPPED",
+      "play": "未归类",
+      "playKeys": [],
+      "playDesc": "本样本内未映射到现有玩法族",
+      "oneLiner": "Gang Beasts is a silly multiplayer party game with surly gelatinous characters, brutal slapstick fight sequences, and absurd hazardous environments, set in the mean streets of Beef City.",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [],
+        "note": "官方描述未写人数；Steam 类目含 PvP / Online PvP",
+        "officialText": "未获取",
+        "maxPlayers": "未获取"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 19.99,
+        "sampled": 19.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 60270,
+        "positivePct": 85.1,
+        "label": "未获取",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "未归类：核心是多人近身格斗与淘汰，本库 23 族里没有「战斗 / 对抗」族，不硬塞。",
+      "risk": "Steam 标签；近期评测标签；峰值在线；销量/愿望单/分区数据",
+      "lineage": "同族自有条目：0 条",
+      "relatedOwn": [],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/285900/",
+      "releaseYear": "2017",
+      "releaseDate": "Dec 12, 2017",
+      "sampledAt": "2026-11-04T15:32:50.049Z",
+      "detail": {
+        "Steam 标签": "未获取",
+        "Steam 类目": "Multi-player、PvP、Online PvP、Shared/Split Screen PvP、Shared/Split Screen、Steam Achievements、Full controller support、Remote Play on Phone、Remote Play on Tablet、Remote Play on TV、Remote Play Together、Family Sharing",
+        "官方人数原文": "未获取",
+        "官方标注上限": "未获取",
+        "初始价（USD）": "19.99",
+        "采样价（USD）": "19.99",
+        "采样折扣": "0%",
+        "评测数": "60270",
+        "好评率": "85.1%",
+        "采样时在线": "376",
+        "拥有人数区间": "2,000,000 .. 5,000,000",
+        "采样时间": "2026-11-04T15:32:50.049Z"
+      },
+      "source": {
+        "file": "data/steam-expanded-2026-11-04.json",
+        "pointer": "#/results/19",
+        "urls": [
+          "https://store.steampowered.com/api/appdetails?appids=285900&cc=us&l=english",
+          "https://steamspy.com/api.php?request=appdetails&appid=285900",
+          "https://store.steampowered.com/app/285900/?l=english&cc=us"
+        ],
+        "meta": "Steam appdetails（名称 / 发行日期 / 类目 / 初始价 / 采样价 / 商店页官方文案）+ SteamSpy appdetails（评测数 / 好评率 / 采样时在线 / 拥有人数区间）"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M37",
+      "origin": "market",
+      "title": "Duck Game",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "UNMAPPED",
+      "play": "未归类",
+      "playKeys": [],
+      "playDesc": "本样本内未映射到现有玩法族",
+      "oneLiner": "Enter the futuristic year of 1984, an age where ducks run wild in a frantic battle for glory. Blast your friends with Shotguns, Net Guns, Mind Control Rays, Saxophones, Magnet Guns, and much, much more.",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "2P",
+          "3P",
+          "4P"
+        ],
+        "note": "官方原文：2 to 8 players；本库人数档只到 4P",
+        "officialText": "2 to 8 PLAYERS + 4 Spectators in either Local Multiplayer Couch Combat, or Online Play!",
+        "maxPlayers": "8"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 12.99,
+        "sampled": 12.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 38476,
+        "positivePct": 96.6,
+        "label": "未获取",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "未归类：核心是 2-8 人武器乱斗与淘汰，属战斗 / 对抗，不硬塞。",
+      "risk": "Steam 标签；近期评测标签；峰值在线；销量/愿望单/分区数据",
+      "lineage": "同族自有条目：0 条",
+      "relatedOwn": [],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/312530/",
+      "releaseYear": "2015",
+      "releaseDate": "Jun 4, 2015",
+      "sampledAt": "2026-11-04T15:32:50.049Z",
+      "detail": {
+        "Steam 标签": "未获取",
+        "Steam 类目": "Single-player、Multi-player、PvP、Online PvP、LAN PvP、Shared/Split Screen PvP、Shared/Split Screen、Steam Achievements、Full controller support、Steam Trading Cards、Steam Workshop、Steam Cloud、Includes level editor、Remote Play on Phone、Remote Play on Tablet、Remote Play on TV、Remote Play Together、Family Sharing",
+        "官方人数原文": "2 to 8 PLAYERS + 4 Spectators in either Local Multiplayer Couch Combat, or Online Play!",
+        "官方标注上限": "8",
+        "初始价（USD）": "12.99",
+        "采样价（USD）": "12.99",
+        "采样折扣": "0%",
+        "评测数": "38476",
+        "好评率": "96.6%",
+        "采样时在线": "112",
+        "拥有人数区间": "2,000,000 .. 5,000,000",
+        "采样时间": "2026-11-04T15:32:50.049Z"
+      },
+      "source": {
+        "file": "data/steam-expanded-2026-11-04.json",
+        "pointer": "#/results/20",
+        "urls": [
+          "https://store.steampowered.com/api/appdetails?appids=312530&cc=us&l=english",
+          "https://steamspy.com/api.php?request=appdetails&appid=312530",
+          "https://store.steampowered.com/app/312530/?l=english&cc=us"
+        ],
+        "meta": "Steam appdetails（名称 / 发行日期 / 类目 / 初始价 / 采样价 / 商店页官方文案）+ SteamSpy appdetails（评测数 / 好评率 / 采样时在线 / 拥有人数区间）"
+      },
+      "prototype": null
+    },
+    {
+      "id": "M38",
+      "origin": "market",
+      "title": "Stick Fight: The Game",
+      "titleEn": "",
+      "pool": "M",
+      "poolLabel": "市面对照",
+      "playKey": "UNMAPPED",
+      "play": "未归类",
+      "playKeys": [],
+      "playDesc": "本样本内未映射到现有玩法族",
+      "oneLiner": "Stick Fight is a physics-based couch/online fighting game where you battle it out as the iconic stick figures from the golden age of the internet.",
+      "coreVerb": "未获取",
+      "players": {
+        "modes": [
+          "2P",
+          "3P",
+          "4P"
+        ],
+        "note": "官方原文：2 to 4 players",
+        "officialText": "2 to 4 PLAYERS in either Local or Online Multiplayer (NO SINGLE PLAYER MODE)",
+        "maxPlayers": "4"
+      },
+      "age": {
+        "band": "未获取",
+        "basis": "Steam 商店页没有儿童年龄/适配标注"
+      },
+      "session": {
+        "band": "未获取",
+        "basis": "官方未标注单局时长"
+      },
+      "onboarding": "未获取",
+      "mood": "未获取",
+      "platform": {
+        "target": "Steam（本地同屏）",
+        "tech": "商业成品",
+        "basis": "Steam 类目字段"
+      },
+      "price": {
+        "band": "未获取",
+        "currency": "USD",
+        "base": 4.99,
+        "sampled": 4.99,
+        "discountPct": 0,
+        "basis": "采样时点价格，不是历史最低价"
+      },
+      "reviews": {
+        "total": 122658,
+        "positivePct": 93.5,
+        "label": "未获取",
+        "basis": "SteamSpy 全语言合计，口径可能不同于商店页英文子集"
+      },
+      "evidence": {
+        "level": "E3",
+        "label": "外部可核实事实",
+        "note": "Steam 商店页 / SteamSpy 采样；不是试玩证据，也不代表儿童适配"
+      },
+      "fit": null,
+      "why": "未归类：核心是 2-4 人物理格斗，属战斗 / 对抗，不硬塞。",
+      "risk": "Steam 标签；近期评测标签；峰值在线；销量/愿望单/分区数据",
+      "lineage": "同族自有条目：0 条",
+      "relatedOwn": [],
+      "dedup": "未获取",
+      "steamUrl": "https://store.steampowered.com/app/674940/",
+      "releaseYear": "2017",
+      "releaseDate": "Sep 28, 2017",
+      "sampledAt": "2026-11-04T15:32:50.049Z",
+      "detail": {
+        "Steam 标签": "未获取",
+        "Steam 类目": "Multi-player、PvP、Online PvP、Shared/Split Screen PvP、Shared/Split Screen、Partial Controller Support、Remote Play on Phone、Remote Play on Tablet、Remote Play Together、Family Sharing",
+        "官方人数原文": "2 to 4 PLAYERS in either Local or Online Multiplayer (NO SINGLE PLAYER MODE)",
+        "官方标注上限": "4",
+        "初始价（USD）": "4.99",
+        "采样价（USD）": "4.99",
+        "采样折扣": "0%",
+        "评测数": "122658",
+        "好评率": "93.5%",
+        "采样时在线": "265",
+        "拥有人数区间": "2,000,000 .. 5,000,000",
+        "采样时间": "2026-11-04T15:32:50.049Z"
+      },
+      "source": {
+        "file": "data/steam-expanded-2026-11-04.json",
+        "pointer": "#/results/21",
+        "urls": [
+          "https://store.steampowered.com/api/appdetails?appids=674940&cc=us&l=english",
+          "https://steamspy.com/api.php?request=appdetails&appid=674940",
+          "https://store.steampowered.com/app/674940/?l=english&cc=us"
+        ],
+        "meta": "Steam appdetails（名称 / 发行日期 / 类目 / 初始价 / 采样价 / 商店页官方文案）+ SteamSpy appdetails（评测数 / 好评率 / 采样时在线 / 拥有人数区间）"
       },
       "prototype": null
     }
